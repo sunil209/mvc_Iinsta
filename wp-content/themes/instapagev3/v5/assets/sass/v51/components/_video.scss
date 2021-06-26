@@ -1,0 +1,46 @@
+.video-responsive {
+	padding-bottom: 56.3%;
+	position: relative;
+	overflow: hidden;
+	margin: 0 -0.5%;
+	box-shadow: $box_shadow_level_3;
+
+	&.video-facebook {
+		padding-bottom: 0;
+	}
+
+	.blog-post-body & {
+		box-shadow: none;
+	}
+
+	iframe {
+		height: 101%;
+		width: 100%;
+		position: absolute;
+	}
+
+	.accordion & {
+		box-shadow: none;
+	}
+
+	// NOTE: fix for videos with .loader animation
+	p {
+		margin: 0;
+	}
+}
+
+.video-responsive-wrapper {
+	overflow: hidden;
+
+	.editable-content & {
+		margin: spacer(3) spacer(-2) spacer(4.5);
+
+		@include breakpoint(tablet) {
+			margin: spacer(3) 0 spacer(4.5);
+		}
+	}
+
+	.accordion-body & {
+		margin: spacer(2) 0;
+	}
+}

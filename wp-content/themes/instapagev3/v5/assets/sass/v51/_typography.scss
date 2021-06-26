@@ -1,0 +1,246 @@
+// NOTE: Mixin for headlines.
+@mixin headline($level)  {
+	@if $level == 'h1' {
+		font-size: 40px;
+		line-height: 1.2;
+	} @else if $level == 'h2' {
+		font-size: 32px;
+		line-height: 1.44;
+	} @else if $level == 'h3' {
+		font-size: 24px;
+		line-height: 1.5;
+	} @else if $level == 'h4' {
+		font-size: 20px;
+		line-height: 1.6;
+	} @else if $level == 'h5' {
+		font-size: $font_size_large;
+		line-height: 1.67;
+	}
+}
+
+// NOTE: HEADLINES
+// NOTE: Sometimes we are using classes which only imitate our headlines styles.
+h1, h2, h3, h4, h5,
+.heading-primary,
+.heading-secondary,
+.heading-tertiary,
+.heading-quaternary,
+.heading-senary {
+	display: block;
+	font-family: $font_family_secondary;
+	font-weight: $font_weight_bold;
+}
+
+h2, h3, h4, h5 {
+	color: $color_vader;
+
+	.section-dark & {
+		color: $color_leia;
+	}
+}
+
+h1,
+.heading-primary {
+	@include headline(h3);
+
+	@include breakpoint(tablet) {
+		@include headline(h2);
+	}
+
+	@include breakpoint(large_tablet) {
+		@include headline(h1);
+	}
+}
+
+h2,
+.heading-secondary {
+	@include headline(h4);
+
+	@include breakpoint(tablet) {
+		@include headline(h3);
+	}
+
+	@include breakpoint(large_tablet) {
+		@include headline(h2);
+	}
+}
+
+h3,
+.heading-tertiary {
+	@include headline(h5);
+
+	@include breakpoint(tablet) {
+		@include headline(h3);
+	}
+
+	.label-group & {
+		margin-bottom: spacer(5);
+	}
+}
+
+h4,
+.heading-quaternary {
+	font-size: $font_size_basic;
+
+	@include breakpoint(tablet) {
+		@include headline(h4);
+	}
+
+	// TODO: Design review.
+	.tile & {
+		font-size: $font_size_xlarge;
+	}
+
+	&.tile-label-title {
+		// FIXME: pls delete after v7 typography is merged
+		font-size: $font_size_basic;
+	}
+}
+
+h5,
+.heading-senary {
+	@include headline(h5);
+
+	h1 + & {
+		margin-top: spacer(2);
+	}
+}
+
+// NOTE: Regular tags
+p {
+	// NOTE: Parapgraph gets different margin on mobiles (benefit section)
+	margin-top: spacer(1);
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	@include breakpoint(large_tablet) {
+		margin-top: spacer(2);
+	}
+
+	// NOTE: dependences playground!
+	h3 + & {
+		margin-top: spacer(2);
+	}
+
+	.hero-section & {
+		@include breakpoint(large_tablet) {
+			font-size: $font_size_xlarge;
+			max-width: columns(10);
+			// NOTE: We don't want to reset our default top/bottom margins here.
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	.blog-post-body & {
+		margin-top: spacer(2.5);
+	}
+
+	// NOTE: We need to separate paragraph and anchor text.
+	.panel-tile & {
+		margin-bottom: spacer(2);
+	}
+
+	// NOTE: If there is more this long selectors - consider making subelement of component panel for paragraphs.
+	.panel-tile.in-column & {
+		margin-top: spacer(1);
+	}
+
+	.panel-single-agency & {
+		display: flex;
+		margin: 0;
+	}
+
+	.panel-testimonial & {
+		font-size: $font_size_small;
+	}
+
+	.accordion-body & {
+		&:first-child {
+			margin-top: spacer(2);
+		}
+	}
+
+	.division-header & {
+		@include breakpoint(desktop) {
+			width: columns(8);
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
+
+a {
+	text-decoration: none;
+	transition: 0.2s all;
+	color: inherit;
+	cursor: pointer;
+
+	// Dependencies playground
+	.list-option & {
+		transition: none;
+	}
+
+	.list-option > & {
+		letter-spacing: 1px;
+	}
+
+	.accordion-header & {
+		color: $color_r2d2;
+
+		&:hover {
+			color: $color_skywalker;
+		}
+	}
+
+	.hero-section-text & {
+		font-weight: bold;
+	}
+}
+
+small {
+	font-size: $font_size_small;
+	line-height: 1.71;
+}
+
+.page-single-post {
+	p, ul, ol {
+		font-size: $font_size_large;
+	}
+
+	ol, ul {
+		margin: spacer(2) 0 spacer(2) spacer(4);
+	}
+
+	ol {
+		list-style: decimal;
+
+		li {
+			padding-left: spacer(1);
+		}
+	}
+}
+
+.single-integration {
+	h3 + ul {
+		margin-top: spacer(2);
+	}
+}
+
+.quote-tweet-author {
+	font-size: $font_size_large;
+}
+
+hr {
+	width: 100%;
+	border: 0;
+	height: 1px;
+	background-color: $color_kylo;
+	margin: spacer(6) 0;
+
+	.sidebar & {
+		margin: spacer(2.5) 0;
+	}
+}

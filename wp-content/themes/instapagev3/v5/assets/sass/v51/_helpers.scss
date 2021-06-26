@@ -1,0 +1,233 @@
+[data-state~=sticky] {
+	position: fixed;
+}
+
+[data-state~=hidden] {
+	display: none;
+}
+
+[data-state~=locked] {
+	overflow: hidden;
+}
+
+[data-state~=locked-mobile] {
+	overflow: hidden;
+
+	@include breakpoint(desktop) {
+		overflow: auto;
+	}
+}
+
+.section-darker {
+	background-color: $color_yoda;
+}
+
+.section-dark {
+	background-color: $color_vader;
+	color: $color_leia;
+}
+
+.section-darker-white {
+	background: linear-gradient(to bottom, $color_yoda 0%, $color_leia 100%);
+}
+
+// NOTE: Instapage SVG logo
+.logo-svg-wrapper {
+	vertical-align: middle;
+}
+
+.logo-svg {
+	fill: $color_leia;
+	fill-rule: evenodd;
+}
+
+// NOTE: Google trends chart
+.google-trends-embeded {
+	display: block;
+	text-align: center;
+	margin: spacer(4) 0 spacer(2);
+
+	iframe {
+		max-width: 100%;
+	}
+}
+
+// NOTE: Transition effect
+.fade {
+	@include transition ($transition_regular);
+
+	&.fade-effect {
+		opacity: 0;
+	}
+}
+
+// NOTE: ConvertPro banner image fix
+.editable-content .cp-popup-container img {
+	margin: 0;
+	box-shadow: none;
+}
+
+// NOTE: ConvertPro banner top spacing fix
+.editable-content .cp-popup-container {
+	margin-top: spacer(5);
+}
+
+// TODO: Remove it after creating video component styles.
+.video-responsive-wrapper {
+	.editable-content & {
+		margin: spacer(3) spacer(-2) spacer(4.5);
+		overflow: hidden;
+
+		@include breakpoint(tablet) {
+			margin: spacer(3) 0 spacer(4.5);
+		}
+	}
+
+	.accordion-body & {
+		margin: spacer(2) 0;
+	}
+}
+
+.is-hidden {
+	display: none;
+}
+
+.sm-visible {
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}
+
+.xsm-hidden {
+	display: none;
+
+	@include breakpoint(widescreen_phone) {
+		display: block;
+	}
+}
+
+.md-visible {
+	@include breakpoint(only_phone) {
+		display: none;
+	}
+}
+
+.tb-hidden {
+	@include breakpoint(only_phone) {
+		display: none;
+	}
+}
+
+.tb-visible {
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}
+
+.lg-tb-visible {
+	@include breakpoint(large_tablet) {
+		display: none;
+	}
+}
+
+.lg-tb-hidden {
+	@include breakpoint(max_large_tablet) {
+		display: none;
+	}
+}
+
+.lg-visible {
+	display: none;
+
+	@include breakpoint(desktop) {
+		display: block;
+	}
+}
+
+// NOTE: turning off widget Contact Sales on mobile device
+.zEWidget-launcher {
+	display: none;
+
+	@include breakpoint(desktop) {
+		display: block;
+	}
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+}
+
+.img-main {
+	margin: 0 auto;
+}
+
+.img-fullwidth {
+	display: block;
+	width: 100%;
+}
+
+.img-rounded {
+  border-radius: 10px;
+}
+
+.main-text {
+	text-align: center;
+	margin-top: spacer(3.5);
+}
+
+.centered-content {
+	@include breakpoint(tablet) {
+		display: flex;
+		justify-content: center;
+	}
+
+	.program-badge {
+		display: block;
+		margin: 0 auto spacer(2);
+		pointer-events: none;
+
+		@include breakpoint(tablet) {
+			margin: 0 spacer(2) 0 0;
+		}
+
+		&:last-of-type {
+			@include breakpoint(tablet) {
+				margin: 0;
+			}
+		}
+	}
+}
+
+// NOTE: video helpers
+video.video-retina {
+	display: none;
+}
+
+@media
+only screen and ( min-resolution: 200dpi),
+only screen and ( min-resolution: 1.25dppx) {
+	video.video-retina {
+		@include breakpoint(large_tablet) {
+			display: block;
+		}
+	}
+
+	video.video-normal {
+		@include breakpoint(large_tablet) {
+			display: none;
+		}
+	}
+}
+
+// NOTE: Navbar was overflowing content after scroll,
+// here is applied nice solution fo this problem, only CSS:
+// Reference here https://css-tricks.com/hash-tag-links-padding/
+.scroll-to-with-navbar-offset::before {
+    display: block;
+    height: 100px;
+    margin-top: spacer(-10);
+    content: " ";
+    visibility: hidden;
+    pointer-events: none;
+}

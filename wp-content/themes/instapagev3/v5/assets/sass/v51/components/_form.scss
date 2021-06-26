@@ -1,0 +1,65 @@
+// BASE COMPONENTS:
+//	.form-title
+//	.form-field
+
+.form-title {
+	margin-bottom: spacer(2);
+	text-align: center;
+}
+
+.form-field {
+	position: relative;
+	margin-bottom: spacer(3);
+	margin-top: spacer(1);
+
+	// NOTE: unique color here.
+	::-webkit-input-placeholder {
+		color: #808389;
+	}
+
+	::-moz-placeholder {
+		color: #808389;
+	}
+
+	:-ms-input-placeholder {
+		color: #808389;
+	}
+
+	:-moz-placeholder {
+		color: #808389;
+	}
+}
+
+.form-field-group {
+	display: block;
+
+	@include breakpoint(tablet) {
+		display: flex;
+		align-items: center;
+	}
+}
+
+
+.form-columns {
+	@include breakpoint(tablet) {
+		@include css-grid(2);
+	}
+}
+
+.form-field-info {
+	margin-top: spacer(.5);
+	font-size: $font_size_small;
+	color: $color_danger;
+	display: none;
+	justify-content: space-between;
+
+	.form-field[data-state~="error"] & {
+		display: flex;
+	}
+}
+
+.form-careers {
+	max-width: columns(5);
+	padding: 0 spacer(2);
+	margin: 0 auto;
+}

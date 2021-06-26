@@ -1,0 +1,92 @@
+.accordion-row {
+	@include breakpoint(tablet) {
+		max-width: 595px;
+		margin: 0 auto;
+	}
+
+	@include breakpoint(large_tablet) {
+		max-width: 100%;
+		padding-top: spacer(3);
+		display: flex;
+		align-items: flex-start;
+	}
+}
+
+.accordion-panel {
+	position: relative;
+	box-shadow: $box_shadow_level_1;
+	border-radius: 10px;
+	text-align: center;
+	padding: spacer(3) 0 spacer(12.5);
+	margin-bottom: $main_gap;
+
+	@include breakpoint(large_tablet) {
+		margin-bottom: 0;
+		flex: 1;
+	}
+
+	&:nth-child(odd) {
+		@include breakpoint(large_tablet) {
+			padding: spacer(3) 0 spacer(11.5);
+			margin-top: spacer(4);
+			margin-bottom: - spacer(4);
+		}
+	}
+
+	&:nth-child(even) {
+		@include breakpoint(large_tablet) {
+			margin-left: $main_gap;
+			margin-right: $main_gap;
+		}
+	}
+}
+
+.accordion-panel-content {
+	padding: 0 spacer(2.5);
+}
+
+.accordion-panel-img {
+	@include breakpoint(large_tablet) {
+		height: 70px;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.accordion-panel-header {
+	font-size: $font_size_xlarge;
+	padding-top: spacer(2);
+}
+
+.accordion-panel-subheader {
+	padding-top: spacer(2);
+	font-size: $font_size_basic;
+	position: relative;
+
+	&:before {
+		border-top: 1px solid #d7e2e6;
+		content: "";
+		position: absolute;
+		top: 33px;
+		left: 0;
+		width: 100%;
+		z-index: -1;
+	}
+}
+
+.accordion-panel-subheader-background {
+	background-color: $color_leia;
+	padding: 0 spacer(2);
+}
+
+.accordion-icon-bottom {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	color: $color_kylo;
+}
+
+.accordion-panel-link {
+	display: block;
+}

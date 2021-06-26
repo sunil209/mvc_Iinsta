@@ -1,0 +1,149 @@
+// VARIANTS
+//	.list-horizontal
+//	.list-vertical
+//	.list-check
+// ELEMENTS
+//	.list-option
+
+.list-horizontal {
+	display: flex;
+	align-items: center;
+
+	// NOTE: We need some different centering rule in navbar component. (WWP-2491)
+	.navbar & {
+		margin-top: 5px;
+	}
+
+	.amp-navbar & {
+		margin-top: 0;
+		float: right;
+	}
+
+	&.stick-to-right {
+		margin-left: auto;
+	}
+
+	.stick-to-right + & {
+		margin-left: spacer(4);
+		flex: initial;
+	}
+}
+
+.list-vertical {
+	padding: 0 0 spacer(2) spacer(0.5);
+
+	@include breakpoint(tablet) {
+		max-width: columns(3);
+	}
+}
+
+.list-vertical li {
+	list-style: none;
+	font-size: $font_size_basic;
+
+	@include breakpoint(tablet) {
+		padding-bottom: spacer(1.5);
+		font-size: $font_size_large;
+	}
+
+	.agency-single-partners & {
+		font-size: $font_size_basic;
+		padding: spacer(1) 0;
+	}
+}
+
+.list-vertical li::before {
+	color: $color_r2d2;
+	content: "\2022";
+	font-size: $font_size_xxlarge;
+	padding-right: spacer(0.5);
+}
+
+.list-option {
+	.list-horizontal & {
+		margin-right: spacer(2.5);
+	}
+
+	// Dependencies playground!
+	.navbar &,
+	.navbar-white &,
+	.navbar[data-state~="sticky"] & {
+		&.current-menu-parent {
+			opacity: 1;
+
+			&::after {
+				display: block;
+				position: relative;
+				top: -5px;
+				width: 100%;
+				height: 2px;
+				content: '';
+			}
+		}
+	}
+
+	.navbar & {
+		text-transform: uppercase;
+		transition: 0.2s all;
+		opacity: 0.8;
+		-webkit-transform: translate3d(0, 0, 0);
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.current-menu-parent {
+			&::after {
+				background-color: $color_white;
+			}
+		}
+	}
+
+	.navbar-white &,
+	.navbar[data-state~="sticky"] & {
+		&.current-menu-parent {
+			color: $color_ocean;
+
+			&::after {
+				background-color: $color_ocean;
+			}
+		}
+	}
+}
+
+.list-check {
+	font-size: $font_size_small;
+
+	@include breakpoint(tablet) {
+		font-size: $font_size_basic;
+	}
+
+	@include breakpoint(desktop) {
+		font-size: $font_size_large;
+	}
+
+	li {
+		max-width: calc(100% - 35px);
+		padding-bottom: spacer(1);
+		position: relative;
+		left: 35px;
+
+		@include breakpoint(tablet) {
+			padding-bottom: spacer(1.5);
+		}
+	}
+}
+
+.list-check-sign {
+	margin-right: spacer(1);
+	color: $color_r2d2;
+	vertical-align: text-bottom;
+	position: absolute;
+	top: 3px;
+	left: -35px;
+	font-size: $font_size_xlarge;
+}

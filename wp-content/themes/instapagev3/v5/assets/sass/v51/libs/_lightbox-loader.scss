@@ -1,0 +1,54 @@
+/**
+ * Featherlight Loader
+ *
+ * Copyright 2015, WP Site Care http://www.wpsitecare.com
+ * MIT Licensed.
+ */
+@-webkit-keyframes featherlightLoader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes featherlightLoader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.featherlight-loading .featherlight-content {
+	margin: auto;
+	height: 80px;
+	width: 80px;
+	animation: rotate .8s infinite linear;
+	background: transparent;
+	border: 6px solid $color_r2d2;
+	border-right-color: transparent;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.featherlight-loading .featherlight-content > * {
+	display: none !important;
+}
+
+.featherlight-loading .featherlight-close,
+.featherlight-loading .featherlight-inner {
+	display: none;
+}

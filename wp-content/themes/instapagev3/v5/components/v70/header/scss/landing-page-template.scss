@@ -1,0 +1,29 @@
+.v7-header-copy-narrow {
+    .v7-header-center & {
+        max-width: $content_width_narrow;
+
+        @include breakpoint(tablet) {
+            margin: 0 spacer(6);
+        }
+    }
+}
+
+.v7-header-label-white {
+    display: inline-block;
+    padding: spacer(0.5) spacer(1.5);
+    border-radius: $border_radius_primary;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: $font_size_small;
+    font-weight: $font_weight_semibold;
+    text-transform: uppercase;
+}
+
+.v7-header-arrows {
+    flex-shrink: 0;
+    padding: 8px;
+}
+
+.v7-header-arrows-icon {
+    fill: $color_white;
+    font-size: 40px;
+}

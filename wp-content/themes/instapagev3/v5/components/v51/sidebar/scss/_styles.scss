@@ -1,0 +1,89 @@
+// BASE COMPONENT
+//	.sidebar
+// ELEMENTS
+//	.sidebar-title
+//  .sidebar-menu
+// VARIANTS
+//	.sidebar-select
+
+.sidebar {
+	grid-area: sidebar;
+
+	@include breakpoint(large_tablet) {
+		position: sticky;
+		position: -webkit-sticky;
+		top: spacer(15);
+		align-self: flex-start;
+		margin-bottom: spacer(4);
+	}
+
+	&.filter-sidebar {
+		@include breakpoint(large_tablet) {
+			position: static;
+		}
+	}
+
+	.single-integration & {
+		@include breakpoint(large_tablet) {
+			position: static;
+		}
+	}
+}
+
+.sidebar-menu {
+	display: none;
+	
+	@include breakpoint(large_tablet) {
+		display: block;
+	}
+}
+
+.sidebar-title {
+	text-align: center;
+	
+	@include breakpoint(large_tablet) {
+		margin-bottom: spacer(3);
+		padding-left: spacer(3);
+		text-align: left;	
+	}
+	
+	.filter-sidebar & {
+		padding: 0;
+
+		@include breakpoint(large_tablet) {
+			margin-bottom: spacer(3);
+		}
+	}
+}
+
+.sidebar-select {
+	margin-bottom: spacer(3);
+
+	@include breakpoint(large_tablet) {
+		display: none;
+	}
+}
+
+.sidebar-wrapper {
+	margin: 0 0 spacer(4);
+
+	@include breakpoint(tablet) {
+		@include css-grid(3, 10px);
+	}
+
+	@include breakpoint(large_tablet) {
+		display: block;
+	}
+}
+
+.sidebar-select-wrapper {
+	margin: 0 0 spacer(2);
+
+	@include breakpoint(tablet) {
+		@include css-grid(2, 10px);
+	}
+
+	@include breakpoint(large_tablet) {
+		display: block;
+	}
+}

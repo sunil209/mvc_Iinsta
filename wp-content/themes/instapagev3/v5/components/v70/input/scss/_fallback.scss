@@ -1,0 +1,18 @@
+// For Edge 12-18 that doesn't recognize :placeholder-shown pseudo-class
+input.v7-input-field {
+    @supports (-ms-ime-align:auto) {
+        ~ .v7-input-label {
+            top: 0;
+            font-size: $font_size_xsmall;
+        }
+    }
+}
+
+// For Safari 11+
+.v7-form-multistep-vertical .v7-input-bar {
+    @media not all and (min-resolution: .001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+            margin-top: -3px;
+        }
+    }
+}

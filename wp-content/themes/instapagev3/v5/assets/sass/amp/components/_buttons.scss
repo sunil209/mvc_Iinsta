@@ -1,0 +1,51 @@
+.v7-btn-group {
+    margin-top: spacer(3);
+
+    .v7-btn {
+        display: block;
+        margin: auto;
+
+        &:not(:first-child) {
+            margin-top: spacer(2);
+        }
+    }
+}
+
+.v7-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    transition: background-color $transition_regular,
+        border-color $transition_regular,
+        color $transition_regular;
+    border-radius: $border_radius_primary;
+    outline: none;
+    font: $font_size_small/normal $font_family_secondary;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    .v7-cta & {
+        width: 210px;
+    }
+}
+
+.v7-btn-white {
+    border: 2px solid $color_white;
+    background-color: $color_white;
+    color: $color_ocean;
+}
+
+.v7-btn-ghost {
+    border: 2px solid $color_white;
+    color: $color_white;
+
+    &:hover {
+        border: 2px solid $color_white;
+        background-color: $color_white;
+        color: $color_ocean;
+    }
+}
+
+.v7-btn-large {
+    padding: 12px 24px;
+    font-size: $font_size_basic;
+}

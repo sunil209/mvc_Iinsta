@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="68" height="70" viewBox="0 0 68 70">
+    <g fill="none" fill-rule="evenodd" transform="translate(0 1)">
+        <circle cx="6.87" cy="10.79" r="3.36" stroke="#BECED6" stroke-linecap="round" stroke-width="1.41"/>
+        <circle cx="61.84" cy="10.79" r="3.36" stroke="#BECED6" stroke-linecap="round" stroke-width="1.41"/>
+        <circle cx="61.84" cy="50.25" r="3.36" stroke="#BECED6" stroke-linecap="round" stroke-width="1.41"/>
+        <circle cx="6.69" cy="50.25" r="3.36" stroke="#BECED6" stroke-linecap="round" stroke-width="1.41"/>
+        <circle cx="6.87" cy="10.79" r="3.36" fill="#BCCED6" fill-rule="nonzero" opacity=".2"/>
+        <circle cx="61.84" cy="10.79" r="3.36" fill="#BCCED6" fill-rule="nonzero" opacity=".2"/>
+        <circle cx="61.84" cy="50.25" r="3.36" fill="#BCCED6" fill-rule="nonzero" opacity=".2"/>
+        <circle cx="6.69" cy="50.25" r="3.36" fill="#BCCED6" fill-rule="nonzero" opacity=".2"/>
+        <path stroke="#BECED6" stroke-linecap="round" stroke-width="1.41" d="M6.69 54.14V68M6.69 14.94v31.07M6.69 0v6.69M10.65 10.79h47.44M61.84 14.15v32.19M57.77 50.18H10.86"/>
+        <path stroke="#BECED6" stroke-dasharray="3.52" stroke-linecap="round" stroke-width="1.41" d="M.75 62.44h66.5"/>
+        <path stroke="#BECED6" stroke-linecap="round" stroke-width="1.41" d="M34.37 24.13H54.3M34.37 29.76H54.3M34.37 36.1h13.59"/>
+        <rect width="15.74" height="15.74" x="13.19" y="22.28" stroke="#BECED6" stroke-linecap="round" stroke-width="1.41" rx="1.55"/>
+        <rect width="15.74" height="15.74" x="13.19" y="22.28" fill="#BCCED6" fill-rule="nonzero" opacity=".2" rx="1.55"/>
+        <path stroke="#BECED6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.41" d="M33.93 15.39V3.77l-3.02 3.02M36.86 6.69l-2.93-2.93M33.84 45.34v11.62l3.02-3.02M30.91 54.03l2.93 2.93"/>
+    </g>
+</svg>

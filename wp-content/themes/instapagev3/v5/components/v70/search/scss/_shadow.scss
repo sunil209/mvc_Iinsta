@@ -1,0 +1,55 @@
+.v7-search-shadow {
+    position: relative;
+
+    @include breakpoint(tablet) {
+       display: flex;
+    }
+}
+
+.v7-search-shadow-wrapper {
+    padding: spacer(3);
+    border-radius: $border_radius_secondary;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    @include breakpoint(tablet) {
+       max-width: 595px;
+       margin-left: auto;
+       margin-right: auto;
+    }
+
+    @include breakpoint(large_tablet) {
+        width: 750px;
+        max-width: initial;
+    }
+}
+
+.v7-search-shadow-filter-wrapper {
+    padding: spacer(2.5) spacer(2.5) spacer(2);
+
+    @include breakpoint(desktop) {
+        width: 900px;
+    }
+}
+
+.v7-search-input-shadow {
+    height: 42px;
+    padding: spacer(1) spacer(1) spacer(1) spacer(3.5);
+    background-color: $color_white;
+    color: $color_grey;
+    text-shadow: 0 0 0 $color_dark;
+    font-size: $font_size_basic;
+    font-weight: $font_weight_normal;
+
+    @include breakpoint(tablet) {
+        font-size: $font_size_large;
+    }
+
+    &::placeholder {
+        color: $color_grey;
+    }
+
+    .v7-search-shadow-filter-wrapper & {
+        height: 54px;
+        padding-left: 47px;
+    }
+}

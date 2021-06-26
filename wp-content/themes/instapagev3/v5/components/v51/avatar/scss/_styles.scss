@@ -1,0 +1,24 @@
+// NOTE: used in testimonial tiles.
+$avatar_height: 50px;
+
+.avatar {
+	display: flex;
+	align-items: center;
+}
+
+.avatar-profile {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	margin-right: spacer(1.5);
+}
+
+.avatar-title {
+	font-style: italic;
+	line-height: 1;
+}
+
+.avatar-info {
+	font-size: $font_size_xsmall;
+	line-height: 2;
+}

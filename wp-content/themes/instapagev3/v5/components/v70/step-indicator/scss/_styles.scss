@@ -1,0 +1,24 @@
+.v7-step-indicator-text {
+    .v7 & {
+        margin-top: 0;
+        color: $color_grey;
+        font-size: $font_size_small;
+        text-align: left;
+    }
+}
+
+.v7-step-indicator-wrapper {
+    display: flex;
+    width: 100%;
+    padding-bottom: spacer(3.5);
+}
+
+.v7-step-indicator-stripe {
+    flex-grow: 1;
+    height: 5px;
+    margin-right: spacer(0.5);
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

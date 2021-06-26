@@ -1,0 +1,49 @@
+.v7-alphabet-bar {
+    display: none;
+
+    @include breakpoint(large_tablet) {
+        display: block;
+        position: sticky;
+        z-index: map-get($z_index, navbar-social);
+        padding: spacer(2) $content_padding;
+        background-color: $color_white;
+        box-shadow: $shadow_1;
+        color: $color_grey;
+        font-size: $font_size_xlarge;
+    }
+
+    &[data-state~="sticky"] {
+        top: $navbar_height;
+        animation: slideDownAlphabet 0.5s;
+    }
+
+    &.is-searched {
+        display: none;
+    }
+}
+
+.v7-alphabet-bar-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1030px;
+    margin: 0 auto;
+}
+
+.v7-alphabet-bar-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    transition: $transition_regular;
+    border-radius: $border_radius_primary;
+
+    &:hover {
+        color: $color_ocean;
+    }
+
+    &[data-state~="active"] {
+        background-color: $color_ocean;
+        color: $color_white;
+    }
+}

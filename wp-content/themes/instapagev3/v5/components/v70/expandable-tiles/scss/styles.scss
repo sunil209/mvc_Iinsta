@@ -1,0 +1,87 @@
+.v7-expandable-tiles-container {
+    @include breakpoint(large_tablet) {
+        @include css-grid(3);
+        align-items: start;
+    }
+}
+
+.v7-expandable-tile {
+    margin-bottom: $main_gap;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(large_tablet) {
+        margin-bottom: 0;
+    }
+}
+
+.v7-expandable-tile-icon-container {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+}
+
+.v7-expandable-tile-icon {
+    max-height: 100%;
+    width: auto;
+}
+
+.v7-expandable-tile-title {
+    // FIXME: Delete .v7 and move up after v51 typography is out. Needed for higher specificity.
+    .v7 & {
+        font-size: $font_size_xlarge;
+    }
+}
+
+.v7-expandable-tile-headline,
+.v7-expandable-tile-text {
+    .expand-content > & {
+        margin-top: spacer(2);
+    }
+}
+
+.v7-expandable-tile-headline {
+    position: relative;
+    z-index: map-get($z_index, garbage);
+
+    &:before {
+        position: absolute;
+        top: 13px;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid $color_ice;
+        content: "";
+        z-index: -1;
+    }
+}
+
+.v7-expandable-tile-headline-background {
+	background-color: $color_white;
+	padding: 0 spacer(2);
+}
+
+.v7-expandable-tile-text {
+    // FIXME: Delete .v7 and move up after v51 typography is out. Needed for higher specificity.
+    .v7 & {
+        font-size: $font_size_basic;
+    }
+}
+
+.v7-expandable-tile-text-visible {
+    // NOTE: Fix for keeping tiles the same height and allowing expanding separately
+    @include breakpoint(large_tablet) {
+        min-height: 75px;
+    }
+
+    @include breakpoint(desktop) {
+        min-height: unset;
+    }
+}
+
+.v7-expand-content,
+.v7-expand-trigger {
+    width: 100%;
+}

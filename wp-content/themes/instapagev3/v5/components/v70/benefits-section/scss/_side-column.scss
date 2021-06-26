@@ -1,0 +1,37 @@
+.v7-benefits-side-column {
+    &.v7-benefits-inline {
+        @include breakpoint(tablet) {
+            flex-direction: column;
+            margin-bottom: spacer(4);
+            text-align: left;
+        }
+    }
+}
+
+.v7-benefits-side-column-icon-wrapper {
+    &.v7-benefits-inline-icon-wrapper {
+        @include breakpoint(tablet) {
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+.v7-benefits-side-column-icon {
+    @include breakpoint(only_phone) {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.v7-benefits-side-column-heading {
+    @include breakpoint(only_phone) {
+        margin-top: spacer(2);
+    }
+
+    @include breakpoint(tablet) {
+        margin-left: spacer(2);
+    }
+}

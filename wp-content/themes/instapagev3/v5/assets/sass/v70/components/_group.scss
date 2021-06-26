@@ -1,0 +1,498 @@
+.v7-group {
+    margin-top: spacer(4);
+
+    @include breakpoint(tablet) {
+        position: relative;
+        width: 200px;
+        min-height: 300px;
+        margin: spacer(5) auto 0;
+    }
+
+    @include breakpoint(desktop) {
+        margin-bottom: spacer(16);
+    }
+}
+
+.v7-group-img {
+    @include breakpoint(only_phone) {
+        max-width: 250px;
+        margin: 0 auto $main-gap;
+    }
+
+    @include breakpoint(tablet) {
+        @include transition($transition_regular);
+    }
+
+    &:hover {
+        @include breakpoint(tablet) {
+            transform: scale(1.05);
+            box-shadow: $shadow_1;
+        }
+    }
+}
+
+.v7-group-item {
+    margin: 0 auto spacer(3);
+    @include transition($transition_slow);
+
+    @include breakpoint(tablet) {
+        position: absolute;
+        margin: initial;
+    }
+
+    &:nth-child(1) {
+        @include breakpoint(tablet) {
+            right: 0;
+            left: 0;
+            max-width: 200px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 10px;
+            max-width: 155px;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(desktop) {
+            top: 0;
+            max-width: 200px;
+        }
+    }
+
+    &:nth-child(2) {
+        @include breakpoint(tablet) {
+            top: 70px;
+            left: -220px;
+            max-width: 200px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 60px;
+            left: -155px;
+            max-width: 160px;
+        }
+
+        @include breakpoint(desktop) {
+            top: 60px;
+            left: -220px;
+            max-width: 200px;
+        }
+    }
+
+    &:nth-child(3) {
+        @include breakpoint(tablet) {
+            top: 70px;
+            right: -220px;
+            max-width: 200px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 60px;
+            right: -155px;
+            max-width: 160px;
+        }
+
+        @include breakpoint(desktop) {
+            top: 60px;
+            right: -220px;
+            max-width: 200px;
+        }
+    }
+
+    &:nth-child(4) {
+        @include breakpoint(tablet) {
+            bottom: 0;
+            left: -185px;
+            max-width: 165px;
+        }
+
+        @include breakpoint(large_tablet) {
+            bottom: 55px;
+            left: -125px;
+            max-width: 130px;
+        }
+
+        @include breakpoint(desktop) {
+            bottom: 10px;
+            left: -185px;
+            max-width: 165px;
+        }
+    }
+
+    &:nth-child(5) {
+        @include breakpoint(tablet) {
+            right: -185px;
+            bottom: 0;
+            max-width: 165px;
+        }
+
+        @include breakpoint(large_tablet) {
+            right: -125px;
+            bottom: 55px;
+            max-width: 130px;
+        }
+
+        @include breakpoint(desktop) {
+            right: -185px;
+            bottom: 10px;
+            max-width: 165px;
+        }
+    }
+
+    &:nth-child(6) {
+        display: none;
+
+        @include breakpoint(large_tablet) {
+            display: block;
+            bottom: 15px;
+            left: -225px;
+            max-width: 85px;
+        }
+
+        @include breakpoint(desktop) {
+            bottom: -10px;
+            left: -290px;
+            max-width: 85px;
+        }
+    }
+
+    &:nth-child(7) {
+        display: none;
+
+        @include breakpoint(large_tablet) {
+            display: block;
+            right: -225px;
+            bottom: 15px;
+            max-width: 85px;
+        }
+
+        @include breakpoint(desktop) {
+            right: -290px;
+            bottom: -10px;
+            max-width: 85px;
+        }
+    }
+
+    &:nth-child(8) {
+        display: none;
+
+        @include breakpoint(large_tablet) {
+            display: block;
+            top: 24px;
+            left: -370px;
+            max-width: 200px;
+        }
+
+        @include breakpoint(desktop) {
+            top: 15px;
+            left: -490px;
+            max-width: 250px;
+        }
+    }
+
+    &:nth-child(9) {
+        display: none;
+
+        @include breakpoint(large_tablet) {
+            display: block;
+            top: 24px;
+            right: -370px;
+            max-width: 200px;
+        }
+
+        @include breakpoint(desktop) {
+            top: 15px;
+            right: -490px;
+            max-width: 250px;
+        }
+    }
+
+    &:nth-child(10) {
+        display: none;
+
+        @include breakpoint(large_tablet) {
+            display: block;
+            bottom: -20px;
+            left: -355px;
+            max-width: 115px;
+        }
+
+        @include breakpoint(desktop) {
+            bottom: -80px;
+            left: -450px;
+            max-width: 140px;
+        }
+    }
+
+    &:nth-child(11) {
+        display: none;
+
+        @include breakpoint(large_tablet) {
+            display: block;
+            right: -355px;
+            bottom: -20px;
+            max-width: 115px;
+        }
+
+        @include breakpoint(desktop) {
+            right: -450px;
+            bottom: -80px;
+            max-width: 140px;
+        }
+    }
+}
+
+// NOTE: group-animation
+.v7-group-animation-wrapper {
+    position: relative;
+    width: 222px;
+    min-height: 158px;
+    margin: auto;
+
+    @include breakpoint(tablet) {
+        width: 430px;
+        min-height: 260px
+    }
+
+    @include breakpoint(large_tablet) {
+        width: 540px;
+        min-height: 350px;
+    }
+}
+
+.v7-group-animation {
+    position: absolute;
+
+    .v7-group-animation-active & {
+        animation: fade-in-and-grow 0.5s cubic-bezier(0, 0.45, 0.58, 1) 0.2s;
+        animation-fill-mode: both;
+    }
+
+    &:nth-child(1) {
+        right: 0;
+        left: 0;
+        max-width: 97px;
+        margin: auto;
+        animation-delay: 1.2s;
+
+        @include breakpoint(tablet) {
+            max-width: 170px;
+        }
+
+        @include breakpoint(large_tablet) {
+            max-width: 220px;
+        }
+    }
+
+    &:nth-child(2) {
+        z-index: 4;
+        top: 73px;
+        right: 0;
+        left: 0;
+        max-width: 97px;
+        margin: auto;
+        animation-duration: 1s;
+
+        @include breakpoint(tablet) {
+            top: 108px;
+            max-width: 170px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 158px;
+            max-width: 220px;
+        }
+    }
+
+    &:nth-child(3) {
+        z-index: 3;
+        top: 50px;
+        left: 0;
+        max-width: 97px;
+        animation-delay: 1.4s;
+
+        @include breakpoint(tablet) {
+            top: 71px;
+            max-width: 170px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 109px;
+            max-width: 220px;
+        }
+    }
+
+    &:nth-child(4) {
+        z-index: 3;
+        top: 50px;
+        right: 0;
+        max-width: 97px;
+        animation-delay: 1s;
+
+        @include breakpoint(tablet) {
+            top: 71px;
+            max-width: 170px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 109px;
+            max-width: 220px;
+        }
+    }
+
+    &:nth-child(5) {
+        z-index: 1;
+        bottom: 0;
+        left: 30px;
+        max-width: 66px;
+        animation-delay: 1.7s;
+
+        @include breakpoint(tablet) {
+            bottom: 0;
+            left: 56px;
+            max-width: 116px;
+        }
+
+        @include breakpoint(large_tablet) {
+            left: 67px;
+            max-width: 153px;
+        }
+    }
+
+    &:nth-child(6) {
+        z-index: 1;
+        right: 30px;
+        bottom: 0;
+        max-width: 66px;
+        animation-delay: 2.6s;
+
+        @include breakpoint(tablet) {
+            right: 56px;
+            bottom: 0;
+            max-width: 116px;
+        }
+
+        @include breakpoint(large_tablet) {
+            right: 67px;
+            max-width: 153px;
+        }
+    }
+
+    &:nth-child(7) {
+        z-index: 2;
+        top: 17px;
+        left: -35px;
+        max-width: 79px;
+        animation-delay: 2.2s;
+
+        @include breakpoint(tablet) {
+            top: 16px;
+            left: -66px;
+            max-width: 137px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 47px;
+            left: -128px;
+            max-width: 178px;
+        }
+    }
+
+    &:nth-child(8) {
+        z-index: 2;
+        top: 17px;
+        right: -35px;
+        max-width: 79px;
+        animation-delay: 1.7s;
+
+        @include breakpoint(tablet) {
+            top: 16px;
+            right: -66px;
+            max-width: 137px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 47px;
+            right: -128px;
+            max-width: 178px;
+        }
+    }
+
+    &:nth-child(9) {
+        z-index: 2;
+        bottom: 19px;
+        left: -35px;
+        max-width: 79px;
+        animation-delay: 2s;
+
+        @include breakpoint(tablet) {
+            bottom: 36px;
+            left: -66px;
+            max-width: 137px;
+        }
+
+        @include breakpoint(large_tablet) {
+            bottom: 33px;
+            left: -91px;
+            max-width: 178px;
+        }
+    }
+
+    &:nth-child(10) {
+        z-index: 2;
+        right: -35px;
+        bottom: 19px;
+        max-width: 79px;
+        animation-delay: 2s;
+
+        @include breakpoint(tablet) {
+            right: -66px;
+            bottom: 36px;
+            max-width: 137px;
+        }
+
+        @include breakpoint(large_tablet) {
+            right: -91px;
+            bottom: 33px;
+            max-width: 178px;
+        }
+    }
+
+    &:nth-child(11) {
+        top: 61px;
+        left: -67px;
+        max-width: 66px;
+        animation-delay: 2.6s;
+
+        @include breakpoint(tablet) {
+            top: 93px;
+            left: -128px;
+            max-width: 104px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 145px;
+            left: -185px;
+            max-width: 135px;
+        }
+    }
+
+    &:nth-child(12) {
+        top: 61px;
+        right: -67px;
+        max-width: 66px;
+        animation-delay: 2.4s;
+
+        @include breakpoint(tablet) {
+            top: 93px;
+            right: -128px;
+            max-width: 104px;
+        }
+
+        @include breakpoint(large_tablet) {
+            top: 145px;
+            right: -185px;
+            max-width: 135px;
+        }
+    }
+}

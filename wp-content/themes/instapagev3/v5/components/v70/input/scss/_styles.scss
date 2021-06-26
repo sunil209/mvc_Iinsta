@@ -1,0 +1,181 @@
+// NOTE: special trick for making prompt in modal blue - to 15 verse
+.v7-input {
+    position: relative;
+    width: 100%;
+    padding: spacer(1.5) 0 spacer(2);
+
+    input,
+    textarea {
+        border-radius: 0;
+        font-family: $font_family_primary;
+        color: $color_ocean;
+        text-shadow: 0 0 0 $color_slate;
+        -webkit-text-fill-color: transparent;
+        resize: none;
+        -webkit-appearance: none;
+    }
+
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: $color_slate;
+        text-shadow: none;
+        -webkit-text-fill-color: initial;
+    }
+}
+
+.v7-input {
+    padding: spacer(1.5) 0 spacer(2);
+    position: relative;
+    width: 100%;
+
+    .v7-partner-form & {
+        padding: spacer(2) 0 spacer(2.5);
+    }
+}
+
+.v7-input-field {
+    width: 100%;
+    padding-bottom: 9px;
+    padding-left: 0;
+    border: 0;
+    border-bottom: 1px solid $color_fog;
+    outline: 0;
+    font-size: $font_size_basic;
+    transition: $transition_regular;
+
+    &:not(:placeholder-shown) ~ .v7-input-label {
+        top: 0;
+        font-size: $font_size_xsmall;
+    }
+
+    &:not(:placeholder-shown) + .v7-input-clear {
+        display: block;
+    }
+
+    @at-root {
+        textarea#{&} {
+            height: 115px;
+            line-height: 1.63;
+            vertical-align: top;
+            resize: none;
+        }
+    }
+
+    &:focus {
+        border-color: transparent;
+    }
+}
+
+.v7-input-info {
+    display: none;
+    position: absolute;
+    font-size: $font_size_xsmall;
+    line-height: 1.43;
+    left: 0;
+    margin-top: spacer(0.5);
+    width: 100%;
+
+    .v7-input-field[data-state*="is-error"] ~ & {
+        display: flex;
+        color: $color_red;
+    }
+
+    .v7-checkbox-container & {
+        top: 90%;
+
+        @include breakpoint(tablet) {
+            top: initial;
+            padding-top: spacer(3);
+        }
+    }
+}
+
+.v7-input-label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    transition: $transition_regular;
+    color: $color_grey;
+    font-size: $font_size_basic;
+    text-align: left;
+    pointer-events: none;
+
+    .v7-input-field:focus ~ & {
+        top: 0;
+        font-size: $font_size_xsmall;
+        color: $color_ocean;
+    }
+
+    .v7-input-field[data-state*="is-error"] ~ & {
+        top: 0;
+        font-size: $font_size_xsmall;
+        color: $color_grey;
+    }
+}
+
+.v7-input-label-title {
+    display: block;
+    margin-bottom: spacer(1);
+    padding-top: spacer(1);
+    color: $color_grey;
+    font-size: $font_size_basic;
+}
+
+.v7-input-icon {
+    position: absolute;
+    top: 33px;
+    cursor: pointer;
+}
+
+.v7-input-search {
+    right: 0;
+    border: 0;
+    padding: 0;
+    // NOTE: fix for grey bg on android
+    background-color: initial;
+}
+
+.v7-input-clear {
+    font-size: $font_size_basic;
+    right: 52px;
+    top: 33px;
+    display: none;
+}
+
+.v7-input-bar {
+    position: relative;
+    margin-top: -1px;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: $color_sky;
+        @include transition($transition_regular);
+    }
+
+    &:before {
+        left: 50%;
+    }
+
+    &:after {
+        right: 50%;
+    }
+
+    .v7-input-field:focus ~ &:before,
+    .v7-input-field:focus ~ &:after {
+        width: 50%;
+    }
+
+    .v7-input-field[data-state*="is-error"] ~ &:before,
+    .v7-input-field[data-state*="is-error"] ~ &:after {
+        background-color: $color_red;
+        width: 50%;
+    }
+}
+
+.v7-input-warning {
+    margin: 0 0 0 auto;
+}

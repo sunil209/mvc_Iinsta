@@ -1,0 +1,9 @@
+/**
+Be carefull! `{{ className }}`, `{{ leadingColor }}`, `{{ leadingColorHover }}`
+are automatically replaced by PHP. This comment is also truncate automatically
+ */
+
+body.{{className}} {
+    --leading-color: {{leadingColor}};
+    --leading-color-hover: {{leadingColorHover}};
+}

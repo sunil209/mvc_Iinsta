@@ -1,0 +1,186 @@
+// BASE COMPONENT
+//  .v7-pricing-cards-section
+//  .v7-pricing-cards-wrapper
+//  .v7-pricing-card
+//  .v7-pricing-card-expanded
+// INNER ELEMENTS
+//  .v7-price-section
+//  .v7-price
+//  .v7-pricing-subtitle
+//  .v7-pricing-plan
+//  .v7-pring-line
+//  .v7-pricing-cards-trigger
+//  .v7-pricing-cards-buttons-wrapper
+
+.v7-pricing-cards-section {
+    position: relative;
+    margin-top: spacer(-26.5);
+
+    @include breakpoint(tablet) {
+        margin-top: spacer(-9);
+    }
+
+    @include breakpoint(large_tablet) {
+        margin-top: spacer(-5);
+        max-width: 970px;
+        box-sizing: content-box;
+    }
+}
+
+.v7-pricing-cards-wrapper {
+    @include breakpoint(tablet) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.v7-pricing-card,
+.v7-pricing-cards-trigger,
+.v7-pricing-cards-buttons-wrapper {
+    position: relative;
+    background-color: $color_white;
+    box-shadow: $shadow_4;
+}
+
+.v7-pricing-cards-wrapper,
+.v7-pricing-cards-trigger,
+.v7-pricing-cards-buttons-wrapper {
+    @include breakpoint(tablet) {
+        top: -30px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.v7-pricing-card {
+    padding: spacer(3) spacer(3) spacer(4);
+    text-align: center;
+
+    @include breakpoint(only_tablet) {
+        padding: spacer(3);
+    }
+
+    @include breakpoint(tablet) {
+        width: 50%;
+        max-height: 1020px;
+        transition: max-height $transition_slow ease-in-out;
+    }
+
+    @include breakpoint(large_tablet) {
+        max-height: 1000px;
+        padding: spacer(4) spacer(5) spacer(3);
+    }
+
+    &:nth-child(2) {
+        @include breakpoint(only_phone) {
+            margin-top: spacer(4);
+        }
+
+        @include breakpoint(tablet) {
+            max-height: 1050px;
+            margin-top: spacer(-3);
+            padding-top: spacer(6);
+        }
+
+        @include breakpoint(large_tablet) {
+            max-height: 1030px;
+            margin-top: spacer(-2);
+        }
+    }
+}
+
+.v7-pricing-card-expanded {
+    &:nth-child(n) {
+        @include breakpoint(tablet) {
+            max-height: 200em;
+        }
+    }
+}
+
+.v7-price-section {
+    position: relative;
+
+    @include breakpoint(tablet) {
+        height: 90px;
+    }
+
+    h1 {
+        font-size: $font_size_huge;
+    }
+}
+
+.v7-price {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity $transition_slow cubic-bezier(0.23, 1, 0.32, 1);
+
+    // FIXME: Delete .v7 and move up after v51 typography is out. Needed for higher specificity.
+    // NOTE: Display changed to position $ along the number itself, not the block element.
+    .v7 & {
+        display: inline-block;
+    }
+}
+
+.v7-price-currency {
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    font-size: $font_size_large;
+}
+
+.v7-pricing-header {
+    .v7 & {
+        font-size: $font_size_xxlarge;
+
+        @include breakpoint(only_tablet) {
+            font-size: $font_size_xlarge;
+        }
+    }
+}
+
+.v7-pricing-subtitle {
+    .v7 & {
+        color: $color_grey;
+        font-size: $font_size_small;
+    }
+}
+
+.v7-pricing-plan {
+    .v7 & {
+        color: $color_grey;
+        font-size: $font_size_xsmall;
+    }
+}
+
+.v7-pricing-card-footnote {
+    margin-top: spacer(0.5);
+    text-align: right;
+
+    .v7 & {
+        font-size: $font_size_small;
+    }
+}
+
+.v7-pricing-cards-trigger {
+    display: none;
+
+    @include breakpoint(tablet) {
+        display: block;
+        padding: 13px 0;
+        text-align: center;
+    }
+}
+
+.v7-pricing-cards-buttons-wrapper {
+    display: none;
+
+    @include breakpoint(tablet) {
+        display: flex;
+    }
+
+    &.no-offset {
+        top: 0;
+        margin-bottom: spacer(6);
+    }
+}

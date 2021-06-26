@@ -1,0 +1,36 @@
+.page-404 {
+	padding-bottom: spacer(3);
+	min-height: 100vh;
+	text-align: center;
+	font-family: $font_family_secondary;
+
+	@include breakpoint(large_tablet) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.page-404-image {
+	padding-top: spacer(10);
+	max-width: 100%;
+
+	@include breakpoint(large_tablet) {
+		padding-top: spacer(12);
+	}
+}
+
+.page-404-title {
+	font-size: 100px;
+	line-height: 1;
+
+	@include breakpoint(large_tablet) {
+		font-size: 140px;
+	}
+}
+
+.page-404-description {
+	@include breakpoint(large_tablet) {
+		font-size: $font_size_large;
+	}
+}

@@ -1,0 +1,50 @@
+.v7-subscribe-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.v7-subscribe-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    margin-right: spacer(3);
+    padding: 0;
+    border-radius: 50%;
+    background-color: $color_sky;
+    color: $color_white;
+
+    &:hover {
+        background-color: #2459e1;
+    }
+
+    @include breakpoint(tablet) {
+        margin: 0 spacer(2);
+    }
+
+    &:last-child {
+        @include breakpoint(only_phone) {
+            margin-right: 0;
+        }
+    }
+}
+
+.v7-email-icon {
+    .v7-subscribe-btn & {
+        font-size: $font_size_xxlarge;
+    }
+}
+
+.v7-i-tunes,
+.v7-g-play {
+    position: relative;
+}
+
+.v7-i-tunes {
+    top: -2px;
+}
+
+.v7-g-play {
+    left: 2px;
+}

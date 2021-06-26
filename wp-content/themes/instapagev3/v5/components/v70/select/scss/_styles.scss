@@ -1,0 +1,199 @@
+.select-container {
+    padding: spacer(2.5) 0 spacer(2);
+    position: relative;
+    text-align: left;
+
+    .contact-form-body & {
+        padding: spacer(3) 0 spacer(1);
+    }
+
+    .v7-select & {
+        padding: spacer(1.5) 0 spacer(3);
+    }
+
+    .v7-form-multistep-vertical & {
+        padding: spacer(1.5) 0 spacer(1.5);
+
+        @include breakpoint(tablet) {
+            padding: spacer(1.5) 0 spacer(3.5);
+        }
+    }
+}
+
+//NOTE: adjusting select2 styles
+.select-container .select2-container {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.select2-container {
+    border-color: $color_hansolo;
+    //NOTE: fix for select height so it's not changing when border is bigger
+    margin-bottom: 1px;
+
+    .v7-sidebar-select &,
+    .v7-select & {
+        border-color: $color_fog;
+    }
+
+    .select[data-state*="is-error"] ~ & {
+        margin-bottom: 0;
+        border-bottom: 2px solid $color_red;
+    }
+}
+
+.select2-selection__rendered,
+.select2-selection__placeholder {
+    font-size: $font_size_small;
+    color: $color_vader;
+
+    .contact-form-body  &,
+    .contact-modal &,
+    .sidebar-select-wrapper &,
+    .v7-select & {
+        font-size: $font_size_basic;
+    }
+}
+
+.select2-selection__rendered {
+    color: $color_vader;
+
+    .v7-listing-page & {
+        color: $color_slate;
+        font-size: $font_size_large;
+    }
+
+    .v7-select & {
+        color: $color_slate;
+        line-height: 1.63;
+    }
+}
+
+.select2-selection__placeholder {
+    // FIXME: we can add this as a $color-placeholder when v5.1 variables will be ready
+    color: #7C8089;
+}
+
+.select2-selection__placeholder {
+    .contact-form-body  & {
+        color: $color-placeholder;
+    }
+
+    .v7-sidebar-select & {
+        font-size: $font_size_large;
+        color: $color_grey;
+    }
+
+    .v7-select & {
+        color: $color_grey;
+    }
+}
+
+.select2-selection__arrow {
+    .v7-listing-page & {
+        color: $color_grey;
+    }
+}
+
+.select2-selection__arrow b {
+    @extend %material-icons;
+    position: static;
+    border: none;
+    margin-right: spacer(.5);
+    margin-top: spacer(1);
+
+    &:after {
+        content: 'keyboard_arrow_down';
+    }
+
+    .v7-select &:after {
+        color: $color_grey;
+    }
+}
+
+.select2-container--open .select2-results__option {
+    &:hover {
+        color: $color_leia;
+        background-color: $color_r2d2;
+    }
+}
+
+.select2-results__option {
+    .v7-listing-page &,
+    .v7-select & {
+        font-size: $font_size_large;
+        color: $color_slate;
+
+        &:hover {
+            color: $color_slate;
+            background-color: $color_ice;
+        }
+    }
+
+    &[aria-selected="true"] {
+        color: $color_ocean;
+    }
+
+    .v7-select & {
+        font-size: $font_size_basic;
+    }
+}
+
+.select2-results__option--highlighted[aria-selected="false"] {
+    .v7-listing-page &,
+    .v7-select & {
+        color: $color_slate;
+        background-color: $color_ice;
+    }
+}
+
+.select2-dropdown {
+    @include transition($transition_fast, margin-top);
+    margin-top: - spacer(1);
+    opacity: 0;
+
+    .v7-listing-page &,
+    .v7-select & {
+        border-radius: $border_radius_primary;
+        box-shadow: $shadow_2;
+        overflow: hidden;
+    }
+}
+
+.select2-dropdown[data-state~=open] {
+    margin-top: 0;
+    opacity: 1;
+    z-index: 5100000;
+
+    .v7-listing-page & {
+        top: 10px;
+    }
+}
+
+.select2-results__options {
+    max-height: 400px;
+}
+
+.select2-container--focus {
+    border-bottom: 2px solid $color_r2d2;
+    margin-bottom: 0px;
+
+    .v7-select & {
+        border-bottom: 2px solid $color_sky;
+    }
+}
+
+.select-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: $transition_regular;
+    opacity: 0;
+    color: $color_grey;
+    font-size: $font_size_xsmall;
+    pointer-events: none;
+
+    .is-selected ~ & {
+        opacity: 1;
+    }
+}

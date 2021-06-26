@@ -1,0 +1,39 @@
+.v7-simple-footer-links-wrapper {
+    @include breakpoint(tablet) {
+        display: flex;
+        justify-content: center;
+    }
+
+    p {
+        color: $color_fog;
+    }
+}
+
+.v7-simple-footer-link {
+    margin-top: spacer(1);
+    margin-left: spacer(2);
+    color: $color_fog;
+
+    @include breakpoint(tablet) {
+        position: relative;
+        margin-top: 0;
+        margin-left: spacer(2.5);
+    }
+
+    &:first-of-type {
+        margin-left: 0;
+
+        @include breakpoint(tablet) {
+            margin-left: spacer(2.5);
+        }
+    }
+
+    &::before {
+        @include breakpoint(tablet) {
+            content: '-';
+            position: absolute;
+            left: -14px;
+            color: $color_fog;
+        }
+    }
+}

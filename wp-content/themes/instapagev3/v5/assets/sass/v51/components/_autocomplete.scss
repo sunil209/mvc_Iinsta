@@ -1,0 +1,40 @@
+// NOTE: Pixabay autoComplete plugin.
+.autocomplete-suggestions {
+    display: none;
+    color: $color_jedi;
+    line-height: 2.1;
+    width: 100%;
+    max-height: 255px;
+    padding: spacer(1) spacer(2);
+    cursor: pointer;
+    position: absolute;
+    z-index: map-get($z_index, dropdown);
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: $color_leia;
+    box-shadow: $box_shadow_level_2;
+    animation: slideDown .3s;
+
+    b {
+        color: $color_vader;
+
+        &:hover {
+            color: $color_r2d2;
+        }
+    }
+}
+
+.autocomplete-suggestion {
+    &.selected,
+    &:hover {
+        color: $color_r2d2;
+
+        b {
+            color: inherit;
+        }
+    }
+
+    b {
+        color: $color_vader;
+    }
+}

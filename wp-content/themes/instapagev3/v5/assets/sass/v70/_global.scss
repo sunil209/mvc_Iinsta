@@ -1,0 +1,249 @@
+.v7-content {
+    padding-right: $content_padding;
+    padding-left: $content_padding;
+    margin: 0 auto;
+
+    @include breakpoint(large_tablet) {
+        padding-left: $content_padding_big;
+        padding-right: $content_padding_big;
+    }
+
+    // NOTE: This should be the only one @media queries exception. We need to keep some spacings on both sides of the content until it gets fixed width.
+    @media screen and (min-width: $content_width + (2 * $content_padding)) {
+        padding-left: 0;
+        padding-right: 0;
+        width: $content_width;
+    }
+
+    // NOTE: sometimes we don't want content to get paddings on mobile devices. To achieve that please add data-self="sm-full".
+    &[data-self~="sm-full"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &[data-self~="sm-only-full"] {
+        @include breakpoint(only_phone) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &.is-narrow {
+        // NOTE: This should be the only one @media queries exception. We need to keep some spacings on both sides of the content until it gets fixed width.
+        @media screen and (min-width: $content_width_narrow + (2 * $content_padding)) {
+            width: $content_width_narrow;
+        }
+    }
+}
+
+.v7-content-md {
+    padding-right: $content_padding;
+    padding-left: $content_padding;
+
+    @include breakpoint(tablet) {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 auto;
+        max-width: 595px;
+    }
+
+    @include breakpoint(large_tablet) {
+        max-width: 780px;
+    }
+
+    @include breakpoint(desktop) {
+        max-width: 970px;
+    }
+}
+
+.v7-content-overflow-hidden {
+    overflow: hidden;
+}
+
+.v7-shadow-1 {
+    box-shadow: $shadow_1;
+}
+
+.v7-section-darker {
+    background-color: $color_quartz;
+}
+
+.v7-section-ocean,
+.v7-bg-ocean {
+    background-color: $color_ocean;
+}
+
+.v7-bg-sky {
+    background-color: $color_sky;
+}
+
+.v7-bg-royal {
+    background-color: $color_royal;
+}
+
+.v7-bg-grey {
+    background-color: #374f6b;
+}
+
+.v7-bg-dark-old {
+    background-color: #0D1A2B;
+}
+
+.v7-bg-quartz {
+    background-color: $color_quartz;
+}
+
+.v7-bg-fog {
+    background-color: $color_fog;
+}
+
+.v7-bg-purple {
+    background-color: $color_purple;
+}
+
+.v7-bg-orange {
+    background-color: $color_orange;
+}
+
+.v7-bg-red {
+    background-color: $color_red;
+}
+
+.v7-bg-mint {
+    background-color: $color_mint;
+}
+
+.v7-is-hidden {
+	display: none !important;
+}
+
+.v7-is-hidden-lg {
+    @include breakpoint(max_large_tablet) {
+        display: none !important;
+    }
+}
+
+.v7-is-hidden-lg-up {
+    @include breakpoint(large_tablet) {
+        display: none !important;
+    }
+}
+
+.v7-is-transparent {
+    opacity: 0;
+}
+
+.v7-position-relative {
+    position: relative;
+}
+
+// NOTE: mix for intercom over modal btn
+.intercom-launcher-frame {
+    body[data-state~="locked"] & {
+        display: none;
+    }
+}
+
+// NOTE: text coloring:
+.v7-label-green {
+    color: $color_mint;
+}
+
+.v7-label-yellow {
+    color: $color_orange;
+}
+
+.v7-label-purple {
+    color: $color_purple;
+}
+
+.v7-link-green {
+    &:hover {
+        border-color: $color_mint;
+        color: $color_mint;
+    }
+}
+
+.v7-link-yellow {
+    &:hover {
+        border-color: $color_orange;
+        color: $color_orange;
+    }
+}
+
+.v7-link-purple {
+    &:hover {
+        border-color: $color_purple;
+        color: $color_purple;
+    }
+}
+
+.v7-header-spacing {
+    padding-top: spacer(12.5);
+
+    @include breakpoint(tablet) {
+        padding-top: spacer(13.5);
+    }
+
+    @include breakpoint(large_tablet) {
+        padding-top: spacer(16);
+    }
+
+    @include breakpoint(desktop) {
+        padding-top: spacer(17);
+    }
+}
+
+// Class to be used for topfold elements with Bootstrap grid. Minimizes the glitches.
+.v7-grid-topfold-helper {
+    @include breakpoint(large_tablet) {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        max-width: $content_width;
+        margin: auto;
+    }
+}
+
+.v7-invisible-box{
+    opacity: 0;
+}
+
+.v7-invisible-content{ 
+    opacity: 0;
+}
+
+.insta-loader{
+    margin: auto;
+    height: 80px;
+    width: 80px;
+    -webkit-animation: rotate .8s infinite linear;
+    animation: rotate .8s infinite linear;
+    border: 6px solid #2d67f7;
+    border-right-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    &.insta-white-loader{
+        border: 6px solid #ffffff; 
+        border-right-color: transparent;
+    }
+
+    @include breakpoint(max_large_tablet) {
+        top: 0;
+        bottom: 90%;
+    }
+
+}
+
+.v7-insta-loader{
+    position: relative;
+    &.loaded-content{
+        .insta-loader{
+            display: none;
+        }
+    }
+}

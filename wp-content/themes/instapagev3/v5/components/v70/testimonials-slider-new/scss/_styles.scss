@@ -1,0 +1,124 @@
+.v7-testimonials-slide {
+    @include breakpoint(large_tablet) {
+        flex-direction: column;
+    }
+
+    @include breakpoint(max_large_tablet) {
+        .v7-testimonials-slider:not(.slick-initialized) &:not(:first-child) {
+            display: none;
+        }
+    }
+}
+
+.v7-testimonial-slide-content {
+    max-width: 620px;
+    text-align: center;
+
+    @include breakpoint(desktop) {
+        max-width: 770px;
+    }
+}
+
+.v7-testimonial-client-photo-img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: $shadow_3;
+}
+
+.v7-testimonial-company-logo-container {
+    width: 130px;
+    height: 40px;
+}
+
+.v7-testimonial-company-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.v7 .v7-testimonial-client-position {
+    color: $color_grey;
+}
+
+.js-v7-testimonials-slider{
+    &.js-v7-testimonials-new-slider{
+        
+        @include media-breakpoint-down(md) {
+            padding-bottom: 100px;
+        }
+
+        .v7-previous-slide-round, 
+        .v7-next-slide-round {
+
+            @include media-breakpoint-down(sm) {
+                top: 100px;
+            }
+        }
+
+
+        .v7-previous-slide-round {
+            
+    
+            @include breakpoint(only_phone) {
+                right: calc(50% + 90px);
+            }
+
+            @include breakpoint(tablet) {
+                right: calc(50% + 310px);
+            }
+
+            @include breakpoint(large_tablet) {
+                right: calc(50% + 410px);
+            }
+    
+            @include breakpoint(desktop) {
+                right: calc(50% + 510px);
+            }
+
+        }
+    
+        .v7-next-slide-round {
+            
+    
+            @include breakpoint(only_phone) {
+                left: calc(50% + 90px);
+            }
+
+            @include breakpoint(tablet) {
+                left: calc(50% + 310px);
+            }
+
+            @include breakpoint(large_tablet) {
+                left: calc(50% + 410px);
+            }
+    
+            @include breakpoint(desktop) {
+                left: calc(50% + 510px);
+            }
+        }
+
+        .slick-dots {
+            display: none !important;
+            bottom: 10px;
+            @include media-breakpoint-down(md) {
+                display: block !important;
+            }
+
+            li button::before {
+                background: #8b98a9;
+                border-color: #8b98a9;
+                width: 6px;
+                height: 6px;
+            }
+
+            li.slick-active button::before {
+                background: #0D2187;
+                border-color: #0D2187;
+            }
+
+        }
+    }
+}

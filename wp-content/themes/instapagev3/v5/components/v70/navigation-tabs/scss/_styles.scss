@@ -1,0 +1,47 @@
+.v7-navigation-tabs {
+    display: none;
+
+    @include breakpoint(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 550px;
+        margin: 0 auto spacer(2.5);
+    }
+
+    @include breakpoint(desktop) {
+        width: initial;
+    }
+}
+
+.v7-navigation-tabs-item {
+    @include breakpoint(tablet) {
+        flex-grow: 1;
+        margin: auto spacer(1) spacer(2.5);
+        padding: spacer(1) 0 spacer(0.5);
+        transition: all $transition_regular;
+        border-bottom: 3px solid transparent;
+        text-align: center;
+        cursor: pointer;
+
+        &[data-state~="active"] {
+            border-bottom: 3px solid $color_ocean;
+        }
+
+        &:not([data-state~="active"]) {
+            color: $color_fog;
+
+            &:hover {
+                color: $color_ocean;
+            }
+        }
+    }
+}
+
+.v7-navigation-tabs-link {
+    display: flex;
+    justify-content: center;
+    padding-bottom: spacer(1);
+    transition: 0.2s;
+    border-bottom: 2px solid transparent;
+    color: $color_dark;
+}

@@ -1,0 +1,34 @@
+.templates-img-section {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.templates-img {
+	max-height: 250px;
+	//NOTE: for keeping img aspect-ratio
+	align-self: center;
+
+	@include breakpoint(large_tablet) {
+		max-height: 528px;
+	}
+}
+
+.templates-img-fullwidth {
+	height: 250px;
+	width: 100%;
+	//NOTE: for keeping img aspect-ratio
+	align-self: center;
+
+	@include breakpoint(tablet) {
+		height: 300px;
+	}
+
+	@include breakpoint(large_tablet) {
+		height: 528px;
+	}
+
+	@include breakpoint(desktop) {
+		height: initial;
+	}
+}

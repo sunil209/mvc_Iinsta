@@ -1,0 +1,20 @@
+.v7-logo-bar-wrapper {
+    position: absolute;
+    max-width: 120px;
+    margin-top: spacer(3);
+
+    @include breakpoint(tablet) {
+        max-width: 140px;
+        margin-top: spacer(3.5);
+    }
+
+    svg {
+        max-width: 100%;
+    }
+}
+
+.v7-logo-bar-is-dark {
+    .logo-svg {
+        fill: #000;
+    }
+}

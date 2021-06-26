@@ -1,0 +1,89 @@
+// BASE COMPONENT
+//	.v7-sidebar
+// ELEMENTS
+//	.v7-sidebar-title
+//	.v7-sidebar-menu
+//	.v7-sidebar-menu-link
+// VARIANTS
+//	.v7-sidebar-select
+
+.v7-sidebar {
+	grid-area: topbar;
+
+	@include breakpoint(desktop) {
+		grid-area: sidebar;
+		position: sticky;
+		top: 150px;
+		align-self: flex-start;
+		margin-bottom: spacer(4);
+	}
+
+	// FIXME: this is a temporary hotfix for first v7 Features release. Redo the grid layout for template and JS for manipulating it.
+	&.is-searched {
+		grid-area: content;
+		margin-top: spacer(5);
+
+		@include breakpoint(desktop) {
+			grid-area: sidebar;
+			margin-top: 0;
+		}
+	}
+
+	.v7-thumbnails-browser & {
+		position: static;
+	}
+}
+
+.v7-sidebar-title {
+	text-align: center;
+
+	@include breakpoint(desktop) {
+		padding-left: spacer(2);
+		text-align: left;
+	}
+
+	.v7-sidebar & {
+		@include breakpoint(only_phone) {
+			font-size: $font_size_xlarge;
+		}
+	}
+}
+
+.v7-sidebar-menu {
+	display: none;
+
+	@include breakpoint(desktop) {
+		display: block;
+		max-height: calc(100vh - 250px);
+		overflow-y: auto;
+	}
+
+	.v7-thumbnails-browser & {
+		@include breakpoint(desktop) {
+			max-height: unset;
+		}
+	}
+}
+
+.v7-sidebar-menu-link {
+	display: inline-block;
+	width: 100%;
+	padding: spacer(1) spacer(2);
+	font-size: $font_size_large;
+	white-space: nowrap;
+	transition: $transition_regular;
+
+	&[data-state~="active"],
+	&:hover {
+		color: $color_dark;
+		background-color: $color_ice;
+	}
+}
+
+.v7-sidebar-select {
+	margin-bottom: spacer(3);
+
+	@include breakpoint(desktop) {
+		display: none;
+	}
+}

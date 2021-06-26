@@ -1,0 +1,422 @@
+// BASE COMPONENT
+//	.panel
+// ELEMENTS
+//	.panel-block
+//	.panel-image
+//	.panel-link
+//	.panel-number
+// VARIANTS
+//	.panel-floating
+//	.panel-tile
+//
+//	.in-column
+
+.panel {
+	background-color: $color_leia;
+	box-shadow: $box_shadow_level_2;
+	position: relative;
+	margin-bottom: $main_gap;
+
+	// Dependency playground
+	.two-columns-half & {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.template-page-similar & {
+		max-width: 340px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include breakpoint(tablet) {
+			max-width: initial;
+		}
+	}
+
+	&.in-group {
+		text-align: center;
+
+		@include breakpoint(widescreen_phone) {
+			margin: spacer(1.5) 0;
+			display: flex;
+		}
+
+		@include breakpoint(tablet) {
+			align-items: center;
+		}
+
+		@include breakpoint(large_tablet) {
+			flex-direction: column;
+			flex: 1;
+			margin-right: spacer(3);
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.no-gap-mobile {
+		@include breakpoint(only_phone) {
+			margin-bottom: 0;
+		}
+	}
+
+	.preferred-partners & {
+		box-shadow: $box_shadow_level_3;
+	}
+}
+
+.panel-floating {
+	@include transition(0.2s, box-shadow);
+
+	&:hover {
+		@include breakpoint(widescreen_phone) {
+			box-shadow: $box_shadow_level_5;
+		}
+	}
+
+	.listing &:hover {
+		box-shadow: none;
+
+		@include breakpoint(widescreen_phone) {
+			box-shadow: $box_shadow_level_5;
+		}
+	}
+}
+
+.panel-block {
+	padding: spacer(3) spacer(2);
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	// Dependencies playground!
+	.panel-small & {
+		font-size: $font_size_large;
+		justify-content: center;
+	}
+
+	.in-group & {
+		@include breakpoint(widescreen_phone) {
+			justify-content: center;
+		}
+
+		@include breakpoint(tablet) {
+			flex: 1;
+		}
+
+		@include breakpoint(large_tablet) {
+			justify-content: flex-start;
+		}
+	}
+
+	.listing & {
+		padding: spacer(1) spacer(3) spacer(4);
+
+		@include breakpoint(tablet) {
+			padding: spacer(3);
+		}
+	}
+
+	.tiles-row-small & {
+		transition: $transition_regular;
+	}
+
+	.category-marketing-dictionary & {
+		background: url('../images/icon-dictionary.svg') no-repeat center 30px;
+		background-size: 70px;
+		padding-top: spacer(14);
+	}
+
+	// Responsive
+	@include breakpoint(tablet) {
+		padding: spacer(3);
+	}
+
+	.agency-single-container & {
+		max-width: columns(3);
+		margin: 0 auto;
+
+		@include breakpoint(large_tablet) {
+			margin: 0 spacer(3) 0 0;
+		}
+	}
+
+	&:hover {
+		.tiles-row-small & {
+			//NOTE: there no the same as on v5.0 shadow in our variables
+			box-shadow: 0 1px 2px 0 rgba(13,26,44,.06), 0 5px 10px 0 rgba(13,26,44,.15);
+		}
+	}
+}
+
+.panel-block-big {
+	padding: spacer(5) spacer(4);
+
+	@include breakpoint(widescreen_phone) {
+		padding: spacer(5) spacer(2.5);
+		justify-content: center;
+		align-items: center;
+	}
+
+	@include breakpoint(tablet) {
+		padding: spacer(3);
+	}
+
+	@include breakpoint(large_tablet) {
+		padding: spacer(6.5) spacer(4);
+	}
+
+	.tiles-row-center & {
+		@include breakpoint(large_tablet) {
+			padding: spacer(4);
+		}
+	}
+}
+
+.panel-group {
+	@include breakpoint(widescreen_phone) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@include breakpoint(large_tablet) {
+		flex-direction: row;
+	}
+}
+
+.panel-link {
+	// NOTE: We need to place it to the right bottom corner.
+	margin: auto 0 0 auto;
+
+	.in-column > & {
+		margin-right: auto;
+	}
+
+	.panel-testimonial & {
+		position: absolute;
+		bottom: spacer(3);
+		right: spacer(3);
+	}
+
+	.panel-single-agency & {
+		text-transform: none;
+		margin: 0;
+		display: block;
+	}
+
+	.podcast-listing & {
+		margin: auto auto 0 0;
+
+		@include breakpoint(desktop) {
+			width: 100%;
+			text-align: right;
+		}
+	}
+}
+
+// FIXME: we can remove it when TILE component will be ready
+.panel-link-bottom {
+	position: absolute;
+	bottom: spacer(3);
+	right: spacer(3);
+}
+
+.panel-number {
+	font-size: 80px;
+	background-color: $color_yoda;
+	color: $color_hansolo;
+	font-family: $font_family_secondary;
+	@include transition;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: spacer(1.5) 0;
+	// NOTE: We want this element to have same width when the parent block gets narrower.
+	flex-shrink: 0;
+
+	.panel:hover & {
+		background-color: $color_r2d2;
+		color: $color_leia;
+	}
+
+	// Responsive
+	@include breakpoint(tablet) {
+		width: 170px;
+		font-size: 100px;
+	}
+
+	// Variants
+	.panel-small & {
+		font-size: $font_size_xxlarge;
+		background-color: $color_leia;
+		border-right: 2px solid $color_yoda;
+		width: 50px;
+
+		@include breakpoint(tablet) {
+			font-size: 32px;
+			width: 70px;
+		}
+	}
+}
+
+.panel-link-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: map-get($z_index, image);
+	opacity: 0;
+	transition: $transition_regular;
+
+	.panel-image-wrapper:hover & {
+		opacity: 1;
+	}
+
+	.carousel-wrapper.slick-initialized & {
+		opacity: 1;
+	}
+}
+
+.panel-tile {
+	display: flex;
+	flex-direction: column;
+
+	// NOTE: When tile is in column we want it to be this direction on all resolutions.
+	&.in-column {
+		flex-direction: column;
+		justify-content: inherit;
+		text-align: center;
+	}
+
+	&.panel-arrow {
+		@include breakpoint(tablet) {
+			text-align: left;
+		}
+	}
+
+	@include breakpoint(tablet) {
+		flex-direction: row;
+	}
+}
+
+.panel-small {
+	flex-direction: row;
+	align-items: stretch;
+	// NOTE: we want 2-lines panel to have the same height as the other panels in a section.
+	height: 110px;
+}
+
+.panel-dictionary {
+	font-size: $font_size_large;
+	padding: spacer(1) spacer(2);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include transition(0.2s, box-shadow);
+
+	&:hover {
+		box-shadow: $box_shadow_level_5;
+	}
+}
+
+.panel-testimonial {
+	padding: spacer(3) spacer(3) spacer(9);
+	flex-direction: column;
+}
+
+.panel-image-wrapper {
+	.panel-testimonial & {
+		height: 50px;
+		display: flex;
+		align-items: center;
+	}
+
+	.panel-single-agency & {
+		margin-bottom: spacer(2);
+	}
+
+	.agency-listing & {
+		height: 147px;
+		padding: spacer(3);
+		background-color: $color_yoda;
+		margin: spacer(-3) spacer(-2) spacer(2.5);
+		text-align: center;
+
+		@include breakpoint(tablet) {
+			margin: spacer(-3) spacer(-3) spacer(2.5);
+		}
+	}
+
+	.podcast-listing & {
+		margin: spacer(-3) spacer(-2) spacer(2.5);
+		transition: $transition_slow;
+		position: relative;
+
+		@include breakpoint(tablet) {
+			margin: spacer(-3) spacer(-3) spacer(2.5);
+		}
+
+		@include breakpoint(desktop) {
+			cursor: pointer;
+		}
+
+		&:after {
+			transition: $transition_regular;
+			width: 100%;
+			content: '';
+			height: 100%;
+			background: rgba(30, 136, 229, 0.84);
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+
+		&:hover:after {
+			opacity: 1;
+		}
+	}
+
+	.panel-block-big &,
+	.panel-block-small & {
+		@include breakpoint(widescreen_phone) {
+			width: 100%;
+			height: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		@include breakpoint(large_tablet) {
+			margin-bottom: spacer(1.5);
+		}
+	}
+}
+
+.panel-tile-icon {
+	color: $color_hansolo;
+	font-size: $font_size_small;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.panel-division {
+	padding: spacer(3);
+	font-size: $font_size_large;
+	text-align: center;
+
+	@include breakpoint(tablet) {
+		font-size: $font_size_xxlarge;
+	}
+
+	@include breakpoint(large_tablet) {
+		margin-top: spacer(6);
+	}
+
+	.tiles-row-medium + & {
+		margin-top: 0;
+	}
+}

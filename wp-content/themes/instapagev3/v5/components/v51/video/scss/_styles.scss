@@ -1,0 +1,38 @@
+// BASE COMPONENT
+//  .video
+// ELEMENTS
+//  .video-close
+
+.video {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: map-get($z_index, header-video);
+    background-color: #000;
+    display: none;
+
+    &[data-state~="active"] {
+        display: block;
+        animation: fade-in 1s;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;       
+    }
+}
+
+.video-close {
+    position: absolute;
+    top: spacer(2);
+    right: spacer(2);
+    color: $color_leia;
+    background-color: $color_vader;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: spacer(0.5);
+}

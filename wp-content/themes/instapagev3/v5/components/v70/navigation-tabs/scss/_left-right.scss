@@ -1,0 +1,22 @@
+.v7-navigation-tabs {
+    &.v7-navigation-tabs-left-right {
+        @include breakpoint(tablet) {
+            justify-content: center;
+        }
+    }
+}
+
+.v7-navigation-tabs-item {
+    .v7-navigation-tabs-left-right & {
+        @include breakpoint(tablet) {
+            flex-grow: initial;
+            margin: 0 spacer(2) spacer(2.5);
+            border-bottom: 0;
+            cursor: default;
+        }
+
+        @include breakpoint(large_tablet) {
+            margin: 0 spacer(1.5) spacer(2.5);
+        }
+    }
+}

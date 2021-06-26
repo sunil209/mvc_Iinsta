@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /?s=
+Disallow: /search/
+Disallow: /wp-content/uploads/2016/10/asset-1@3x-1.png
+Disallow: /wp-content/uploads/2016/10/asset-1@3x-1-*.png
+Disallow: /wp-content/uploads/2016/10/asset-1@3x-2.png
+Disallow: /wp-content/uploads/2016/10/asset-1@3x-2-*.png
+Disallow: /wp-content/uploads/2016/10/group-2@3x-1.png
+Disallow: /wp-content/uploads/2016/10/group-2@3x-1-*.png
+Disallow: /wp-content/uploads/2016/10/group-2@3x-2.png
+Disallow: /wp-content/uploads/2016/10/group-2@3x-2-*.png
+Sitemap: https://instapage.com/sitemap_index.xml

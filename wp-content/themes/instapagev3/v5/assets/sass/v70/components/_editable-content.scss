@@ -1,0 +1,233 @@
+.v7-editable-content,
+.v7-editable-accordion {
+    a:not(.btn) {
+        color: $color_ocean;
+
+        &:hover {
+            color: #2459e1;
+        }
+    }
+
+    ul {
+        list-style: none;
+        text-indent: -8px;
+
+        li {
+            &::before {
+                content: "\2022";
+                position: relative;
+                font-family: "Material Icons";
+                font-size: $font_size_xxlarge;
+            }
+        }
+    }
+}
+
+.v7-editable-accordion {
+    color: $color_slate;
+    font-size: $font_size_large;
+
+    ul {
+        margin-left: 13px;
+    }
+
+    li {
+        padding-left: spacer(0.5);
+
+        &::before {
+            top: 2px;
+            left: -10px;
+            color: $color_ocean;
+        }
+    }
+}
+
+.v7-editable-content {
+    h1, h2, h3, h4, h5 {
+        margin-bottom: spacer(1);
+        color: inherit;
+
+        @include breakpoint(tablet) {
+            margin-bottom: spacer(2);
+        }
+    }
+
+    h1, h2 {
+        font-size: $font_size_xxlarge;
+
+        @include breakpoint(tablet) {
+            font-size: $font_size_huge;
+        }
+    }
+
+    h2 {
+        margin-top: spacer(4);
+
+        @include breakpoint(tablet) {
+            font-size: $font_size_xxxlarge;
+        }
+    }
+
+    h3 {
+        margin-top: spacer(4);
+        font-size: $font_size_xlarge;
+
+        @include breakpoint(tablet) {
+            font-size: $font_size_xxlarge;
+        }
+    }
+
+    h4 {
+        font-size: $font_size_large;
+
+        @include breakpoint(tablet) {
+            font-size: $font_size_xlarge;
+        }
+    }
+
+    h4 {
+        font-size: $font_size_large;
+
+        @include breakpoint(tablet) {
+            font-size: $font_size_xlarge;
+        }
+    }
+
+    p, ul {
+        color: inherit;
+        font-size: $font_size_basic;
+
+        @include breakpoint(tablet) {
+            font-size: $font_size_xlarge;
+        }
+    }
+
+    ul {
+        margin: spacer(3) 0 spacer(1) spacer(2.5);
+
+        @include breakpoint(tablet) {
+            margin-left: spacer(3);
+        }
+
+        & + p {
+            margin-top: spacer(3);
+        }
+    }
+
+    li {
+        padding-left: spacer(1.5);
+
+        &::before {
+            left: -18px;
+            color: $color_sky;
+        }
+    }
+
+    a.v7-btn-cta {
+        width: 100%;
+        color: $color_white;
+
+        &:hover {
+            color: $color_white;
+        }
+    }
+
+    blockquote {
+        position: relative;
+        margin: spacer(3.5) 0;
+        overflow: hidden;
+        font-size: $font_size_basic;
+        text-align: center;
+
+        @include breakpoint(tablet) {
+            font-size: $font_size_xlarge;
+        }
+
+        @include breakpoint(large_tablet) {
+            padding-left: spacer(10.5);
+            font-size: $font_size_xxlarge;
+            text-align: left;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        // NOTE: we need <span> so we don't have to use classes
+        footer > span {
+            display: none;
+
+            @include breakpoint(large_tablet) {
+                display: inline;
+            }
+        }
+
+        // NOTE: the quote icon.
+        &:before {
+            display: inline-block;
+            position: static;
+            width: 80px;
+            height: 80px;
+            border: 1px solid $color_white;
+            background: url('../images/article-quote-blockquote.svg') $color_white no-repeat center;
+
+            @include breakpoint(large_tablet) {
+                position: absolute;
+                left: 0;
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        // NOTE: the line.
+        &:after {
+            z-index: -1;
+            top: 41px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $color_fog;
+
+            @include breakpoint(large_tablet) {
+                top: 75px;
+                left: 30px;
+                width: 2px;
+                height: 100%;
+            }
+        }
+
+        & > footer {
+            padding: spacer(1) 0;
+            font-size: $font_size_small;
+
+            @include breakpoint(large_tablet) {
+                font-size: $font_size_large;
+            }
+        }
+
+        cite {
+            display: block;
+            margin-bottom: spacer(1);
+            font-style: normal;
+
+            @include breakpoint(large_tablet) {
+                display: inline;
+            }
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: spacer(1.5) auto;
+        box-shadow: $shadow_single_post;
+
+        @include breakpoint(tablet) {
+            display: block;
+            margin: spacer(5.5) auto;
+        }
+    }
+}

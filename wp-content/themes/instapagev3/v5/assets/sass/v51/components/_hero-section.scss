@@ -1,0 +1,430 @@
+// BASE COMPONENNT:
+//	.hero-section
+// VARIANTS:
+//	hero-section-light
+//	.cta-section
+//	.header-section
+//		.header-section-[page_name]
+//		.header-section-full
+
+.hero-section {
+	background-color: $color_vader;
+	color: $color_leia;
+
+	&.is-small {
+		height: 420px;
+		min-height: auto;
+		padding: 0;
+
+		@include breakpoint(tablet) {
+			height: 480px;
+		}
+
+		@include breakpoint(desktop) {
+			height: 515px;
+		}
+	}
+
+	&.is-large {
+		height: 600px;
+	}
+
+	&.is-full {
+		height: 100vh;
+		max-height: 900px;
+
+		@include breakpoint(desktop) {
+			// NOTE: Logos section is a part of full height header. This line helps us center a section content.
+			padding-bottom: spacer(7.5);
+		}
+	}
+}
+
+.hero-section-light {
+	background-color: $color_leia;
+	color: $color_vader;
+}
+
+.hero-section-single-integration {
+	height: 100%;
+	background-color: $color_yoda;
+	text-align: center;
+
+	@include breakpoint(tablet) {
+		text-align: left;
+	}
+}
+
+// FIXME: pls delete after v7 typography is merged
+.hero-section-dark {
+  background-image: linear-gradient(to bottom, #0d2187, #0d2187 39%, #0f48d6);
+
+	.heading-primary {
+		@include breakpoint(large_tablet) {
+			font-size: 32px;
+		}
+	}
+
+	p {
+		@include breakpoint(large_tablet) {
+			font-size: $font_size_large;
+		}
+	}
+}
+
+.cta-section {
+	padding: spacer(10) 0;
+
+	.in-row {
+		text-align: center;
+
+		@include breakpoint(large_tablet) {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			text-align: left;
+		}
+
+		@include breakpoint(desktop) {
+			justify-content: space-between;
+		}
+	}
+}
+
+.cta-section-block {
+	.in-row & {
+		@include breakpoint(only_phone) {
+			width: 100%;
+		}
+
+		@include breakpoint(max_large_tablet) {
+			margin-bottom: spacer(5);
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		@include breakpoint(large_tablet) {
+			width: auto;
+
+			&:first-of-type {
+				width: 40%;
+			}
+		}
+	}
+}
+
+.header-section {
+	padding: spacer(15) 0 spacer(10);
+	min-height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-position: center top;
+	background-size: cover;
+	position: relative;
+
+	@include breakpoint(desktop) {
+		height: $heigh_header;
+		padding: spacer(7.5) 0 0;
+	}
+
+	// NOTE: we don't want to change slick original file because of future updates of plugin
+	&.slick-slide {
+		height: $heigh_header;
+	}
+
+	&.hero-section-single-integration {
+		min-height: 400px;
+		padding-top: spacer(5);
+		padding-bottom: 0;
+
+		@include breakpoint(tablet) {
+			height: 400px;
+			padding-top: 0;
+		}
+	}
+}
+
+.header-section-left {
+	max-height: 700px;
+	text-align: center;
+	flex-direction: row;
+
+	@include breakpoint(tablet) {
+		max-height: 930px;
+	}
+
+	@include breakpoint(large_tablet) {
+		max-height: 670px;
+		text-align: initial;
+	}
+
+	@include breakpoint(desktop) {
+		max-height: initial;
+		height: 850px;
+	}
+}
+
+.header-section-left-tall {
+	max-height: 830px;
+
+	@include breakpoint(tablet) {
+		max-height: 970px;
+	}
+
+	@include breakpoint(large_tablet) {
+		max-height: 670px;
+		text-align: initial;
+	}
+
+	@include breakpoint(desktop) {
+		max-height: initial;
+		height: 850px;
+	}
+}
+
+.hero-section-column-wrapper {
+	@include breakpoint(large_tablet) {
+		display: flex;
+		align-items: center;
+		max-width: 100%;
+	}
+
+	.hero-section-single-integration  & {
+		@include breakpoint(only_phone) {
+			width: 100%;
+		}
+
+		@include breakpoint(tablet) {
+			max-width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+}
+
+.hero-section-column {
+	@include breakpoint(large_tablet) {
+		width: 50%;
+	}
+
+	.hero-section-single-integration & {
+		&:first-of-type {
+			padding-bottom: spacer(5);
+
+			@include breakpoint(tablet) {
+				width: 200px;
+				z-index: map-get($z_index, image);
+			}
+
+			@include breakpoint(large_tablet) {
+				width: 40%;
+			}
+		}
+
+		&:last-of-type {
+			height: 265px;
+			position: relative;
+			// NOTE: Ensure full width for the background image of the last column
+			width: 100vw;
+			margin-right: - spacer(2);
+			margin-left: - spacer(2);
+			background: url('../images/tile-integration.svg');
+			background-size: 470px;
+			background-position: bottom -100px center;
+			background-repeat: no-repeat;
+
+			@include breakpoint(tablet) {
+				height: 400px;
+				width: 550px;
+				background-size: 650px;
+				background-position: top -115px center;
+			}
+		}
+	}
+}
+
+.hero-section-image {
+	max-width: 100%;
+	padding-top: spacer(6);
+	max-height: 400px;
+
+	@include breakpoint(tablet) {
+		max-height: 100%;
+	}
+
+	@include breakpoint(large_tablet) {
+		padding-top: 0;
+		max-width: initial;
+		max-height: 570px;
+	}
+
+	@include breakpoint(desktop) {
+		max-height: 100%;
+	}
+
+	.hero-section-single-integration & {
+		position: absolute;
+		padding-top: 0;
+		transform: rotate(11deg);
+		top: 65px;
+		left: calc(50% + 8px);
+
+		@include breakpoint(tablet) {
+			width: 65px;
+			top: calc(50% - 40px);
+			left: calc(50% - 20px);
+		}
+	}
+}
+
+.hero-section-text {
+	margin-top: spacer(4);
+	font-family: $font_family_secondary;
+}
+
+.hero-section-text-bottom {
+	color: $color_hansolo;
+}
+
+.hero-section-text-left {
+	margin: spacer(1) 0 spacer(4);
+
+	.hero-section-single-integration & {
+		margin: spacer(2) 0 spacer(5);
+
+		@include breakpoint(only_tablet) {
+			width: 250px;
+		}
+	}
+}
+
+.hero-section-intro {
+	text-align: center;
+	width: 100%;
+	// FIXME: we need to refactor z-index var. map
+	z-index: 1;
+
+	@include breakpoint(tablet) {
+		width: auto;
+	}
+}
+
+.hero-icon-container {
+	width: 100px;
+	height: 100px;
+	background-color: $color_leia;
+	border-radius: 50%;
+	padding: spacer(2.5);
+	margin: 0 auto spacer(2);
+}
+
+.hero-icon {
+	width: 100%;
+	height: 100%;
+}
+
+.hero-slider {
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	height: $heigh_header;
+	background-color: $color_vader;
+}
+
+.hero-slider-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.hero-scroll {
+	font-size: 32px;
+	margin-top: spacer(4);
+
+	@include breakpoint(large_tablet) {
+		margin-top: spacer(6);
+	}
+}
+
+// NOTE: Main header background variants
+
+
+.header-section-features {
+	background-image: url('../images/features-bg.png');
+}
+
+.header-section-integrations {
+	background-image: url('../images/integrations-bg.jpg');
+}
+
+.header-section-seo {
+	background-image: url('../images/seo-chapter-bg.jpg');
+}
+
+.main-header-dictionary {
+	background-image: url('../images/dictionary-bg.jpg');
+}
+
+.main-header-single-integration {
+	background-image: url('../images/single-page-integration-bg.jpg');
+}
+
+
+.main-header-contact-us {
+	justify-content: flex-start;
+	color: $color_vader;
+
+	@include breakpoint(desktop) {
+		padding-top: spacer(19.5);
+	}
+}
+
+.main-header-products-adwords {
+	background-image: url('../images/products-adwords-bg.jpg');
+}
+
+.header-section-partners {
+	background-image: url('../images/partner-join-bg.jpg');
+}
+
+.header-section-podcast {
+	background-image: url('../images/podcast-bg.jpg');
+}
+
+
+.header-section-customers {
+	background-color: $color_yoda;
+	color: $color_vader;
+}
+
+.header-section-retargeting-solutions {
+	background-image: url('../images/retargeting-solutions-bg.jpg');
+}
+
+
+.header-section-fb-ads-solutions {
+	background-image: url('../images/fb-ads-solutions-bg.jpg');
+}
+
+.header-section-sitemap {
+	// FIXME: Sitemap gets non-standard header height. Should be discussed with Rafal, so we can change the image with proper sized one.
+	@include breakpoint(tablet) {
+		background: url('../images/search_img.jpg') no-repeat center 57% / auto 75%;
+	}
+
+	@include breakpoint(large_tablet) {
+		background-size: auto 90%;
+	}
+
+	@include breakpoint(desktop) {
+		background-size: auto;
+	}
+}

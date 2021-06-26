@@ -1,0 +1,365 @@
+.carousel-wrapper {
+    overflow: hidden;
+    // NOTE: for loading placeholder purpose
+    min-height: 700px;
+
+    &.slick-initialized {
+        min-height: initial;
+    }
+
+    .carousel-single & {
+        @include breakpoint(large_tablet) {
+            overflow: visible;
+        }
+    }
+}
+
+.carousel-item {
+    display: none;
+    flex-direction: column;
+
+    @include breakpoint(large_tablet) {
+        flex-direction: row;
+    }
+
+    .slick-initialized & {
+        display: flex;
+    }
+}
+
+.carousel-content {
+    text-align: center;
+
+    @include breakpoint(large_tablet) {
+        flex: 1;
+        text-align: left;
+        margin-left: spacer(11);
+    }
+
+    @include breakpoint(desktop) {
+        margin-left: spacer(14);
+    }
+
+    .carousel-single & {
+        @include breakpoint(large_tablet) {
+            margin-left: $main_gap;
+            padding: 0 0 0 spacer(8);
+        }
+
+        @include breakpoint(desktop) {
+            margin-left: spacer(6);
+        }
+    }
+}
+
+.carousel-copy {
+    @include breakpoint(large_tablet) {
+        max-width: columns(5);
+        min-height: 280px;
+    }
+
+    .carousel-single & {
+        @include breakpoint(large_tablet) {
+            max-width: 375px;
+            min-height: initial;
+        }
+
+        @include breakpoint(desktop) {
+            max-width: columns(5);
+        }
+    }
+}
+
+// NOTE: Needed for higher specificity over v7 typography
+p.carousel-job {
+    .v7 & {
+        margin-top: spacer(0.5);
+        color: $color_grey;
+    }
+}
+
+.carousel-text {
+    .v7 & {
+        margin-top: spacer(1.5);
+    }
+}
+
+.carousel-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+
+    @include breakpoint(tablet) {
+        width: 70px;
+        height: 70px;
+    }
+
+    .carousel-avatar-active & {
+        box-shadow: $shadow_1;
+    }
+
+    .carousel-single & {
+        @include breakpoint(large_tablet) {
+            width: 50px;
+            height: 50px;
+        }
+
+        @include breakpoint(large_tablet) {
+            width: 70px;
+            height: 70px;
+        }
+    }
+}
+
+.carousel-img {
+    border-radius: $border_radius_secondary;
+    margin: 0 auto;
+
+    @include breakpoint(tablet) {
+        max-width: 600px;
+    }
+
+    @include breakpoint(large_tablet) {
+        position: absolute;
+        right: 0;
+        max-width: 455px;
+    }
+
+    @include breakpoint(desktop) {
+        max-width: 570px;
+    }
+
+    .carousel-single & {
+        @include breakpoint(large_tablet) {
+            top: 0;
+            bottom: 0;
+            margin: auto 0 auto auto;
+            max-width: 455px;
+        }
+
+        @include breakpoint(desktop) {
+            position: relative;
+            max-width: 570px;
+        }
+    }
+}
+
+.carousel-img-wrapper {
+    display: flex;
+    position: relative;
+    margin: auto;
+    margin-bottom: spacer(9);
+    padding: 0 spacer(2);
+
+    @include breakpoint(tablet) {
+        padding: 0;
+    }
+
+    @include breakpoint(large_tablet) {
+        top: 15px;
+        flex: 1;
+        height: 320px;
+        margin-bottom: auto;
+    }
+
+    @include breakpoint(desktop) {
+        height: 400px;
+        margin-top: 0;
+    }
+
+    &::after {
+        content: "";
+        background-color: #f7fbff;
+        width: 105%;
+        height: 100%;
+        position: absolute;
+        top: 30px;
+        border-radius: $border_radius_secondary;
+        transform: rotate(-6deg);
+        z-index: -1;
+
+        @include breakpoint(tablet) {
+            max-width: 670px;
+            right: -15px;
+            margin: auto;
+        }
+
+        @include breakpoint(large_tablet) {
+            width: 500px;
+        }
+
+        @include breakpoint(desktop) {
+            width: 640px;
+            max-width: initial;
+        }
+    }
+}
+
+.carousel-img-wrapper-single {
+    position: relative;
+    margin-bottom: spacer(4);
+    padding: 0 spacer(2);
+
+    @include breakpoint(tablet) {
+        margin-bottom: spacer(7);
+        padding: 0;
+    }
+
+    @include breakpoint(large_tablet) {
+        flex: 1;
+    }
+
+    &::after {
+        content: "";
+        background-color: $color_yoda;
+        width: 105%;
+        height: 100%;
+        position: absolute;
+        top: 45px;
+        border-radius: 30px;
+        left: -20px;
+        transform: rotate(-6deg);
+        z-index: -1;
+
+        @include breakpoint(tablet) {
+            max-width: 700px;
+            border-radius: 50px;
+            top: 80px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        @include breakpoint(large_tablet) {
+            width: 700px;
+            left: initial;
+        }
+
+        @include breakpoint(desktop) {
+            width: 850px;
+            max-width: initial;
+        }
+
+        .carousel-single & {
+            top: 20px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            max-width: 620px;
+            margin: auto;
+            // FIXME: pls use v7 var. when moving component to v7
+            background-color: #f7fbff;
+            border-radius: $border_radius_secondary;
+
+            @include breakpoint(tablet) {
+                left: -20px;
+                width: 620px;
+            }
+
+            @include breakpoint(large_tablet) {
+                top: 80px;
+                right: 0;
+                left: initial;
+                width: 480px;
+                height: 72%;
+            }
+
+            @include breakpoint(desktop) {
+                top: 20px;
+                width: 600px;
+                height: 95%;
+            }
+        }
+    }
+
+    .carousel-single & {
+        @include breakpoint(large_tablet) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.carousel-video-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    @include breakpoint(large_tablet) {
+        position: absolute;
+        right: 0;
+        width: 455px;
+    }
+
+    @include breakpoint(desktop) {
+        width: 570px;
+    }
+}
+
+.carousel-navigation {
+    display: none;
+
+    .slick-initialized &,
+    &.slick-initialized {
+        display: flex;
+        padding-top: spacer(5.5);
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include breakpoint(large_tablet) {
+            justify-content: flex-start;
+            padding-top: spacer(7.5);
+        }
+    }
+}
+
+.carousel-navigation-link {
+    margin: 0 spacer(1) spacer(1) 0;
+    position: relative;
+    outline: 0;
+    @include transition($transition_regular);
+
+    @include breakpoint(tablet) {
+        margin: 0 spacer(1) 0 0;
+    }
+
+    &:last-child {
+        @include breakpoint(tablet) {
+            margin-right: 0;
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition: all 0.8s;
+        opacity: 0.4;
+        background: #000;
+        border-radius: 10px;
+    }
+
+    &:hover:before {
+        opacity: 0;
+    }
+
+    .carousel-single & {
+        &:before {
+            border-radius: 5px;
+        }
+    }
+}
+
+.carousel-avatar-active {
+    margin-top: spacer(-2.5);
+
+    @include breakpoint(tablet) {
+        margin-top: spacer(-3.5);
+    }
+
+    &:before {
+        opacity: 0;
+    }
+}

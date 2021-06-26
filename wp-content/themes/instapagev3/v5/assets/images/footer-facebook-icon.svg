@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16" height="16" viewBox="0 -0.285 16 16" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bcced6;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Facebook_copy_2" data-name="Facebook copy 2" class="cls-1" d="M 11.795 4.936 L 9.412 4.936 L 9.412 3.283 C 9.341 2.878 9.659 2.51 10.073 2.518 L 11.755 2.518 L 11.755 -0.214 L 9.442 -0.223 C 7.584 -0.301 6.088 1.276 6.277 3.113 L 6.277 4.932 L 4.795 4.932 L 4.795 7.743 L 6.277 7.743 L 6.277 15.699 L 9.412 15.699 L 9.412 7.743 L 11.525 7.743 Z"/>
+</svg>

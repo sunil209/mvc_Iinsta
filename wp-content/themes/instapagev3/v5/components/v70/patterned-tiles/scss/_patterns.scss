@@ -1,0 +1,196 @@
+.v7-patterned-tile {
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+    }
+
+    // Left patterned tile
+    &:first-child {
+        margin-bottom: spacer(2);
+
+        @include breakpoint(tablet) {
+            margin-bottom: spacer(3);
+        }
+
+        @include breakpoint(large_tablet) {
+            margin-right: spacer(3);
+            margin-bottom: 0;
+        }
+
+        // Cropped circle
+        .v7-pattern-paceholder {
+            background-color: #458afa;
+
+            @include breakpoint(only_phone) {
+                bottom: -136px;
+                left: -130px;
+            }
+
+            @include breakpoint(only_tablet) {
+                bottom: -90px;
+                left: -86px;
+            }
+
+            @include breakpoint(large_tablet) {
+                bottom: -110px;
+                left: -110px;
+            }
+
+            @include breakpoint(desktop) {
+                bottom: -100px;
+                left: -100px;
+            }
+
+            .v7-patterned-tile-orange & {
+                background-color: $color_orange;
+            }
+        }
+
+        &::before,
+        &::after {
+            width: 95px;
+            height: 75px;
+            @include dotted-background($color_mint);
+        }
+
+        // Top dots
+        &:before {
+            right: 0;
+
+            @include breakpoint(only_phone) {
+                top: 12px;
+                width: 33px;
+                height: 24px;
+            }
+
+            @include breakpoint(only_tablet) {
+                top: 8px;
+                height: 80px;
+            }
+
+            @include breakpoint(large_tablet) {
+                top: 6px;
+                right: -27px;
+            }
+
+            @include breakpoint(desktop) {
+                top: 8px;
+                right: 0;
+            }
+        }
+
+        // Bottom dots
+        &:after {
+            bottom: 0;
+
+            @include breakpoint(only_phone) {
+                left: 4px;
+                width: 42px;
+                height: 43px;
+            }
+
+            @include breakpoint(only_tablet) {
+                left: 10px;
+                height: 90px;
+            }
+
+            @include breakpoint(large_tablet) {
+                bottom: -8px;
+                left: -10px;
+            }
+
+            @include breakpoint(desktop) {
+                bottom: 0;
+                left: 8px;
+            }
+        }
+    }
+
+    // Right patterned tile
+    &:last-child {
+        // Cropped circle
+        .v7-pattern-paceholder {
+            background-color: $color_mint;
+
+            @include breakpoint(only_phone) {
+                top: -145px;
+                right: -140px;
+            }
+
+            @include breakpoint(only_tablet) {
+                top: -95px;
+                right: -105px;
+            }
+
+            @include breakpoint(large_tablet) {
+                top: -110px;
+                right: -130px;
+            }
+
+            @include breakpoint(desktop) {
+                top: -75px;
+                right: -115px;
+            }
+        }
+
+        // Top dots
+        &:before {
+            right: 0;
+            @include dotted-background(#458afa);
+
+            @include breakpoint(only_phone) {
+                top: 10px;
+                width: 30px;
+                height: 42px;
+            }
+
+            @include breakpoint(tablet) {
+                top: 20px;
+                width: 69px;
+                height: 100px;
+            }
+
+            @include breakpoint(large_tablet) {
+                width: 48px;
+            }
+
+            @include breakpoint(desktop) {
+                top: 78px;
+                width: 51px;
+            }
+        }
+
+        // Bottom dots
+        &:after {
+            bottom: 0;
+            @include dotted-background($color_fog);
+
+            @include breakpoint(only_phone) {
+                left: 10px;
+                width: 42px;
+                height: 49px;
+            }
+
+            @include breakpoint(only_tablet) {
+                left: 5px;
+                width: 80px;
+                height: 73px;
+            }
+
+            @include breakpoint(large_tablet) {
+                bottom: -8px;
+                left: -47px;
+                width: 120px;
+                height: 55px;
+            }
+
+            @include breakpoint(desktop) {
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}

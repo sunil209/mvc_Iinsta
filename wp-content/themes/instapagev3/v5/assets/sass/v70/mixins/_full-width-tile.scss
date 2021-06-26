@@ -1,0 +1,20 @@
+@mixin full_width_tile {
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 140px;
+    margin: 0;
+    padding-right: 24px;
+    padding-left: 24px;
+    border-bottom: 1px solid $color_fog;
+    border-radius: 0;
+    box-shadow: none;
+
+    &:first-of-type {
+        border-top: 1px solid $color_fog;
+    }
+
+    &:last-child {
+        border-bottom: none;
+        box-shadow: $shadow_1;
+    }
+}

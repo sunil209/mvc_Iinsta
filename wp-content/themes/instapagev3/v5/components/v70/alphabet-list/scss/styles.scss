@@ -1,0 +1,81 @@
+.v7-alphabet-list-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+    margin-bottom: -1px;
+    padding: 0 spacer(2);
+    transition: $transition_regular;
+    border: 1px solid $color_fog;
+    border-width: 1px 0;
+    color: $color_slate;
+    font-size: $font_size_basic;
+
+    @include breakpoint(tablet) {
+        margin-bottom: spacer(3);
+        border: none;
+        border-radius: $border_radius_secondary;
+        box-shadow: $shadow_1;
+        font-size: $font_size_large;
+    }
+
+    &:hover {
+        color: $color_ocean;
+
+        @include breakpoint(tablet) {
+            box-shadow: $shadow_2;
+        }
+    }
+}
+
+.v7-alphabet-list-play {
+    padding: 3px;
+    transition: $transition_regular;
+    border-radius: 50%;
+    background-color: $color_smog;
+    color: $color_white;
+
+    .v7-alphabet-list-panel:hover & {
+        background-color: $color_ocean;
+    }
+}
+
+.v7-alphabet-list-letter {
+    margin: spacer(3) 0 spacer(4);
+    color: $color_smog;
+    font-size: 80px;
+    line-height: 1.22;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+        position: relative;
+        margin: 0 0 spacer(4);
+        font-size: 100px;
+        text-align: left;
+    }
+
+    &::before {
+        @include breakpoint(tablet) {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 85%;
+            height: 1px;
+            background-color: $color_fog;
+        }
+
+        @include breakpoint(large_tablet) {
+            width: 90%;
+        }
+    }
+}
+
+
+.dictionary-video {
+    margin: 0 auto;
+
+    @include breakpoint(tablet) {
+        max-width: 850px;
+    }
+}

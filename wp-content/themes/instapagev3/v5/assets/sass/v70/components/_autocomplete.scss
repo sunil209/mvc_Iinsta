@@ -1,0 +1,55 @@
+.v7-autocomplete-element {
+    margin-bottom: spacer(1.5);
+    transition: $transition_regular;
+    color: $color_slate;
+    font-size: $font_size_basic;
+
+    @include breakpoint(tablet) {
+        font-size: $font_size_large;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover,
+    &:hover strong,
+    &.is-selected ,
+    &.is-selected strong {
+        color: $color_sky;
+        cursor: pointer;
+    }
+
+    strong {
+        color: $color_dark;
+    }
+
+    .v7-search-shadow-filter-wrapper &,
+    .v7-search-shadow-filter-wrapper & strong {
+        @include breakpoint(tablet) {
+            font-size: $font_size_basic;
+        }
+    }
+}
+
+.v7-autocomplete-suggestions {
+    position: absolute;
+    z-index: 9;
+    top: 100%;
+    width: 100%;
+    max-height: 144px;
+    margin-top: spacer(1);
+    padding: spacer(2);
+    overflow-y: overlay;
+    background-color: $color_white;
+    box-shadow: $shadow_3;
+    text-align: left;
+
+    @include breakpoint(tablet) {
+        padding: spacer(2) spacer(3);
+    }
+
+    @include breakpoint(large_tablet) {
+        max-height: 154px;
+    }
+}

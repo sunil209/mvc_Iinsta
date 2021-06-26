@@ -1,0 +1,60 @@
+// BASE COMPONENT
+//	.v7-logo
+// ELEMENTS
+//	.v7-logo-bar
+//	.v7-logo-image
+
+.v7-logo {
+    @include breakpoint(tablet) {
+        display: block;
+    }
+}
+
+.v7-logo-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(tablet) {
+        margin-bottom: spacer(-2);
+    }
+
+    .v7-logos-wide & {
+        // NOTE: fix for default division-header spacing
+        margin-top: spacer(-2);
+
+        @include breakpoint(tablet) {
+            margin-top: spacer(-3);
+        }
+
+        @include breakpoint(large_tablet) {
+            justify-content: space-between;
+        }
+    }
+}
+
+.v7-logo-image {
+    width: auto;
+    height: 25px;
+    margin: spacer(1.5) spacer(1.5) spacer(1.5);
+
+    @include breakpoint(widescreen_phone) {
+        height: initial;
+        margin: spacer(2) spacer(1.5) spacer(2);
+    }
+
+    @include breakpoint(tablet) {
+        margin: 0 spacer(1) spacer(2);
+    }
+
+    @include breakpoint(large_tablet) {
+        margin: 0 spacer(2) spacer(2);
+    }
+}
+
+.v7-logos-wide {
+    .h1 {
+        font-size: $font_size_basic;
+    }
+}

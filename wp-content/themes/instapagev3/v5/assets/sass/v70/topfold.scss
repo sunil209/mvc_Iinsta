@@ -1,0 +1,27 @@
+@import 'variables';
+
+/* MIXINS */
+@import 'mixins/full-width-tile';
+
+/* COMMON */
+@import 'global';
+@import 'layouts';
+@import 'typography';
+@import 'components/division';
+@import 'components/box';
+
+/* COMPONENTS */
+@import '../../../components/v70/accordion/scss/styles';
+@import '../../../components/v70/benefits-section/scss/jumbo-tiles';
+@import '../../../components/v70/button/scss/styles';
+@import '../../../components/v70/buttons-group/scss/styles';
+@import '../../../components/v70/buttons-group/scss/subscribe';
+@import '../../../components/v70/logos/scss/styles';
+@import '../../../components/v70/header/scss/styles';
+@import '../../../components/v70/header/scss/landing-page-template';
+@import '../../../components/v70/header/scss/solid';
+@import '../../../components/v70/search/scss/styles';
+@import '../../../components/v70/search/scss/shadow';
+@import '../../../components/v70/sidebar/scss/styles';
+@import '../../../components/v70/tiles/scss/styles';
+@import '../../../components/v70/tooltip/scss/styles';

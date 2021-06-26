@@ -1,0 +1,10 @@
+.v7-partner-form {
+    @include breakpoint(only_phone) {
+        margin-right: - $content_padding;
+        margin-left: - $content_padding;
+    }
+
+    @include breakpoint(tablet) {
+        border-radius: $border_radius_secondary;
+    }
+}

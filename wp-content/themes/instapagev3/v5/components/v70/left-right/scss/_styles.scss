@@ -1,0 +1,233 @@
+.v7-left-right-section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 595px;
+
+    @include breakpoint(large_tablet) {
+        max-width: initial;
+        display: flex;
+        align-items: center;
+    }
+
+    &.v7-left-right-spread {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @include breakpoint(only_phone) {
+            margin-top: spacer(6);
+        }
+
+        @include breakpoint(large_tablet) {
+            flex-direction: row;
+            margin-top: spacer(10);
+        }
+    }
+}
+
+.v7-left-right-text-section {
+    padding-top: spacer(4);
+    text-align: center;
+
+    @include breakpoint(tablet) {
+        padding-top: spacer(5);
+    }
+
+    @include breakpoint(large_tablet) {
+        padding-top: 0;
+        text-align: left;
+        flex: 1;
+    }
+
+    .v7-left-right-spread & {
+        padding-top: 0;
+    }
+}
+
+.v7-left-right-label {
+    display: block;
+    margin-bottom: spacer(1);
+    font-weight: $font_weight_bold;
+    text-transform: uppercase;
+}
+
+.v7-left-right-section-image-tiles {
+    @include breakpoint(large_tablet) {
+        padding-bottom: spacer(6);
+    }
+}
+
+.v7-left-right-text {
+    @include breakpoint(large_tablet) {
+        max-width: 400px;
+        margin-left: auto;
+    }
+
+    @include breakpoint(desktop) {
+        max-width: 470px;
+    }
+
+    .v7-left-right-odd & {
+        @include breakpoint(large_tablet) {
+            margin-right: auto;
+            margin-left: initial;
+        }
+    }
+
+    .v7-left-right-simplified & {
+        @include breakpoint(tablet) {
+            margin-top: spacer(3);
+        }
+
+        @include breakpoint(large_tablet) {
+            max-width: columns(4);
+            margin-top: initial;
+        }
+    }
+
+    .v7-left-right-odd.v7-left-right-simplified & {
+        @include breakpoint(large_tablet) {
+            margin-right: spacer(10);
+            margin-left: auto;
+        }
+    }
+}
+
+.v7-left-right-img-section {
+    @include breakpoint(large_tablet) {
+        flex: 1;
+    }
+
+    .v7-left-right-odd & {
+        @include breakpoint(large_tablet) {
+            order: 2;
+        }
+    }
+
+    .v7-left-right-spread & {
+        @include breakpoint(only_phone) {
+            padding-top: spacer(4);
+        }
+
+        @include breakpoint(only_tablet) {
+            padding-top: spacer(6);
+        }
+    }
+}
+
+.v7-left-right-img-section-regular {
+    @include breakpoint(large_tablet) {
+        height: 480px;
+    }
+
+    @include breakpoint(desktop) {
+        height: 600px;
+    }
+}
+
+.v7-left-right-img {
+    @include breakpoint(large_tablet) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 640px;
+        height: 480px;
+
+        .v7-left-right-odd & {
+            right: initial;
+            left: 0;
+        }
+    }
+
+    @include breakpoint(desktop) {
+        width: 800px;
+        height: 600px;
+    }
+
+    &.is-responsive {
+        @include breakpoint(large_tablet) {
+            width: calc(100% + 45px);
+        }
+
+        @include breakpoint(desktop) {
+            width: calc(100% + 120px);
+        }
+
+        @include breakpoint(large_desktop) {
+            width: 800px;
+        }
+    }
+
+    // NOTE: Exception for four-logos image on homepage.
+    // In case of another occurence, change to a variant.
+    .customers-logos & {
+        @include breakpoint(large_tablet) {
+            transform: translateX(-62px);
+        }
+
+        @include breakpoint(desktop) {
+            transform: translateX(-92px);
+        }
+    }
+}
+
+.v7-left-right-img-with-tile-container {
+    // NOTE: All strange percentages are calculated based on design,
+    // rounding them up changes view too significantlly
+    position: relative;
+
+    &:before {
+        display: block;
+        position: absolute;
+        top: 7%;
+        left: -9%;
+        width: 111%;
+        height: 100%;
+        transform: rotate(-5deg);
+        border-radius: $border_radius_secondary;
+        background-color: $color_quartz;
+        content: '';
+    }
+
+    @include breakpoint(large_tablet) {
+        max-width: 455px;
+        margin-right: auto;
+    }
+
+    @include breakpoint(desktop) {
+        max-width: 570px;
+    }
+
+    .v7-left-right-odd & {
+        &:before {
+            top: 7%;
+            left: -3%;
+            transform: rotate(5deg);
+        }
+
+        @include breakpoint(large_tablet) {
+            margin-right: initial;
+            margin-left: auto;
+        }
+    }
+
+    img {
+        border-radius: $border_radius_secondary;
+    }
+}
+
+.v7-left-right-logo-container {
+    width: 250px;
+    height: 40px;
+}
+
+.v7-left-right-inner-section {
+    @include breakpoint(only_tablet) {
+        display: flex;
+        justify-content: space-around;
+
+        // NOTE: Make sure incoming content from CMS is aligned well
+        div {
+            margin-top: 0;
+        }
+    }
+}

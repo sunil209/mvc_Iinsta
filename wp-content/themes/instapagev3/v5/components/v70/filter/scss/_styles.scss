@@ -1,0 +1,22 @@
+.v7-filter-group {
+    overflow-x: hidden;
+}
+
+.v7-link-filter {
+    display: inline-block;
+    margin: 0 spacer(1);
+    color: $color_fog;
+    font-family: $font_family_secondary;
+    font-size: $font_size_small;
+    font-weight: $font_weight_semibold;
+
+    @include breakpoint(tablet) {
+        margin: 0 spacer(2);
+        font-size: $font_size_basic;
+    }
+
+    &:hover,
+    &[data-state~="active"] {
+        color: $color_ocean;
+    }
+}

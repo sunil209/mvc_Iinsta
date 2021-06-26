@@ -1,0 +1,453 @@
+// BASE COMPONENNT:
+//	.btn
+//	.btn-group
+// MODIFICATIONS:
+//	.btn-cta
+//  .btn-ghost
+//  .btn-ghost-cta
+//  .btn-play
+//  .btn-rounded
+//  .btn-huge
+//  .btn-large
+//  .btn-small
+// STATES:
+//	disabled
+
+// NOTE: Mixin for buttons size.
+@mixin btn-size($size) {
+	@if $size == 'huge' {
+		font-size: 24px;
+		padding: 18px 35px;
+		line-height: 1.5;
+		border-width: 2px;
+		min-width: 180px;
+	} @else if $size == 'large' {
+		font-size: 20px;
+		padding: 13px 30px;
+		line-height: 1.6;
+		border-width: 2px;
+		min-width: 150px;
+	} @else if $size == 'regular' {
+		font-size: $font_size_large;
+		padding: 11px 24px;
+		line-height: 1.78;
+		border-width: 2px;
+		min-width: 130px;
+	} @else if $size == 'small' {
+		font-size: 14px;
+		padding: 4px 20px;
+		line-height: 2.3;
+		border-width: 1px;
+		min-width: 100px;
+	}
+}
+
+// NOTE: Regular styling here.
+.btn {
+	display: inline-block;
+	font-family: $font_family_secondary;
+	transition: 0.2s all;
+	text-transform: uppercase;
+	cursor: pointer;
+	outline: none;
+	border: 2px solid;
+	text-align: center;
+	letter-spacing: inherit;
+	@include btn-size(small);
+
+	@include breakpoint(tablet) {
+		@include btn-size(regular);
+	}
+
+	// NOTE: dependences playground!
+	.btn-group & + & {
+		// NOTE: We need this breakpoint so we don't mess with dependencies too much.
+		@include breakpoint(only_phone) {
+			margin-top: spacer(3);
+		}
+
+		@include breakpoint(tablet) {
+			margin-left: spacer(3);
+		}
+	}
+
+	.header-section & {
+		width: 282px;
+	}
+
+	.header-section-left & {
+		width: initial;
+	}
+
+	.header-section-left-tall & {
+		width: 282px;
+	}
+
+	.header-section-cut & {
+		max-width: 216px;
+		margin-bottom: spacer(1.5);
+
+		@include breakpoint(tablet) {
+			max-width: 250px;
+			margin-right: spacer(1.5);
+		}
+	}
+
+	.hero-section-intro & {
+		margin-top: spacer(6);
+		min-width: 175px;
+	}
+
+	.navbar-menu-option & {
+		margin: 0 auto;
+	}
+
+	&.is-prev {
+		padding-left: spacer(3.5);
+	}
+
+	&.is-next {
+		padding-right: spacer(3.5);
+	}
+
+	&.is-prev,
+	&.is-next {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	// NOTE: Button sizes!
+	&.is-small:not(.btn-rounded) {
+		@include btn-size(small);
+	}
+
+	&.is-large {
+		@include btn-size(regular);
+
+		@include breakpoint(tablet) {
+			@include btn-size(large);
+		}
+	}
+
+	&.is-huge {
+		@include btn-size(regular);
+
+		@include breakpoint(desktop) {
+			@include btn-size(huge);
+		}
+	}
+
+	&.fx-ripple-effect {
+		vertical-align: bottom;
+	}
+
+	.label-group & {
+		margin: spacer(1.5);
+		width: 90%;
+
+		@include breakpoint(tablet) {
+			width: auto;
+		}
+	}
+
+	.quote-tweet & {
+		margin-top: spacer(4);
+	}
+
+	// NOTE: Every time you have to move something by 1-2px in CSS, a unicorn dies...
+	.navbar-login-options & {
+		margin-bottom: 1px;
+		// NOTE: fix for subpixel rendering
+		transform: translate(0);
+	}
+
+	// NOTE: They want more space when there is a button in the accordion component.
+	.accordion-body & {
+		margin-bottom: spacer(1.5);
+	}
+}
+
+.btn-icon {
+	// NOTE: Sometimes we need to move the icon to the left to fix some unnecessary spacing given by material-icon element, so text should be centered correctly.
+	margin-left: -3px;
+
+	// NOTE: SEO chapters. When button redirects to next page, icon should be on the right side.
+	.is-next > & {
+		order: 1;
+		margin: 0 spacer(-1.5) 0 spacer(1);
+		// margin-left: spacer(1);
+		// margin-right: - spacer(1.5);
+	}
+
+	.is-prev > & {
+		margin-right: spacer(1);
+	}
+}
+
+// NOTE: btn-cta placeholder
+%btn-cta {
+	background-color: $color_r2d2;
+	border-color: $color_r2d2;
+	color: $color_leia;
+
+	&:hover {
+		background-color: $color_snoke;
+		border-color: $color_snoke;
+		color: $color_leia;
+	}
+}
+
+// NOTE: Button states!
+.btn-cta {
+	@extend %btn-cta;
+
+	// NOTE: dependences playground!
+	.template-page-header & {
+		margin-top: spacer(4);
+	}
+
+	.form-field-group  & {
+		margin-left: spacer(1);
+	}
+
+	.form-field-group-in-row  & {
+		@include breakpoint(large_tablet) {
+			margin-left: spacer(1);
+		}
+	}
+
+	.hero-slider & {
+		width: initial;
+	}
+
+	.post-page-partners & {
+		margin-top: spacer(3);
+		width: 100%;
+	}
+
+	.blog-post-page &,
+	.form-careers & {
+		width: 100%;
+	}
+
+	.left-right-section & {
+		margin-top: spacer(3);
+	}
+
+	.navbar & {
+		// NOTE: Fallback applied manually, small use case for css variables
+		// If we start using it more broadly we add step in css building for auto prefixing
+		background-color: $color_ocean;
+		border-color: $color_ocean;
+		background-color: var(--leading-color, #{$color_ocean});
+		border-color: var(--leading-color, #{$color_ocean});
+
+		&:hover {
+			background-color: #2459e1;
+			// NOTE: Fallback applied manually, small use case for css variables
+			// If we start using it more broadly we add step in css building for auto prefixing
+			background-color: #2459e1;
+			border-color: $color_snoke;
+			background-color: var(--leading-color-hover, #{#2459e1});
+			border-color: var(--leading-color-hover, #{$color_snoke});
+		}
+	}
+
+	.slider-employee & {
+		background-color: $color_sky;
+		border-color: $color_sky;
+
+		&:hover {
+			background-color: $color_ocean;
+			border-color: $color_ocean;
+		}
+	}
+}
+
+// NOTE: btn-ghost placeholder
+%btn-ghost {
+	background-color: transparent;
+	border-color: $color_white;
+	color: $color_white;
+
+	&:hover {
+		background-color: $color_white;
+		color: $color_ocean;
+	}
+}
+
+[class*=btn-ghost] {
+	background-color: transparent;
+}
+
+.btn-ghost {
+	color: $color_leia;
+
+	&:hover {
+		background-color: $color_leia;
+		border-color: $color_leia;
+		color: $color_vader;
+	}
+
+	.navbar[data-state~="sticky"] & {
+		@extend %btn-cta;
+	}
+}
+
+.btn-ghost-cta {
+	color: $color_r2d2;
+
+	&:hover {
+		color: $color_leia;
+		background-color: $color_r2d2;
+		border-color: $color_r2d2;
+	}
+
+	.left-right-section & {
+		margin-top: spacer(3);
+	}
+
+	&.btn-play {
+		padding-left: spacer(1);
+		border: none;
+		font-size: $font_size_basic;
+
+		&:hover {
+			background: none;
+			color: $color_r2d2;
+		}
+	}
+}
+
+.btn-white {
+	background-color: $color_leia;
+	border-color: $color_leia;
+	color: $color_ocean;
+
+	.navbar[data-state~="sticky"] &,
+	.navbar-white & {
+		@extend %btn-cta;
+		// NOTE: Fallback applied manually, small use case for css variables
+		// If we start using it more broadly we add step in css building for auto prefixing
+		background-color: $color_ocean;
+		border-color: $color_ocean;
+		background-color: var(--leading-color, #{$color_ocean});
+		border-color: var(--leading-color, #{$color_ocean});
+
+		&:hover {
+			// NOTE: Fallback applied manually, small use case for css variables
+			// If we start using it more broadly we add step in css building for auto prefixing
+			background-color: #2459e1;
+			border-color: $color_snoke;
+			background-color: var(--leading-color-hover, #{#2459e1});
+			border-color: var(--leading-color-hover, #{$color_snoke});
+		}
+	}
+
+	.navbar-button-ghost & {
+		@extend %btn-ghost;
+	}
+}
+
+.btn-play-icon {
+	margin: -2px spacer(1) 0 spacer(-1.5);
+	vertical-align: middle;
+	transition: 0.2s all;
+
+	@include breakpoint(tablet) {
+		margin: 0 spacer(1) 0 spacer(-1);
+		vertical-align: text-bottom;
+	}
+
+	.btn-ghost &,
+	.btn-ghost-cta:hover & {
+		fill: $color_leia;
+	}
+
+	.btn-ghost:hover & {
+		fill: $color_vader;
+	}
+
+	.btn-ghost-cta & {
+		fill: $color_r2d2;
+	}
+}
+
+.btn-shadow {
+	border: 0;
+	box-shadow: $box_shadow_level_2;
+}
+
+// NOTE: Button shapes!
+.btn-rounded {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	padding: 12px;
+	min-width: auto;
+
+	// NOTE: dependences playground!
+	.hero-section & {
+		margin-top: spacer(4);
+	}
+
+	&.is-small {
+		width: 24px;
+		height: 24px;
+		line-height: 1;
+		padding: 0;
+	}
+
+	.panel-block & {
+		background-color: $color_r2d2;
+		color: $color_leia;
+		border: 0;
+		line-height: 57px;
+	}
+
+	.podcast-item & {
+		background-color: $color_leia;
+		color: $color_r2d2;
+		width: 80px;
+		height: 80px;
+	}
+
+	.carousel-video-wrapper & {
+		width: 80px;
+		height: 80px;
+		font-size: 40px;
+
+		@include breakpoint(tablet) {
+			padding: 0;
+		}
+	}
+}
+
+.btn-group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	@include breakpoint(tablet) {
+		flex-direction: row;
+	}
+
+	.header-content & {
+		@include breakpoint(large_tablet) {
+			justify-content: initial;
+		}
+	}
+}
+
+.btn-loader {
+	font-size: $font_size_small;
+	padding: 6px spacer(2.5);
+	line-height: 1.78;
+	min-width: 80%;
+
+	@include breakpoint(tablet) {
+		min-width: 370px;
+	}
+}

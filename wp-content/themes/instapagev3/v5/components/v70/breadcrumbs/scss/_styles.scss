@@ -1,0 +1,45 @@
+.v7-breadcrumbs-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.v7-breadcrumb {
+    position: relative;
+    padding: 0 33px 0 spacer(1.5);
+    transition: $transition_regular;
+    color: $color_grey;
+    font-size: $font_size_small;
+
+    &:hover {
+        color: $color_sky;
+
+        &::after {
+            color: $color_grey;
+        }
+    }
+
+    &::after {
+        @extend %material-icons;
+        content: 'keyboard_arrow_right';
+        position: absolute;
+        top: 2px;
+        right: 0;
+        transition: $transition_regular;
+    }
+
+    &:last-of-type {
+        padding: 0 0 0 spacer(1.5);
+        color: $color_slate;
+
+        @include breakpoint(only_phone) {
+            max-width: 40%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        &::after {
+            content: '';
+        }
+    }
+}

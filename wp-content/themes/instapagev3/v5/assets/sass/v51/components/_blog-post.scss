@@ -1,0 +1,21 @@
+//NOTE: Style rules are here because of style inheritance from editable-content
+h1 {
+	.blog-post-page & {
+		margin-bottom: spacer(1);
+		line-height: 35px;
+		letter-spacing: 0;
+
+		@include breakpoint(large_tablet) {
+			line-height: 52px;
+		}
+	}
+}
+
+.blog-post-body {
+	font-size: $font_size_basic;
+
+	@include breakpoint(large_tablet) {
+		margin-top: spacer(5);
+		font-size: $font_size_large;
+	}
+}

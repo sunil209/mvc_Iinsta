@@ -1,0 +1,68 @@
+@import "../libs/bootstrap/scss/functions";
+@import "../libs/bootstrap/scss/variables";
+
+@import "../libs/bootstrap/scss/mixins/breakpoints";
+@import "../libs/bootstrap/scss/mixins/grid-framework";
+@import "../libs/bootstrap/scss/mixins/grid";
+@import "../libs/bootstrap/scss/mixins/utilities";
+
+@import "../libs/bootstrap/scss/grid";
+
+// Custom properties:
+.container {
+    @include breakpoint(large_tablet) {
+        padding-right: $content_padding_big;
+        padding-left: $content_padding_big;
+    }
+
+    &[data-self~="sm-only-full"] {
+        @include breakpoint(only_phone) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &[data-self~="md-only-full"] {
+        @include breakpoint(max_large_tablet) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+.no-gutters-sm {
+    @include breakpoint(only_phone) {
+        margin-right: 0;
+        margin-left: 0;
+
+        > .col,
+        > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+.no-gutters-lg {
+    @include breakpoint(large_tablet) {
+        margin-right: 0;
+        margin-left: 0;
+
+        > .col,
+        > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+.order-2 {
+    order: 2;
+}
+
+// Reset class used in topfold for minimizing glitches on loading
+.v7-grid-topfold-helper {
+    @include breakpoint(large_tablet) {
+        max-width: unset;
+    }
+}

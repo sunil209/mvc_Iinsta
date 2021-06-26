@@ -1,0 +1,49 @@
+// NOTE: This content is only to rewrite some basic styles from Slim Lightbox plugin.
+.featherlight-close-icon {
+	.featherlight & {
+		right: 0;
+		color: $color_hansolo;
+		width: 30px;
+		height: 30px;
+		font-size: $font_size_large;
+
+		@include breakpoint(tablet) {
+			top: -20px;
+			right: -60px;
+			width: 40px;
+			height: 40px;
+			background-color: $color_vader;
+			outline: 0;
+			border-radius: 50%;
+			line-height: 1;
+		}
+	}
+}
+
+.featherlight-content {
+	.featherlight & {
+		padding: 0;
+		overflow: visible;
+		background: none;
+	}
+}
+
+.featherlight-image {
+	max-width: 90vw;
+	max-height: 90vh;
+
+	@include breakpoint(tablet) {
+		max-width: 85vw;
+		max-height: 85vh;
+	}
+
+	@include breakpoint(large_tablet) {
+		max-width: 80vw;
+		max-height: 80vh;
+	}
+}
+
+.featherlight-previous,
+.featherlight-next {
+	display: none;
+}

@@ -1,0 +1,26 @@
+.video-responsive-wrapper {
+    .v7-accordion-body & {
+        margin-top: spacer(2);
+
+        @include breakpoint(tablet) {
+            margin-top: spacer(3);
+        }
+    }
+}
+
+// NOTE: box-shadow for wistia video
+.featured-video-plus {
+    box-shadow: $shadow_2;
+
+    .blog-post-page & {
+        box-shadow: none;
+    }
+}
+
+.v7-dictionary-video {
+    margin-top: spacer(6);
+
+    @include breakpoint(tablet) {
+        margin-top: spacer(-8);
+    }
+}

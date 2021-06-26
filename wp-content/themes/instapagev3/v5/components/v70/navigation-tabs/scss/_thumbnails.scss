@@ -1,0 +1,5 @@
+.v7-thumbnails-browser-navigation {
+    @include breakpoint(tablet) {
+        justify-content: center;
+    }
+}

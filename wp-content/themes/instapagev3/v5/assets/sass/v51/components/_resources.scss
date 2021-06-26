@@ -1,0 +1,9 @@
+.agency-listing {
+    grid-area: content;
+    margin: spacer(3) 0;
+
+    @include breakpoint(large_tablet) {
+        margin: 0;
+        grid-row-start: 1;
+    }
+}

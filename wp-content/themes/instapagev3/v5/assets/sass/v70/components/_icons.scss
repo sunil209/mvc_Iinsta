@@ -1,0 +1,62 @@
+.v7-icon-help {
+	color: $color_fog;
+	@include transition($transition_regular);
+
+    &:hover {
+        color: $color_ocean;
+        cursor: pointer;
+    }
+
+    .v7-toggle-option &,
+    .v7-toggle-option-reveresed & {
+        display: none;
+
+        @include breakpoint(tablet) {
+            display: inline-block;
+        }
+    }
+
+    .v7-toggle-option & {
+        margin-right: spacer(0.5);
+    }
+
+    .v7-toggle-option-reveresed & {
+        margin-left: spacer(0.5);
+    }
+
+    // NOTE: align for agency-partners
+    .checkbox-container & {
+        display: flex;
+        align-self: center;
+        margin-left: spacer(0.5);
+    }
+
+    .v7-card-list & {
+        top: 4px;
+    }
+}
+
+.v7-material-icons {
+    transition: transform $transition_regular ease-in-out;
+
+    .v7-icon-clicked & {
+        // NOTE: Make up for change on rotation
+        margin-top: -3px;
+        transform: rotate(180deg);
+    }
+
+    .v7-pricing-cards-trigger & {
+        font-size: $font_size_xxlarge;
+        vertical-align: middle;
+    }
+}
+
+.v7-expandable-icon {
+    display: block;
+    color: $color_fog;
+    font-size: 38px;
+}
+
+.v7-follow-icon {
+    font-size: 42px;
+}

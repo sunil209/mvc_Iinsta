@@ -1,0 +1,32 @@
+// BASE COMPONENNT:
+//	.dim
+
+// Placeholder
+%make-dim-visible {
+	display: block;
+	animation: fade-in-dim $transition_slow;
+}
+
+.dim {
+	background-color: #040f48;
+	opacity: 0.75;
+	height: 100vh;
+	width: 100vw;
+	display: none;
+	position: fixed;
+	z-index: map-get($z_index, modal-holder);
+
+	.navbar-mobile-bar[data-state~="open"] ~ & {
+		@extend %make-dim-visible;
+		z-index: map-get($z_index, navbar);
+		top: 0;
+
+		@include breakpoint(desktop) {
+			display: none;
+		}
+	}
+
+	&[data-state~="visible"] {
+		@extend %make-dim-visible;
+	}
+}

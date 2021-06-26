@@ -1,0 +1,201 @@
+// BASE COMPONENT
+//	.v7-accordion
+//	.v7-accordion-layout
+// VARIANTS
+//	.v7-accordion-list
+//	.v7-accordion-simplified
+// ELEMENTS
+//	.v7-accordion-headline
+//	.v7-accordion-button
+//	.v7-accordion-header
+//	.v7-accordion-header-img
+//	.v7-accordion-header-title
+//	.v7-accordion-body
+//	.v7-accordion-icon
+
+.v7-accordion {
+    @include breakpoint(only_phone) {
+        margin: 0 (-$content_padding);
+        border-radius: 0;
+    }
+
+    @include breakpoint(tablet) {
+        margin-bottom: spacer(2);
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.v7-accordion-layout {
+    display: grid;
+    grid-template: 50px auto / 70px 1fr;
+
+    @include breakpoint(tablet) {
+        grid-template-columns: 90px 1fr;
+    }
+}
+
+.v7-accordion-list {
+    padding: spacer(3) $content_padding;
+
+    @include breakpoint(tablet) {
+        padding: spacer(3) spacer(4);
+    }
+}
+
+.v7-accordions-group-wrapper {
+    margin-bottom: spacer(5);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.v7-accordion-simplified {
+    padding: spacer(2) $content_padding;
+
+    @include breakpoint(tablet) {
+        padding: spacer(3);
+    }
+
+    @include breakpoint(large_tablet) {
+        padding: spacer(4);
+    }
+}
+
+// FIXME: we can remove nesting when v7 typography is seperated
+.v7 .v7-accordion-headline {
+    text-align: center;
+
+    @include breakpoint(only_phone) {
+        font-size: $font_size_xlarge;
+    }
+
+    @include breakpoint(desktop) {
+        text-align: left;
+    }
+}
+
+.v7-accordion-button {
+    @include breakpoint(only_phone) {
+        text-align: center;
+    }
+}
+
+.v7-accordion-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+
+    .v7-accordion-layout & {
+        grid-column: 1 / 3;
+    }
+}
+
+.v7-accordion-header-img {
+    width: 50px;
+    height: 50px;
+    margin-right: spacer(2);
+
+    @include breakpoint(tablet) {
+        margin-right: spacer(4);
+    }
+}
+
+// FIXME: we can remove nesting when v7 typography is seperated
+.v7-accordion-header-title {
+    margin-right: spacer(1.5);
+
+    .v7-accordion & {
+        font-size: $font_size_large;
+    }
+
+    .v7-accordion-simplified & {
+        @include breakpoint(only_phone) {
+            font-size: $font_size_basic;
+        }
+    }
+}
+
+// FIXME: we can remove nesting when v7 typography is seperated
+.v7-accordion-paragraph {
+    .v7-accordion-simplified & {
+        @include breakpoint(only_tablet) {
+            font-size: $font_size_basic;
+        }
+    }
+}
+
+.v7-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition_slow cubic-bezier(0, 1, 0, 1), padding-top $transition_slow;
+
+    .v7-accordion-layout & {
+        grid-column: 1 / span 2;
+
+        @include breakpoint(tablet) {
+            grid-column: 2;
+        }
+    }
+
+    .v7-accordion-list & {
+        @include breakpoint(only_phone) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include breakpoint(tablet) {
+            max-width: 530px;
+            margin-left: 0;
+        }
+
+        @include breakpoint(large_tablet) {
+            max-width: 730px;
+        }
+
+        @include breakpoint(desktop) {
+            max-width: 590px;
+        }
+    }
+
+    .v7-accordion-simplified & {
+        @include breakpoint(tablet) {
+            margin-right: spacer(8);
+        }
+    }
+
+    .v7-accordion-open & {
+        max-height: 600em;
+        transition: max-height $transition_very_slow ease-in-out;
+    }
+
+    .v7-accordion-list.v7-accordion-open & {
+        padding-top: spacer(2.5);
+
+        @include breakpoint(tablet) {
+            padding-top: spacer(1);
+        }
+    }
+
+    .v7-accordion-simplified.v7-accordion-open & {
+        padding-top: spacer(1);
+
+        @include breakpoint(tablet) {
+            padding-top: spacer(2);
+        }
+    }
+}
+
+.v7-accordion-icon {
+    width: 20px;
+    margin-left: auto;
+    transition: transform $transition_regular;
+
+    .v7-accordion-open & {
+        transform: rotate(180deg);
+    }
+}

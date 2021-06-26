@@ -1,0 +1,92 @@
+/*
+BASE COMPONENTS
+	.template-page-header
+
+ELEMENTS
+	.template-page-header-content
+	.template-page-header-title
+	.template-page-header-arrow
+	.template-page-header-next
+	.template-page-img
+	.template-page-img-desktop
+	.template-page-mobile
+	.template-page-mobile-img
+	.template-page-text
+
+LAYOUTS
+	.template-page-similar (in _layouts.scss)
+*/
+
+.template-page-header {
+	position: relative;
+}
+
+.template-page-header-content {
+	text-align: center;
+	padding: spacer(15) 0 spacer(13);
+
+	@include breakpoint(tablet) {
+		padding-left: spacer(8);
+		padding-right: spacer(8);
+	}
+}
+
+.template-page-header-title {
+	margin: spacer(3) 0;
+}
+
+.template-page-header-arrow {
+	display: none;
+
+	@include breakpoint(tablet) {
+		display: block;
+		background-color: $color_leia;
+		color: $color_kylo;
+		box-shadow: $box_shadow_level_1;
+		border: none;
+		position: absolute;
+		top: 45%;
+
+		&:hover {
+			background-color: $color_r2d2;
+			color: $color_leia;
+		}
+	}
+}
+
+.template-page-header-next {
+	right: 25px;
+}
+
+.template-page-img {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.template-page-img-desktop {
+	display: none;
+
+	@include breakpoint(widescreen_phone) {
+		display: block;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+}
+
+.template-page-mobile {
+	@include breakpoint(widescreen_phone) {
+		display: none;
+	}
+}
+
+.template-page-mobile-img {
+	.template-page-amp & {
+		text-align: center;
+	}
+}
+
+// FIXME: we can remove it when TILE component will be ready
+// NOTE: additional padding for "VIEW TEMPLATE" with position: absolute
+.template-page-text {
+	padding-bottom: spacer(5.5);
+}

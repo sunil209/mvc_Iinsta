@@ -1,0 +1,10 @@
+// NOTE: Transition shorthand.
+// USAGE:
+//	@include transition;
+//	@include transition(1s);
+//	@include transition(1s, background-color);
+
+@mixin transition($duration: 0.2s, $properties...) {
+	transition: all $duration ease-in-out;
+	transition-property: $properties;
+}

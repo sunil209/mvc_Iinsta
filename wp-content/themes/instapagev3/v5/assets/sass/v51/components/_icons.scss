@@ -1,0 +1,193 @@
+// BASE COMPONENT
+//	.icon
+//	.material-icons
+// VARIANTS
+//	.icon-label
+//	.icon-cta
+//	.icon-feature
+// SPECIAL VARIANTS
+//	.icon-hamburger
+
+// NOTE: This is the variant when text is preceded by icon.
+.icon-label {
+	vertical-align: middle;
+	margin-bottom: 2px;
+
+	// Dependency playground!
+	.btn & {
+		margin-right: spacer(1);
+	}
+
+	.btn.is-large {
+		margin-bottom: 3px;
+	}
+}
+
+.icon-cta {
+	color: $color_r2d2;
+	font-size: $font_size_xxlarge;
+}
+
+.icon-disabled {
+	color: $color_hansolo;
+	font-size: $font_size_xsmall;
+}
+
+.material-icons {
+	// NOTE: Dependencies playground!
+	.btn & {
+		font-size: $font_size_xxlarge;
+		margin-left: - spacer(1.5);
+	}
+
+	.btn-rounded & {
+		margin-left: 0;
+		font-size: 32px;
+	}
+
+	.dropdown & {
+		transition: 0.2s transform;
+		font-size: $font_size_large;
+	}
+
+	.dictionary & {
+		font-size: $font_size_xlarge;
+	}
+
+	.workable-group-head & {
+		font-size: 30px;
+	}
+
+	.video-close & {
+		font-size: 32px;
+	}
+
+	.panel-testimonial & {
+		font-size: $font_size_large;
+		margin-right: spacer(1);
+		vertical-align: text-top;
+	}
+
+	.template-page-header & {
+		font-size: 36px;
+	}
+
+	.slick-arrow-round & {
+		font-size: 36px;
+		line-height: 60px;
+	}
+
+	.panel-single-agency & {
+		vertical-align: text-top;
+	}
+
+	.map-pin-person-office & {
+		vertical-align: sub;
+	}
+
+	.podcast-item .panel-link-video & {
+		//NOTE: In our variable there no any size, that is like on design
+		font-size: 44px;
+		line-height: 58px;
+	}
+
+	.carousel-video-wrapper & {
+		font-size: 50px;
+		vertical-align: top;
+
+		@include breakpoint(tablet) {
+			vertical-align: middle;
+		}
+
+		@include breakpoint(desktop) {
+			font-size: 60px;
+		}
+	}
+}
+
+.icon-svg {
+	width: 100px;
+
+	&.is-small {
+		width: 50px;
+		height: 50px;
+	}
+
+	.accordion-header & {
+		margin-right: spacer(2);
+	}
+}
+
+// NOTE: Animated haburger icon.
+.icon-hamburger {
+	width: 25px;
+	height: 25px;
+	position: relative;
+	cursor: pointer;
+	color: $color_grey;
+
+	@include breakpoint(tablet) {
+		margin-right: -3px;
+	}
+}
+
+.icon-hamburger-lines,
+.icon-hamburger-lines:after,
+.icon-hamburger-lines:before {
+	position: absolute;
+	height: 2px;
+	width: 18px;
+	background-color: $color_leia;
+	transition: 0.2s all;
+
+	// Dependencies Playground!
+	.navbar-mobile-expandable &,
+	.navbar[data-state~="sticky"] &,
+	.navbar-white &,
+	.navbar-dark & {
+		background-color: $color_grey;
+	}
+}
+
+.icon-hamburger-lines:after,
+.icon-hamburger-lines:before {
+	content: '';
+	display: block;
+}
+
+.icon-hamburger-lines {
+	top: 13px;
+	left: 5px;
+
+	.icon-hamburger[data-state~="active"] & {
+		background-color: transparent;
+		top: 16px;
+	}
+}
+
+.icon-hamburger-lines:before {
+	top: -5px;
+
+	.icon-hamburger[data-state~="active"] & {
+		top: -5px;
+		left: -3px;
+		transform: rotateZ(45deg) translate(1px, 0);
+	}
+}
+
+.icon-hamburger-lines:after {
+	top: 5px;
+
+	.icon-hamburger[data-state~="active"] & {
+		top: 5px;
+		left: -3px;
+		transform: rotateZ(-45deg) translate(7px, -6px);
+	}
+}
+
+.icon-click-to-tweet {
+	height: 15px;
+	width: initial;
+	margin-right: spacer(0.5);
+	vertical-align: -1px;
+}

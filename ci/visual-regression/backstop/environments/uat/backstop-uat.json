@@ -1,0 +1,219 @@
+{
+  "id": "regression_uat",
+  "viewports": [
+    {
+      "label": "Phone",
+      "width": 360,
+      "height": 480
+    },
+    {
+      "label": "Tablet",
+      "width": 768,
+      "height": 768
+    },
+    {
+      "label": "Laptop",
+      "width": 1430,
+      "height": 768
+    },
+    {
+      "label": "Desktop",
+      "width": 1880,
+      "height": 800
+    }
+  ],
+  "onReadyScript": "onReady.js",
+  "removeSelectors": ["#intercom-frame"],
+  "scenarios": [
+    {
+      "label": "Homepage_regression_uat",
+      "url": "https://secretsite.co",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Homepage-v1_uat",
+      "url": "https://secretsite.co/home",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Homepage-v2_uat",
+      "url": "https://secretsite.co/homepage",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Homepage-v3_uat",
+      "url": "https://secretsite.co/start",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Plans_regression_uat",
+      "url": "https://secretsite.co/plans",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Enterprise-benefits_regression_uat",
+      "url": "https://secretsite.co/enterprise-benefits",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Product-collaboration_regression_uat",
+      "url": "https://secretsite.co/products/team-collaboration",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Product-enterprise_regression_uat",
+      "url": "https://secretsite.co/products/enterprise",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Product-page_migration_regression_uat",
+      "url": "https://secretsite.co/products/page-migration",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+      },
+    {
+      "label": "Solution-fb_ads_regression_uat",
+      "url": "https://secretsite.co/solutions/facebook-ads",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Features_regression_uat",
+      "url": "https://secretsite.co/features",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Blog_regression_uat",
+      "url": "https://secretsite.co/blog",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Blog-post_regression_uat",
+      "url": "https://secretsite.co/blog/personalization",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },   
+    {
+      "label": "Customers_regression_uat",
+      "url": "https://secretsite.co/customers",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Customer_stories_regression_uat",
+      "url": "https://secretsite.co/customer-stories",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Guides_regression_uat",
+      "url": "https://secretsite.co/guides",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Privacy_policy_regression_uat",
+      "url": "https://secretsite.co/privacy-policy",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Newsroom_regression_uat",
+      "url": "https://secretsite.co/newsroom",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Integrations_regression_uat",
+      "url": "https://secretsite.co/integrations",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "About_us_regression_uat",
+      "url": "https://secretsite.co/about",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Enterprise_thank_you_regression_uat",
+      "url": "https://secretsite.co/enterprise-thank-you",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Contact_regression_uat",
+      "url": "https://secretsite.co/contact",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Careers_regression_uat",
+      "url": "https://secretsite.co/careers",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Resources_regression_uat",
+      "url": "https://secretsite.co/resources",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "PCA_regression_uat",
+      "url": "https://secretsite.co/post-click-automation",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Partners_regression_uat",
+      "url": "https://secretsite.co/partners",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Partners-agency_regression_uat",
+      "url": "https://secretsite.co/partners/agency",
+      "postInteractionWait": 4000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Marketing-dictionary_regression_uat",
+      "url": "https://secretsite.co/marketing-dictionary",
+      "postInteractionWait": 5000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Press-kit_regression_uat",
+      "url": "https://secretsite.co/press-kit",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "../../puppeteer",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 6,
+  "asyncCompareLimit": 60,
+  "debug": false,
+  "debugWindow": false
+}

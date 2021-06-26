@@ -1,0 +1,68 @@
+@keyframes slideDown {
+	from {
+		transform: translate(0, -20px);
+		opacity: 0;
+	}
+}
+
+// Navigation and Social Bar Slide Down CSS animation
+@keyframes slideDownNav {
+	from {
+		top: -200px;
+	}
+
+	to {
+		top: 0;
+	}
+}
+
+
+// Slide up, show element and slide down animation (snackbar compontent)
+@keyframes slide-up-down {
+	0% {
+		transform: translateY(0);
+		opacity: 0;
+	}
+
+	25%,
+	75% {
+		transform: translateY(-300px);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 0;
+	}
+}
+
+// Social Bar Slide Up CSS animation
+@keyframes slideUpNav {
+	from {
+		bottom: -200px;
+	}
+
+	to {
+		bottom: 0;
+	}
+}
+
+@keyframes slideDownSocial {
+	from {
+		transform: translateY(-120px);
+	}
+
+	to {
+		transform: translateY(-70px);
+	}
+}
+
+@keyframes slideDownAlphabet {
+	from {
+		top: -95px;
+	}
+
+	to {
+		top: $navbar_height;
+	}
+}

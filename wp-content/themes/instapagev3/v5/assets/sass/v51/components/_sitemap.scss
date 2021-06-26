@@ -1,0 +1,41 @@
+.sitemap {
+    @include breakpoint(tablet) {
+        column-count: 3;
+        margin-bottom: spacer(8.5);
+        column-gap: 20px;
+    }
+
+    @include breakpoint(large_tablet) {
+        column-gap: $main_gap;
+    }
+}
+
+.sitemap-link {
+    display: block;
+    //NOTE: value without spacer because of pixel perfect coding
+    padding: 18px 0 0;
+    color: $color_vader;
+
+    &.hidden {
+        display: none;
+    }
+
+    &:hover {
+        color: $color_r2d2;
+    }
+}
+
+.sitemap-item {
+    margin: 0 spacer(1.5) spacer(5);
+    list-style: none;
+
+    &.hidden {
+        display: none;
+    }
+
+    @include breakpoint(large_tablet) {
+        margin: 0 0 spacer(5) spacer(2);
+        display: inline-block;
+        width: 100%;
+    }
+}

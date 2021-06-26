@@ -1,0 +1,65 @@
+// BASE COMPONENT
+//	.search-component
+// ELEMENTS
+//	.search-input
+//	.search-icon
+//	.search-empty-box
+
+.search-component {
+    position: relative;
+
+    @include breakpoint(tablet) {
+        width: columns(5);
+    }
+
+    @include breakpoint(desktop) {
+        width: columns(8);
+    }
+
+    .hero-section & {
+        margin: spacer(2) auto;
+    }
+}
+
+.search-input {
+    padding: spacer(1.5) spacer(5) spacer(1.5) spacer(2);
+    font-size: $font_size_basic;
+    box-shadow: $box_shadow_level_2;
+    border-radius: $border_radius_primary;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    // NOTE: we're adding height so input won't be jumping when page loads
+    height: 46px;
+
+    @include breakpoint(desktop) {
+        font-size: $font_size_large;
+        padding: spacer(2) spacer(5) spacer(2) spacer(2);
+        height: 58px;
+    }
+
+    &::placeholder {
+        color: $color_jedi;
+    }
+}
+
+.search-icon {
+    position: absolute;
+    // NOTE: improving visual experiences
+    top: 13px;
+    right: spacer(1.5);
+    font-size: $font_size_xlarge;
+    color: $color_jedi;
+
+    @include breakpoint(desktop) {
+        // NOTE: improving visual experiences
+        top: 18px;
+        font-size: 22px;
+    }
+}
+
+.search-empty-box {
+    padding: 0 spacer(2) spacer(6);
+    text-align: center;
+    width: 100%;
+}

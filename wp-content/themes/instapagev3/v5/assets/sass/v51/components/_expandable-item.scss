@@ -1,0 +1,46 @@
+// BASE COMPONENT
+//	.expand-content
+// ELEMENTS
+//	.expand-trigger
+//	.expand-content
+//	.expand-icon
+// STATES
+//	open
+
+.expand-trigger {
+	cursor: pointer;
+}
+
+.expand-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
+
+	.navbar & {
+		transition: max-height 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+
+	.expand-item[data-state~='open'] > & {
+		max-height: 60em;
+
+		.navbar & {
+			max-height: 25em;
+		}
+	}
+}
+
+.expand-icon {
+	transition: 0.2s transform;
+	font-size: 28px;
+
+	// NOTE: We need this monster. There is Expandable item within another expandable item sometimes (Navbar component).
+	.expand-item[data-state='open'] > .expand-trigger &,
+	.expand-item[data-state~='open'] & {
+		transform: rotate(180deg);
+	}
+
+	.navbar & {
+		font-size: $font_size_xlarge;
+		color: $color_grey;
+	}
+}

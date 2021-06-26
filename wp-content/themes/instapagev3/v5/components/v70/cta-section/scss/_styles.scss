@@ -1,0 +1,26 @@
+// BASE COMPONENT
+//  .v7-cta
+// ELEMENTS
+//  .v7-cta-content
+
+.v7-cta {
+    padding: spacer(8) 0;
+    background: $color_royal;
+
+    @include breakpoint(tablet) {
+        padding: spacer(10) 0;
+    }
+}
+
+.v7-cta-light {
+    background-color: #f4f8ff;
+    background-image: none;
+}
+
+.v7-cta-gradient-light {
+    background-image: $gradient_light;
+}
+
+.v7-cta-bright-blue {
+    background: $color_ocean;
+}

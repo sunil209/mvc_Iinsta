@@ -1,0 +1,171 @@
+// BASE COMPONENT
+//	.main-footer
+// ELEMENTS
+//	.main-footer-main
+//	.main-footer-menu
+// 	.main-footer-menu-option
+// 	.main-footer-separator
+// 	.main-footer-social-wrapper
+// 	.main-footer-link
+// 	.main-footer-social
+// 	.main-footer-social-icon
+//	.main-footer-copy-text
+
+.main-footer {
+	padding-bottom: spacer(4);
+
+	@include breakpoint(tablet) {
+		padding-top: spacer(5);
+	}
+
+	@include breakpoint(large_tablet) {
+		padding-bottom: spacer(6);
+	}
+
+	// NOTE: we're adding extra padding so social-bar won't be covering footer copy
+	.navbar-social ~ & {
+		padding-bottom: spacer(8);
+
+		@include breakpoint(desktop) {
+			padding-bottom: spacer(4);
+		}
+	}
+
+	&.main-footer-social-bar {
+		@include breakpoint(max_large_tablet) {
+			padding-bottom: spacer(5);
+		}
+	}
+}
+
+.main-footer-main {
+	margin-top: spacer(2.5);
+
+	@include breakpoint(large_tablet) {
+		margin-top: spacer(4);
+		@include css-grid(5);
+	}
+}
+
+.main-footer-menu {
+	.accordion-body & {
+		padding-left: spacer(2);
+	}
+}
+
+.main-footer-menu-option {
+	line-height: 2.4;
+	font-size: $font_size_small;
+	color: $color_slate;
+
+	.accordion-body & {
+		color: $color_slate;
+		font-size: $font_size_basic;
+	}
+}
+
+.amp-footer-accordion {
+	margin-left: - spacer(2);
+	margin-right: - spacer(2);
+	border-bottom: 1px solid $color_kylo;
+
+	.amp-menu-option {
+		background-color: $color_leia;
+		padding: spacer(1.5) spacer(2.5);
+		border: none;
+	}
+
+	.expand-icon {
+		font-size: $font_size_large;
+		line-height: 1;
+		float: right;
+		@include transition($transition_regular);
+	}
+
+	> .expand-item[expanded] {
+		.expand-icon {
+			transform: rotate(180deg);
+		}
+
+		.expand-content {
+			max-height: none;
+		}
+	}
+
+	// NOTE: Non-standard top padding to make up for an empty <p> rendered in non-AMP version.
+	.accordion-body {
+		padding: spacer(0.5) spacer(2.5) spacer(2.5);
+	}
+}
+
+.main-footer-separator {
+	display: none;
+
+	@include breakpoint(large_tablet) {
+		margin: spacer(4) 0 0;
+		display: block;
+	}
+}
+
+.main-footer-social-wrapper {
+	padding-top: spacer(4);
+	font-size: $font_size_small;
+	letter-spacing: 0;
+	text-align: center;
+
+	@include breakpoint(tablet) {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	@include breakpoint(large_tablet) {
+		padding-top: spacer(3);
+	}
+}
+
+.main-footer-social {
+	display: flex;
+	justify-content: center;
+}
+
+.main-footer-link {
+	// NOTE: Non standard margin to make up the difference between displaying links inline-block vs. flex
+	margin-right: 16.5px;
+	display: inline-block;
+
+	@include breakpoint(tablet) {
+		margin-right: spacer(2);
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.main-footer-social {
+	@include breakpoint(only_phone) {
+		padding-bottom: spacer(4);
+	}
+}
+
+.main-footer-social-icon {
+	width: 24px;
+	height: 24px;
+	background-color: $color_fog;
+	border-radius: $border_radius_primary;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include transition($transition_regular);
+
+	&:hover {
+		background-color: $color_ocean;
+	}
+}
+
+.main-footer-copy-text {
+	color: $color_fog;
+	line-height: 2.3;
+}

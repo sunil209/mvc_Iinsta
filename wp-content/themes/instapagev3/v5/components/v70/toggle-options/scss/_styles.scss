@@ -1,0 +1,42 @@
+// BASE COMPONENT
+//  .v7-toggle-wrapper
+// VARIANTS
+//  .v7-toggle-option
+//  .v7-toggle-option-reveresed
+//  .v7-toggle-option-tooltip
+//  .v7-toggle-option-description
+
+.v7-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.v7-toggle-option,
+.v7-toggle-option-reveresed {
+    display: flex;
+}
+
+.v7-toggle-option-reveresed {
+    flex-direction: row-reverse;
+}
+
+.v7-toggle-option-tooltip {
+    flex: 1 1 100%;
+    color: $color_grey;
+    font-size: $font_size_xsmall;
+
+    @include breakpoint(tablet) {
+        display: none;
+    }
+}
+
+.v7-toggle-option-description {
+    cursor: pointer;
+    transition: color $transition_regular;
+
+    &:hover,
+    &.is-switched {
+        color: $color_ocean;
+    }
+}

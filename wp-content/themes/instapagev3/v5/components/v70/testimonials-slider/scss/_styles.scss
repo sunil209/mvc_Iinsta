@@ -1,0 +1,44 @@
+.v7-testimonials-slide {
+    @include breakpoint(large_tablet) {
+        flex-direction: column;
+    }
+
+    @include breakpoint(max_large_tablet) {
+        .v7-testimonials-slider:not(.slick-initialized) &:not(:first-child) {
+            display: none;
+        }
+    }
+}
+
+.v7-testimonial-slide-content {
+    max-width: 620px;
+    text-align: center;
+
+    @include breakpoint(desktop) {
+        max-width: 770px;
+    }
+}
+
+.v7-testimonial-client-photo-img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: $shadow_3;
+}
+
+.v7-testimonial-company-logo-container {
+    width: 130px;
+    height: 40px;
+}
+
+.v7-testimonial-company-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.v7 .v7-testimonial-client-position {
+    color: $color_grey;
+}

@@ -1,0 +1,185 @@
+// BASE COMPONENT
+//	.benefits
+// ELEMENTS
+//	.benefits-item
+//	.benefits-header
+//	.benefits-description
+//	.benefits-icon
+// LAYOUTS
+//	without-titles
+
+.benefits {
+	padding-top: spacer(8);
+	padding-bottom: spacer(8);
+
+	@include breakpoint(tablet) {
+		padding-top: spacer(8);
+		padding-bottom: spacer(6);
+	}
+}
+
+.benefits-content {
+	@include breakpoint(tablet) {
+		display: grid;
+		@include css-grid(2, 40px);
+		margin: 0 spacer(6);
+	}
+
+	@include breakpoint(desktop) {
+		@include css-grid(3, 40px);
+	}
+
+	&[data-layout~=without-titles] {
+		text-align: center;
+
+		@include breakpoint(tablet) {
+			margin: 0 spacer(3);
+			@include css-grid(2, 40px);
+		}
+
+		@include breakpoint(desktop) {
+			margin: 0 spacer(10);
+			text-align: left;
+		}
+	}
+
+	&[data-layout~=one-row] {
+		text-align: center;
+		margin: 0;
+
+		@include breakpoint(large_tablet) {
+			@include css-grid(3, 40px);
+		}
+	}
+
+	&[data-layout~=two-columns] {
+		@include breakpoint(large_tablet) {
+			@include css-grid(2, 40px);
+		}
+	}
+
+	&.with-panels {
+		@include breakpoint(desktop) {
+			grid-column-gap: spacer(3);
+			margin: 0 spacer(10);
+		}
+	}
+}
+
+.benefits-item {
+	margin-bottom: spacer(4);
+
+	@include breakpoint(tablet) {
+		margin-bottom: spacer(6);
+	}
+
+	.benefits-content[data-layout~=without-titles] & {
+		@include breakpoint(desktop) {
+			margin-bottom: spacer(4);
+		}
+
+		@include breakpoint(desktop) {
+			display: flex;
+		}
+	}
+
+	.benefits-content[data-layout~=one-row] & {
+		text-align: center;
+
+		@include breakpoint(tablet) {
+			text-align: left;
+			display: flex;
+			align-items: center;
+		}
+
+		@include breakpoint(large_tablet) {
+			text-align: center;
+			flex-direction: column;
+			margin-bottom: 0;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+.benefits-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: spacer(2.5);
+
+	@include breakpoint(tablet) {
+		margin-bottom: spacer(2);
+		height: 60px;
+	}
+
+	.benefits-content[data-layout~=without-titles] & {
+		margin-bottom: spacer(2);
+		justify-content: center;
+
+		@include breakpoint(tablet) {
+			height: initial;
+		}
+	}
+
+	.benefits-content[data-layout~=one-row] & {
+		display: block;
+		margin: 0;
+
+		@include breakpoint(tablet) {
+			align-items: flex-start;
+			height: initial;
+		}
+
+		@include breakpoint(large_tablet) {
+			align-items: center;
+		}
+	}
+}
+
+.benefits-icon {
+	margin-right: spacer(2.5);
+	width: 50px;
+	height: 50px;
+
+	.benefits-content[data-layout~=without-titles] & {
+		height: 70px;
+		width: 70px;
+		margin-right: 0;
+
+		@include breakpoint(desktop) {
+			margin-right: spacer(3);
+		}
+	}
+
+	.benefits-content[data-layout~=one-row] & {
+		height: 70px;
+		width: 70px;
+		margin: 0 auto spacer(1);
+
+		@include breakpoint(tablet) {
+			margin: 0 spacer(2.5) 0 0;
+			min-width: 70px;
+		}
+
+		@include breakpoint(large_tablet) {
+			margin: 0 auto spacer(2);
+		}
+	}
+
+	.benefits-content[data-layout~=two-columns] & {
+		width: 70px;
+		height: 70px;
+	}
+}
+
+.benefits-icon-img {
+	margin-right: spacer(2.5);
+	width: 50px;
+	max-height: 50px;
+}
+
+.benefits-description {
+	margin-top: 0;
+}

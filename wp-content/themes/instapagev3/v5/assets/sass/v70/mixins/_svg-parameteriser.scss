@@ -1,0 +1,38 @@
+// Replace `$search` with `$replace` in `$string`
+// @author Hugo Giraudel
+// @param  {String} $string - Initial string
+// @param  {String} $search - Substring to replace
+// @param  {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// Customize svg by replacing dummy values with the actual ones.
+// Prepare the following values in your svg, by changing them to 'colorParam' etc.
+// @param  {String} $svg - initial svg file
+// @param  {String} $color - color to be used
+// @return {String} $customizedColor - customized svg
+@function svg-customizer($svg, $color) {
+    $customizedColor: str-replace($svg, 'colorParam', $color);
+    @return $customizedColor;
+}
+
+@function hex-to-rgb($color) {
+    @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ ")";
+}
+
+$dot: 'data:image/svg+xml,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="19px" height="19px">\
+    <circle fill="colorParam" cx="10" cy="10" r="10"></circle>\
+</svg>';
+
+@mixin dotted-background($color) {
+    background-image: url(svg-customizer($dot, hex-to-rgb($color)));
+}

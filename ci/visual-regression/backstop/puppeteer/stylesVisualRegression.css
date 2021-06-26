@@ -1,0 +1,10 @@
+/**
+ * Hiding intercom from screenshots
+ */
+div#intercom-container {
+    display: none;
+}
+
+div.cookies-wrapper {
+    display: none;
+}

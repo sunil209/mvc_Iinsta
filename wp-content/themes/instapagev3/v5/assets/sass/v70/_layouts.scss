@@ -1,0 +1,27 @@
+.v7-template-dual-column {
+    display: grid;
+    grid-template-areas:
+        "topbar"
+        "sidebar"
+        "content";
+
+    @include breakpoint(desktop) {
+        grid-template-columns: 1fr 2.75fr;
+        grid-column-gap: spacer(12);
+        grid-template-areas:
+            "sidebar topbar"
+            "sidebar content"
+;
+    }
+
+    &.v7-thumbnails-browser {
+        @include breakpoint(desktop) {
+            grid-template-columns: 1fr 3.5fr;
+            column-gap: spacer(6);
+        }
+    }
+}
+
+.v7-template-dual-column-topbar {
+    grid-area: "topbar";
+}

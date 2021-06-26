@@ -1,0 +1,105 @@
+// BASE COMPONENT
+//	.v7-header-imgsearch-component
+// ELEMENTS
+//	.v7-search-input
+//	.v7-search-icon
+//	.v7-search-btn
+//	.search-empty-box
+
+.v7-search-component {
+    position: relative;
+    margin-top: spacer(3);
+
+    @include breakpoint(tablet) {
+        width: 470px;
+        margin: spacer(4) auto 0;
+    }
+
+    @include breakpoint(large_tablet) {
+        width: 455px;
+        margin: spacer(3) 0 0;
+    }
+
+    @include breakpoint(large_tablet) {
+        width: 470px;
+        margin: spacer(3) 0 0;
+    }
+
+    .hero-section & {
+        margin: spacer(2) auto;
+    }
+}
+
+.v7-search-input {
+    width: 100%;
+    // NOTE: we're adding height so input won't be jumping when page loads
+    height: 48px;
+    border: 0;
+    outline: 0;
+    padding: spacer(1) spacer(5) spacer(1) spacer(3);
+    background-color: rgba(255, 255, 255, .05);
+    color: $color_white;
+    font-size: $font_size_large;
+    font-weight: $font_weight_bold;
+    text-shadow: 0 0 0 $color_white;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, .3);
+        font-weight: $font_weight_normal;
+    }
+
+    .search & {
+        &::placeholder {
+            color: $color_white;
+            font-weight: $font_weight_bold;
+        }
+    }
+}
+
+.v7-search-icon {
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    font-size: $font_size_xxlarge;
+    color: rgba(255, 255, 255, .5);
+
+    @include breakpoint(desktop) {
+        font-size: 22px;
+    }
+
+    .v7-search-shadow & {
+        top: 10px;
+        right: initial;
+        left: 9px;
+        color: $color_grey;
+        font-size: 22px;
+    }
+
+    .v7-search-shadow-filter-wrapper & {
+        top: 16px;
+        left: 21px;
+        font-size: $font_size_xlarge;
+    }
+}
+
+.v7-search-btn {
+    padding: 0;
+    background: none;
+    border: none;
+    transition: $transition_regular;
+    cursor: pointer;
+
+    &:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.search-empty-box {
+    width: 100%;
+    padding: 0 spacer(2) spacer(6);
+    text-align: center;
+
+    h3 {
+        color: $color_dark;
+    }
+}

@@ -1,0 +1,37 @@
+// BASE COMPONENT
+//	.label-group
+
+.label {
+	display: inline-block;
+	background-color: $color_leia;
+	font-size: $font_size_small;
+	// NOTE: nowrap - because we don't want em to be in two lines on mobiles (Single partner page)
+	white-space: nowrap;
+	line-height: 1;
+	padding: spacer(.5) spacer(1);
+	// NOTE: this happens when there is a group of labels (eg. Single partner page).
+	margin: spacer(.5) spacer(.5) spacer(.5) 0;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	.agency-single-presentation &:hover {
+		color: $color_skywalker;
+	}
+}
+
+.label-group {
+	text-align: center;
+	padding: spacer(10) 0;
+
+	.post-page-partners & {
+		padding: spacer(2) 0 0;
+
+		@include breakpoint(large_tablet) {
+			padding: 0;
+			text-align: left;
+			margin-top: spacer(1.5);
+		}
+	}
+}

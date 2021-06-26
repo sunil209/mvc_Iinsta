@@ -1,0 +1,117 @@
+.navbar-social {
+    display: none;
+    z-index: map-get($z_index, navbar-social);
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    background-color: #f7fbff;
+
+    @include breakpoint(large_tablet) {
+        display: none;
+        bottom: initial;
+        left: initial;
+        width: initial;
+        padding: spacer(1) 0;
+        background-color: transparent;
+    }
+
+    &[data-state~="sticky"] {
+        display: block;
+        bottom: 0;
+        animation: slideUpNav 0.3s;
+
+        @include breakpoint(large_tablet) {
+            display: inline-block;
+            position: sticky;
+            top: 160px;
+            bottom: initial;
+            margin-left: spacer(-8);
+            float: left;
+            animation: slideDownSocial 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        @include breakpoint(desktop) {
+            margin-left: spacer(-10);
+        }
+    }
+
+    .single-dictionary-term & {
+        @include breakpoint(large_tablet) {
+            margin-left: spacer(0.5);
+            padding: 0 spacer(1) spacer(2);
+        }
+
+        &[data-state~="sticky"] {
+            @include breakpoint(large_tablet) {
+                margin-top: 60px;
+            }
+        }
+    }
+}
+
+.navbar-social-icons {
+    display: flex;
+
+    @include breakpoint(large_tablet) {
+        flex-direction: column;
+    }
+
+    &[data-state~="active"] {
+        .icon-buffer,
+        .icon-linkedin,
+        .icon-twitter,
+        .icon-facebook {
+            opacity: .6;
+        }
+    }
+}
+
+.navbar-social-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar-social-icon-svg-mobile {
+    width: 20px;
+    height: 20px;
+
+    @include breakpoint(large_tablet) {
+        display: none;
+    }
+}
+
+.navbar-social-icon-svg-desktop {
+    display: none;
+
+    @include breakpoint(large_tablet) {
+        display: block;
+        width: 26px;
+        height: 26px;
+    }
+}
+
+.navbar-social-icon-svg {
+    padding: spacer(1.5);
+
+    @include breakpoint(large_tablet) {
+        width: 26px;
+        height: 26px;
+        margin-top: spacer(2.5);
+        padding: 0;
+        border: 0;
+    }
+
+    img {
+        transition: transform 0.3s;
+    }
+
+    &:hover img {
+        transform: translateY(-5px);
+    }
+}
+
+.js-social-container[data-state~="hidden"] {
+    display: none;
+}

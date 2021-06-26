@@ -1,0 +1,81 @@
+.v7-form-multistep {
+    position: relative;
+    border-radius: $border_radius_secondary;
+    background-color: $color_white;
+}
+
+.v7-form-multistep-fieldset {
+    background-color: $color_white;
+
+    &.is-invisible {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.v7-form-multistep-vertical {
+    position: relative;
+    min-height: 610px;
+
+    @include breakpoint(tablet) {
+        min-height: 750px;
+    }
+}
+
+.v7-form-multistep-horizontal {
+    padding: spacer(5) spacer(3);
+
+    @include breakpoint(tablet) {
+        padding: spacer(5);
+    }
+
+    .select-container {
+        .v7-select & {
+            padding: spacer(1.5) 0 spacer(2);
+        }
+    }
+
+    .v7-input textarea {
+        height: 163px;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    // Fix unifying input alignment with select2 on Chrome, FF, Safari
+    input.v7-input-field {
+        height: 31px;
+    }
+
+    input.v7-input-field,
+    textarea.v7-input-field {
+        padding-bottom: 0;
+        line-height: 28px;
+    }
+}
+
+.v7-multistep-vertical-footnote {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    left: 0;
+
+    @include breakpoint(tablet) {
+        bottom: 50px;
+    }
+}
+
+.v7-input {
+    .v7-form-multistep-vertical & {
+        @include breakpoint(tablet) {
+            padding: spacer(1.5) 0 spacer(3.5);
+        }
+    }
+
+    .v7-form-multistep-horizontal & {
+        padding: 14px 0 22px;
+    }
+}

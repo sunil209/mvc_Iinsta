@@ -1,0 +1,232 @@
+.v7-benefits-containter {
+    @include breakpoint(tablet) {
+        justify-content: center;
+    }
+
+    &.v7-benefits-no-tiles,
+    &.v7-benefits-downloadable {
+        @include breakpoint(tablet) {
+            @include css-grid(3);
+        }
+    }
+
+    &.v7-benefits-tiles {
+        @include breakpoint(large_tablet) {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-column-gap: 65px;
+        }
+
+        @include breakpoint(desktop) {
+            grid-column-gap: 80px;
+        }
+    }
+
+    &.v7-benefits-double {
+        @include breakpoint(tablet) {
+            @include css-grid(2);
+        }
+    }
+
+    .v7-product-page & {
+        @include breakpoint(only_tablet) {
+            display: block;
+            // NOTE: The strange number comes from our 595px limited width + paddings of .v7-content
+            max-width: 643px;
+        }
+
+        @include breakpoint(large_tablet) {
+            grid-template-columns: repeat(3, auto);
+            grid-column-gap: 65px;
+        }
+
+        @include breakpoint(desktop) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: $main_gap;
+        }
+    }
+}
+
+.v7-benefits-list {
+    @include breakpoint(tablet) {
+        display: grid;
+        grid-template-columns: repeat(2, 270px);
+        grid-column-gap: 110px;
+        grid-row-gap: spacer(4);
+        justify-content: center;
+    }
+
+    @include breakpoint(large_tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: $main_gap;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.v7-benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint(only_phone) {
+        width: 270px;
+    }
+
+    @include breakpoint(tablet) {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .v7-benefits-tiles:not(.v7-benefits-downloadable) & {
+        @include breakpoint(only_tablet) {
+            margin-bottom: $main_gap;
+            flex-direction: row;
+        }
+    }
+
+    .v7-benefits-list & {
+        margin: 0;
+        flex-direction: row;
+        justify-content: left;
+
+        @include breakpoint(only_phone) {
+            &:not(:last-child) {
+                margin-bottom: spacer(3);
+            }
+        }
+    }
+
+    .v7-product-page & {
+        @include breakpoint(only_tablet) {
+            flex-direction: row;
+            align-items: flex-start;
+            margin-bottom: spacer(3);
+        }
+    }
+}
+
+.v7-benefits-icon {
+    height: 120px;
+    min-width: 120px;
+    margin-bottom: spacer(3);
+
+    .v7-benefits-tiles & {
+        padding: spacer(2.5);
+        // FIXME: Refactor .v7-box so it doesn't have margin bottom, use division classes instead
+        margin-bottom: spacer(2);
+
+        @include breakpoint(only_tablet) {
+            margin-bottom: 0;
+        }
+
+        @include breakpoint(large_tablet) {
+            margin-bottom: spacer(3);
+        }
+    }
+
+    .v7-benefits-no-tiles & {
+        display: flex;
+        align-items: center;
+
+        @include breakpoint(only_tablet) {
+            max-width: 120px;
+        }
+
+        @include breakpoint(large_tablet) {
+            height: 150px;
+        }
+    }
+
+    .v7-product-page & {
+        height: 70px;
+        min-width: 70px;
+        margin-bottom: spacer(2);
+        padding: 0;
+
+        @include breakpoint(tablet) {
+            margin-bottom: spacer(3);
+        }
+    }
+
+    .v7-benefits-list & {
+        width: 22px;
+        min-width: initial;
+        height: 22px;
+        margin: 0 spacer(1.5) 0 0;
+    }
+
+    .v7-benefits-downloadable & {
+        @include breakpoint(only_tablet) {
+            margin-bottom: spacer(3);
+        }
+    }
+
+    .v7-case-study-single & {
+        min-width: 70px;
+        height: 70px;
+    }
+
+    &.no-margin-bottom {
+        margin-bottom: 0;
+    }
+
+    &.is-centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.v7-benefits-icon-img {
+    .v7-benefits-list &,
+    .v7-benefits-no-tiles & {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .v7-case-study-single & {
+        width: 70px;
+        height: 70px;
+        margin: auto;
+    }
+
+    // Re-coloring svg files to $color_ocean without re-uploading
+    // SVG original color should be #bcced6. Output is #2d67f7
+    .v7-single-feature & {
+        filter: invert(0.7) sepia(1) saturate(37) hue-rotate(196deg) brightness(1);
+    }
+}
+
+.v7-benefits-copy {
+    max-width: columns(3);
+
+    .v7-benefits-tiles:not(.v7-benefits-downloadable) & {
+        @include breakpoint(only_tablet) {
+            max-width: initial;
+            margin-left: $main_gap;
+            text-align: left;
+        }
+    }
+
+    .v7-benefits-downloadable & {
+        width: columns(3);
+
+        @include breakpoint(only_tablet) {
+            width: initial;
+        }
+    }
+
+    .v7-product-page & {
+        @include breakpoint(only_tablet) {
+            margin-left: $main_gap;
+            max-width: initial;
+            text-align: left;
+        }
+    }
+}

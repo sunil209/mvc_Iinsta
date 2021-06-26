@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="58" viewBox="0 0 100 58">
+    <defs>
+        <path id="b" d="M0 0h370v400H0z"/>
+        <filter id="a" width="102.2%" height="102%" x="-1.1%" y="-.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.0427438913 0 0 0 0 0.144743681 0 0 0 0 0.27649341 0 0 0 0.195991848 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(-135 -88)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#FFF" xlink:href="#b"/>
+        </g>
+        <path fill="#BCCED6" fill-rule="nonzero" d="M72.8 28.3L56.6 52l-1.5.9 1.8-2.6L67 34.1l-16.4 9.6-3.6 2.4-.5.8c-.9.8-1.7.7-1.7 2 0 .2 0 1.8 1.4 2.7-1.4-.9-1.4.2-1.4.4H15.5c0-19 15.4-34.6 34.4-34.6 9.3 0 17.3 4.1 23.5 10.1l-.6.8z" opacity=".2"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="2" d="M1.1 50.7C1.1 23.7 23 1.8 50 1.8s48.9 21.9 48.9 48.9M5 51h6.8M8.4 33.4l6.7 2.8M18 19l5.3 5.3M33 9l2.9 7.1M94.9 51h-6.8M91.8 34l-6.7 2.9M81.9 19l-5.3 5.3M67.7 9.3l-3 7M50 5.9v7.3"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="2" d="M55.1 54c-1 1.7-2.9 2.8-5 2.8-3.2 0-5.8-2.6-5.8-5.8 0-2.3 1.3-4.2 3.2-5.2"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="2" d="M46.4 46.4L70 30.9 55.1 54"/>
+    </g>
+</svg>

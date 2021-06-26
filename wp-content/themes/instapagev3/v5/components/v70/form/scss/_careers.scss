@@ -1,0 +1,5 @@
+.v7-form-careers {
+    @include breakpoint(large_tablet) {
+        max-width: 355px;
+    }
+}

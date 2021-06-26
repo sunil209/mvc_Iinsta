@@ -1,0 +1,49 @@
+.v7-feature-repeater-container-tile {
+    display: flex;
+    flex-direction: column;
+    padding: spacer(4) spacer(2);
+
+    @include breakpoint(tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 830px;
+        margin: auto;
+        padding: spacer(5) spacer(4);
+    }
+
+    @include breakpoint(large_tablet) {
+        padding: spacer(5) spacer(6);
+    }
+}
+
+.v7-feature-in-tile {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+
+    @include breakpoint(only_phone) {
+        margin-bottom: spacer(3.5);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint(tablet) {
+        width: 50%;
+
+        &:nth-child(4n+1),
+        &:nth-child(4n+2), {
+            margin-bottom: spacer(5);
+        }
+    }
+}
+
+.v7-feature-in-tile-title {
+    .v7 & {
+        @include breakpoint(only_tablet) {
+            font-size: $font_size_basic;
+        }
+    }
+}

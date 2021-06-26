@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16" height="9.88" viewBox="0 0 16 9.88" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bbced5;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="keyboard_arrow_down_copy_42" data-name="keyboard_arrow_down copy 42" class="cls-1" d="M 16.011 8 L 8.011 0 L 0.011 8 L 1.88 9.87 L 8.011 3.75 L 14.13 9.87 Z" transform="matrix(-1, 0, 0, -1, 16.021999, 9.87)"/>
+</svg>

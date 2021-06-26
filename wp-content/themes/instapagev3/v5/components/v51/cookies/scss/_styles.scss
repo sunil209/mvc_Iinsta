@@ -1,0 +1,129 @@
+$button_height: 29px;
+$color_cookie: #f98c24;
+$color_cookie_hover: #e98323;
+$color_cookie_text: #29313e;
+$font_family_cookie: 'Proxima Nova', sans-serif;
+
+.cookies-wrapper {
+    background: $color_leia;
+    padding: spacer(1.5) spacer(2.5) spacer(2.5);
+    color: $color_cookie_text;
+    border-bottom: 1px solid $color_cookie_text;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: map-get($z_index, cookies);
+    transform: translate(0, -200%);
+
+    &[data-state~=shown] {
+        transform: translate(0, 0%);
+    }
+
+    @include breakpoint(tablet) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: spacer(2) spacer(2.5);
+    }
+
+    @include breakpoint(large_tablet) {
+        justify-content: center;
+        padding: spacer(2) spacer(3);
+    }
+}
+
+.cookies-title {
+    font-size: $font_size_small;
+    margin-right: spacer(4.5);
+    line-height: 1.57;
+
+    @include breakpoint(tablet) {
+        font-size: $font_size_basic;
+        line-height: 1.5;
+    }
+}
+
+
+.cookies-title-desktop {
+    letter-spacing: 0.3px;
+    font-family: $font_family_cookie;
+
+    @include breakpoint(tablet) {
+        max-width: 475px;
+        margin-right: spacer(3);
+    }
+
+    @include breakpoint(large_tablet) {
+        max-width: 645px;
+        margin: 0 spacer(4) 0 0;
+    }
+}
+
+.cookie-button {
+    font-family: $font_family_cookie;
+    color: $color_leia;
+    font-size: $font_size_small;
+    text-transform: uppercase;
+    background-color: $color_cookie;
+    border-color: $color_cookie;
+    margin-top: spacer(1.5);
+    min-width: 110px;
+    padding: 3px;
+
+    @include breakpoint(tablet) {
+        margin: 0;
+        padding: 6px;
+    }
+
+    &:hover {
+        background-color: $color_cookie_hover;
+        border-color: $color_cookie_hover;
+    }
+}
+
+.cookie-link {
+    font-family: $font_family_cookie;
+    @include transition($transition_regular);
+    border-bottom: 1px solid;
+    padding-bottom: 1px;
+
+    &:hover {
+        color: $color_cookie;
+    }
+}
+
+.cookies-close {
+    color: $color_cookie_text;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+
+    @include breakpoint(tablet) {
+        $button_height: 36px;
+
+        border: 1px solid $color_cookie_text;
+        border-radius: 50%;
+        width: $button_height;
+        height: $button_height;
+        text-align: center;
+        line-height: $button_height - 1;
+        margin: auto 0;
+        top: 0;
+        bottom: 0;
+        right: 25px;
+        transition: $transition_slow;
+        font-size: 25px;
+
+        &:hover {
+            color: $color_leia;
+            background: $color_cookie_text;
+        }
+    }
+
+    @include breakpoint(large_tablet) {
+        right: 30px;
+    }
+}

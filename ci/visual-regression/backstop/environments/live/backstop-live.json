@@ -1,0 +1,222 @@
+{
+  "id": "regression_live_extended",
+  "viewports": [
+    {
+      "label": "Phone",
+      "width": 360,
+      "height": 480
+    },
+    {
+      "label": "Tablet",
+      "width": 768,
+      "height": 768
+    },
+    {
+      "label": "Laptop",
+      "width": 1430,
+      "height": 768
+    },
+    {
+      "label": "Desktop",
+      "width": 1880,
+      "height": 800
+    }
+  ],
+  "onReadyScript": "onReady.js",
+  "scenarios": [
+    {
+      "label": "Homepage_regression",
+      "url": "https://instapage.com",
+      "readySelector": ".lazyload",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Homepage-v1",
+      "url": "https://instapage.com/home",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Homepage-v2",
+      "url": "https://instapage.com/homepage",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Homepage-v3",
+      "url": "https://instapage.com/start",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Plans_regression",
+      "url": "https://instapage.com/plans",
+      "postInteractionWait": 4000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Enterprise_benefits_regression",
+      "url": "https://instapage.com/enterprise-benefits",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Product_collaboration_regression",
+      "url": "https://instapage.com/products/team-collaboration",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Product_enterprise_regression",
+      "url": "https://instapage.com/products/enterprise",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Product_page_migration_regression",
+      "url": "https://instapage.com/products/page-migration",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Solution_fb_ads_regression",
+      "url": "https://instapage.com/solutions/facebook-ads",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Features_regression",
+      "url": "https://instapage.com/features",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Blog_regression",
+      "url": "https://instapage.com/blog",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Blog_post_regression",
+      "url": "https://instapage.com/blog/personalization",
+      "postInteractionWait": 4000,
+      "delay": 1000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Customers_regression",
+      "url": "https://instapage.com/customers",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Customer_stories_regression",
+      "url": "https://instapage.com/customer-stories",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Guides_regression",
+      "url": "https://instapage.com/guides",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Privacy_policy_regression",
+      "url": "https://instapage.com/privacy-policy",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Newsroom_regression",
+      "url": "https://instapage.com/newsroom",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Integrations_regression",
+      "url": "https://instapage.com/integrations",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "About_us_regression",
+      "url": "https://instapage.com/about",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Enterprise_thank_you_regression",
+      "url": "https://instapage.com/enterprise-thank-you",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Contact_regression",
+      "url": "https://instapage.com/contact",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Careers_regression",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://instapage.com/careers",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Resources_regression",
+      "url": "https://instapage.com/resources",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "PCA_regression",
+      "url": "https://instapage.com/post-click-automation",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Partners_regression",
+      "url": "https://instapage.com/partners",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Partners-agency_regression",
+      "url": "https://instapage.com/partners/agency",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Marketing-dictionary_regression",
+      "url": "https://instapage.com/marketing-dictionary",
+      "postInteractionWait": 5000,
+      "misMatchThreshold" : 0.01
+    },
+    {
+      "label": "Press-kit_regression",
+      "url": "https://instapage.com/press-kit",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.01
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "../../puppeteer",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

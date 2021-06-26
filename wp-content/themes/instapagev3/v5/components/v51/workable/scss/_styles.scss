@@ -1,0 +1,165 @@
+.workable {
+	@include breakpoint(only_phone) {
+		position: relative;
+	}
+
+	@include breakpoint(desktop) {
+		max-width: columns(10);
+	}
+}
+
+.workable-jobs-group {
+	padding: spacer(2) 24px;
+	border-bottom: 1px solid $color_fog;
+
+	&:last-child {
+		border-bottom: none;
+		box-shadow: $shadow_1;
+	}
+
+	@include breakpoint(tablet) {
+		margin-top: spacer(2);
+		padding: spacer(3) spacer(5) spacer(3) spacer(4);
+		border-bottom: none;
+		border-radius: $border_radius_secondary;
+		box-shadow: $shadow_1;
+	}
+}
+
+.workable-jobs-counter {
+	display: inline-block;
+	flex-shrink: 0;
+	height: 30px;
+	width: 30px;
+	margin-left: spacer(2);
+	border-radius: 50%;
+	background-color: $color_ocean;
+	color: $color_white;
+	font-family: $font_family_secondary;
+	font-size: $font_size_basic;
+	line-height: 30px;
+	text-align: center;
+}
+
+.workable-group-head  {
+	cursor: pointer;
+
+	&:hover {
+		.workable-group-head-title {
+			color: $color_ocean;
+		}
+	}
+}
+
+.workable-group-head-title {
+	color: $color_dark;
+	font-family: $font_family_secondary;
+	font-size: $font_size_basic;
+
+	@include breakpoint(tablet) {
+		font-size: $font_size_large;
+	}
+}
+
+.workable-job-entry {
+	display: flex;
+	margin-top: spacer(3);
+	padding-left: spacer(2);
+	position: relative;
+
+	&:before {
+		display: block;
+		color: $color_ocean;
+		font-size: 32px;
+		content: "\2022\0020";
+		position: absolute;
+		left: 0;
+		top: -4px;
+		line-height: 1;
+	}
+}
+
+.workable-job-title {
+	font-family: $font_family_primary;
+	padding-right: spacer(1);
+	color: $color_slate;
+
+	@include breakpoint(tablet) {
+		font-size: $font_size_large;
+	}
+}
+
+.workable-view-job {
+	font-size: $font_size_small;
+	font-weight: $font_weight_semibold;
+	text-transform: uppercase;
+	color: $color_ocean;
+	white-space: nowrap;
+	line-height: 1;
+	margin-top: spacer(0.5);
+	margin-left: auto;
+
+	@include breakpoint(tablet) {
+		font-size: $font_size_basic;
+	}
+}
+
+.workable-sort-by {
+	border-bottom: 1px solid $color_fog;
+
+	@include breakpoint(tablet) {
+		display: flex;
+		margin-bottom: 39px;
+	}
+}
+
+.workable-sort-by-label {
+	 @include breakpoint(tablet) {
+		display: block;
+		margin: auto 0;
+		font-family: $font_family_secondary;
+		font-size: $font_size_basic;
+		color: $color_grey;
+		padding-left: spacer(4);
+	}
+}
+
+.workable-sorting-list {
+	margin-left: auto;
+	margin-bottom: -1px;
+	// NOTE: Flex used because when usign display: inline-block whitespaces matters
+	// and 50% next to each other doesnt work
+	display: flex;
+}
+
+.workable-sorting-list-item {
+	font-size: $font_size_basic;
+	padding: spacer(2) spacer(4);
+	cursor: pointer;
+	color: $color_fog;
+	font-family: $font_family_secondary;
+	width: 50%;
+	text-align: center;
+
+	@include breakpoint(tablet) {
+		min-width: 180px;
+	}
+
+	&:hover {
+		color: $color_dark;
+	}
+
+	&[data-state~="active"] {
+		color: $color_dark;
+		box-shadow: inset 0 -4px 0 0 $color_ocean;
+	}
+}
+
+.workable-footnote {
+	color: $color_dark;
+	text-align: center;
+
+	@include breakpoint(only_phone) {
+		padding: 0 24px;
+	}
+}

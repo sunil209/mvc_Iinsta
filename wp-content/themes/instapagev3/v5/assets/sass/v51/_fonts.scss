@@ -1,0 +1,73 @@
+@font-face {
+	font-family: 'Montserrat';
+	font-display: swap;
+	src:
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/Montserrat-Regular.#{$asset_infix}.eot') format('embedded-opentype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/Montserrat-Regular.#{$asset_infix}.woff2') format('woff2'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/Montserrat-Regular.#{$asset_infix}.woff') format('woff'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/Montserrat-Regular.#{$asset_infix}.ttf') format('truetype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/Montserrat-Regular.#{$asset_infix}.svg#Montserrat-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-display: swap;
+	src: url('/wp-content/themes/instapagev3/v5/assets/fonts/Montserrat-Bold.#{$asset_infix}.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-display: swap;
+	src:
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-RegularIt.#{$asset_infix}.eot') format('embedded-opentype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-RegularIt.#{$asset_infix}.woff2') format('woff2'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-RegularIt.#{$asset_infix}.woff') format('woff'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-RegularIt.#{$asset_infix}.ttf') format('truetype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-RegularIt.#{$asset_infix}.svg#ProximaNova-RegularIt') format('svg');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-display: swap;
+	src:
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Regular.#{$asset_infix}.eot') format('embedded-opentype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Regular.#{$asset_infix}.woff2') format('woff2'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Regular.#{$asset_infix}.woff') format('woff'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Regular.#{$asset_infix}.ttf') format('truetype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Regular.#{$asset_infix}.svg#ProximaNova-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-display: swap;
+	src:
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Semibold.#{$asset_infix}.eot') format('embedded-opentype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Semibold.#{$asset_infix}.woff2') format('woff2'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Semibold.#{$asset_infix}.woff') format('woff'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Semibold.#{$asset_infix}.ttf') format('truetype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/ProximaNova-Semibold.#{$asset_infix}.svg#ProximaNova-Semibold') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Material Icons';
+	font-display: swap;
+	font-style: normal;
+	font-weight: 400;
+	src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
+	src: local('Material Icons'),
+		local('MaterialIcons-Regular'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/MaterialIcons-Regular.woff') format('woff'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/MaterialIcons-Regular.ttf') format('truetype'),
+		url('/wp-content/themes/instapagev3/v5/assets/fonts/MaterialIcons-Regular.svg#material-icons') format('svg');
+}

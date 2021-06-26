@@ -1,0 +1,71 @@
+// BASE COMPONENT
+//	.v7-panel-container
+// VARIANTS
+//	.v7-double-container
+//	.v7-single-container
+
+.v7-panel-container {
+    @include breakpoint(tablet) {
+        @include css-grid(1);
+        grid-row-gap: $main_gap;
+    }
+
+    @include breakpoint(large_tablet) {
+        grid-template-columns: repeat(3, 300px);
+        justify-content: center;
+    }
+
+    @include breakpoint(desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .v7-flat-panel-section & {
+        @include breakpoint(tablet) {
+            @include css-grid(2);
+            grid-row-gap: $main_gap;
+        }
+
+        @include breakpoint(large_tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+.v7-double-panel-container {
+    @include breakpoint(large_tablet) {
+        @include css-grid(2);
+        grid-row-gap: $main_gap;
+        grid-template-columns: repeat(2, 455px);
+        justify-content: center;
+    }
+
+    @include breakpoint(desktop) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .slick-track &.slick-slide {
+        flex-direction: column;
+        // NOTE: Space for box-shadow to fit inside a slide.
+        padding: 0 2px spacer(1.5);
+
+        @include breakpoint(large_tablet) {
+            @include css-grid(2);
+        }
+    }
+}
+
+.v7-single-panel-container {
+    margin-bottom: $main_gap;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .v7-featured-articles-slider:not(.slick-initialized) & {
+        display: none;
+
+        &:first-child {
+            display: block;
+        }
+    }
+}

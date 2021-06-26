@@ -1,0 +1,43 @@
+// FIXME: This is a workaround to deal with .editable-content a:not(.btn) specificity. Fix that first, then come back here.
+.editable-content .quick-links-list {
+	font-size: $font_size_small;
+	counter-reset: number;
+	margin: spacer(1) 0 0;
+	list-style: none;
+
+	@include breakpoint(tablet) {
+		column-count: 2;
+	}
+
+	.level-1 {
+		margin-left: 0;
+		padding: spacer(0.5) 0;
+		counter-increment: number;
+
+		@include breakpoint(large_tablet) {
+			padding: 3px 0;
+		}
+
+		// FIXME: This is a workaround to deal with .editable-content a:not(.btn) specificity. Fix that first, then come back here.
+		&:not(.bullet) > a::before {
+			content: counter(number)". ";
+		}
+	}
+
+	ul {
+		margin: 0 0 0 spacer(3);
+		list-style: none;
+	}
+
+	.level-2 {
+		padding: spacer(0.5) 0;
+	}
+
+	// FIXME: This is a workaround to deal with .editable-content a:not(.btn) specificity. Fix that first, then come back here.
+	a:not(.btn) {
+
+		&::before {
+			content: "\2022\0020";
+		}
+	}
+}

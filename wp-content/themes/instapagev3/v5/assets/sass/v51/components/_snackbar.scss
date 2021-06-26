@@ -1,0 +1,36 @@
+.snackbar {
+	display: none;
+	z-index: map-get($z_index, snackbar);
+	padding: spacer(2);
+	animation: slide-up-down 6s;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: -300px;
+	font-weight: $font_weight_semibold;
+	font-size: $font_size_large;
+	color: $color_leia;
+	background-color: $color_vader;
+
+	@include breakpoint(tablet) {
+		bottom: -270px;
+		max-width: 370px;
+		margin: auto;
+		right: 0;
+	}
+
+	&[data-state~="active"] {
+		display: flex;
+	}
+}
+
+.snackbar-message {
+	.v7 & {
+		color: $color_white;
+	}
+}
+
+.snackbar-close {
+	cursor: pointer;
+	margin: auto 0 auto auto;
+}

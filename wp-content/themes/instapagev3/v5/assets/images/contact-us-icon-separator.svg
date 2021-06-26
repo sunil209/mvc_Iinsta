@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="Poland.svg" width="70px" height="94px" viewBox="0 0 70 94" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #bcced6;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        opacity: 0.2;
+      }
+    </style>
+  </defs>
+  <rect style="fill-rule: evenodd; fill: rgb(188, 206, 214); stroke-width: 0;" x="34" width="2" height="94"/>
+</svg>

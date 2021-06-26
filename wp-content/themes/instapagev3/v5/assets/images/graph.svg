@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="69" height="68" viewBox="0 0 69 68">
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero" opacity=".5" transform="translate(0 5)">
+            <path fill="#BDCCD4" d="M66.64 1.57v2.72H1.36V1.57h65.28zM68 .21H0v5.44h68V.21z"/>
+            <path fill="#BDCCD4" d="M3.4 4.29v1.36h61.2V4.29z"/>
+            <path fill="#BCCED6" d="M53.72 24.01h1.36v17.68h-1.36z"/>
+            <circle cx="13.6" cy="62.09" r="1" fill="#BDCCD4"/>
+            <circle cx="54.4" cy="62.09" r="1" fill="#BDCCD4"/>
+        </g>
+        <path stroke="#BCCED6" stroke-width="1.5" d="M67.31 9.97H.75V5.89h66.56zM33.95.23v4.98M64 10.61v34.07a2 2 0 0 1-2 2H6.17a2 2 0 0 1-2-2V10.61"/>
+        <circle cx="13.6" cy="33.77" r="2.72" stroke="#BCCED6" stroke-width="1.5"/>
+        <circle cx="33.95" cy="20.17" r="2.72" stroke="#BCCED6" stroke-width="1.5"/>
+        <circle cx="54.4" cy="26.97" r="2.72" stroke="#BCCED6" stroke-width="1.5"/>
+        <path stroke="#BCCED6" stroke-width="1.5" d="M4.17 24.59l7.62 7.15M15.95 32.4l15.33-10.53M36.72 20.93l15.12 5.11M56.61 24.59l7.14-6.8M34 22.89v23.46M54.4 30.27v16.08M13.6 36.49v10.2"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="1.5" d="M27.46 46.95L13.6 64.99v2.1M40.54 46.95L54.4 64.99v2.1"/>
+        <path fill="#BCCED6" fill-rule="nonzero" d="M4.17 25.78l7.05 5.96-.68 2.65 1.7 2.1 2.21.34 1.87-1.61.29-1.91.22-.91 14.79-10.02 2.89.51 2.21-1.42 14.74 4.9.22 1.9 2.04 1.7 2.01-.28 1.82-2.72-.72-1.84 6.92-6.54V45.2l-.85.89-5.78.26H6.55l-1.41-.56-.59-1.31-.09-17.35z" opacity=".2"/>
+    </g>
+</svg>

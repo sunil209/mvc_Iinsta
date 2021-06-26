@@ -1,0 +1,130 @@
+.v7-download-logo {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    .v7-download-logos-big & {
+        min-height: 160px;
+
+        @include breakpoint(tablet) {
+            min-height: 175px;
+        }
+
+        @include breakpoint(large_tablet) {
+            min-height: 230px;
+        }
+
+        @include breakpoint(desktop) {
+            min-height: 290px;
+        }
+    }
+
+    .v7-download-logos-small & {
+        width: 100%;
+
+        &::after {
+            content: "";
+            padding-bottom: 100%;
+        }
+    }
+}
+
+.v7-download-logo-border {
+    border: 2px solid $color_ice;
+}
+
+.v7-download-logo-title {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: $color_grey;
+    font-size: $font_size_small;
+
+    @include breakpoint(desktop) {
+        left: 25px;
+    }
+
+    .v7-bg-ocean &,
+    .v7-bg-dark-old & {
+        color: $color_white;
+    }
+}
+
+.v7-download-logos-big img {
+    width: 190px;
+
+    @include breakpoint(tablet) {
+        width: 210px;
+    }
+
+    @include breakpoint(large_tablet) {
+        width: 275px;
+    }
+
+    @include breakpoint(desktop) {
+        width: 345px;
+    }
+}
+
+.v7-download-logos-small img {
+    width: 58px;
+
+    @include breakpoint(tablet) {
+        width: 64px;
+    }
+
+    @include breakpoint(large_tablet) {
+        width: 85px;
+    }
+
+    @include breakpoint(desktop) {
+        width: 108px;
+    }
+}
+
+.v7-download-logo-assets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 146px;
+
+    img {
+        width: 53px;
+
+        @include breakpoint(large_tablet) {
+            width: 78px;
+        }
+
+        @include breakpoint(desktop) {
+            width: 92px;
+        }
+    }
+
+    &::after {
+        @include breakpoint(tablet) {
+            content: "";
+            padding-bottom: 100%;
+        }
+    }
+}
+
+.v7-download-logo-assets-title {
+    display: block;
+    margin-top: spacer(1);
+    color: $color_ocean;
+    font-size: $font_size_small;
+
+    @include breakpoint(tablet) {
+        margin-top: spacer(2);
+    }
+
+    @include breakpoint(large_tablet) {
+        margin-top: spacer(3);
+        font-size: $font_size_large;
+    }
+
+    @include breakpoint(desktop) {
+        margin-top: spacer(4);
+    }
+}

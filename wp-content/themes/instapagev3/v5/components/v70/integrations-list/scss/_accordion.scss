@@ -1,0 +1,95 @@
+.v7-integrations-category {
+    margin-bottom: spacer(5);
+    padding: 0 $content_padding;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// FIXME: we can remove nesting when v7 typography is seperated
+.v7-integrations-category-headline {
+    .v7 & {
+        @include breakpoint(only_phone) {
+            font-size: $font_size_xlarge;
+        }
+    }
+}
+
+.v7-integrations-group-wrapper {
+    @include breakpoint(only_phone) {
+        margin: 0 (- $content_padding);
+    }
+
+    @include breakpoint(only_tablet) {
+        margin: 0;
+    }
+}
+
+.v7-integration {
+    @include breakpoint(max_large_tablet) {
+        display: grid;
+        grid-template: 70px auto / 70px 1fr;
+        border-radius: $border_radius_secondary;
+        cursor: pointer;
+    }
+    
+    @include breakpoint(only_phone) {
+        margin-top: -1px;
+        padding: spacer(3) $content_padding;
+        border-top: 1px solid $color_fog;
+        border-bottom: 1px solid $color_fog;
+        border-radius: 0;
+    }
+
+    @include breakpoint(only_tablet) {
+        margin-bottom: spacer(2);
+        padding: spacer(3) spacer(4);
+        box-shadow: $shadow_1;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.v7-integration-icon,
+.v7-integration-copy {
+    @include breakpoint(max_large_tablet) {
+        margin-top: spacer(1);
+    }
+}
+
+.v7-integration-icon {
+    @include breakpoint(max_large_tablet) {
+        width: 50px;
+        height: 50px;
+        margin-right: spacer(2);
+    }
+}
+
+.v7-integration-description {
+    @include breakpoint(max_large_tablet) {
+        grid-column: 1 / span 2;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height $transition_slow cubic-bezier(0, 1, 0, 1), padding-top $transition_slow;
+    }
+
+    @include breakpoint(only_tablet) {
+        grid-column: 2;
+    }
+
+    .v7-integration-open & {
+        @include breakpoint(max_large_tablet) {
+            max-height: 60em;
+            transition: max-height $transition_very_slow ease-in-out;
+        }
+    }
+}
+
+.v7-integration-description-header {
+    @include breakpoint(max_large_tablet) {
+        display: none;
+    }
+}

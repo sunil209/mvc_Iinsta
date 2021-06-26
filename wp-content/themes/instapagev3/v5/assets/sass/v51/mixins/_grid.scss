@@ -1,0 +1,9 @@
+// NOTE: Use this mixins to position elements.
+// USAGE:
+//	@include css-grid(3, 100px);
+
+@mixin css-grid($columns, $column-gap: $main_gap) {
+	display: grid;
+	grid-template-columns: repeat($columns, 1fr);
+	grid-column-gap: $column-gap;
+}

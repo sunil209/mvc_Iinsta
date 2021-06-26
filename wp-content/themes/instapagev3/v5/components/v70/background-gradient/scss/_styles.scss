@@ -1,0 +1,81 @@
+.v7-gradient-bg {
+    @include breakpoint(tablet) {
+        position: relative;
+    }
+
+    &:before, &:after {
+        @include breakpoint(tablet) {
+            display: block;
+            position: absolute;
+            width: 100%;
+            background-color: $color_quartz;
+            content: '';
+            z-index: -1;
+        }
+    }
+
+    &:before {
+        @include breakpoint(tablet) {
+            height: 50px;
+            padding: spacer(3) 0 spacer(5);
+            clip-path: ellipse(110% 200% at 50% -100%);
+        }
+
+        @include breakpoint(large_tablet) {
+            clip-path: ellipse(80% 200% at 50% -100%);
+        }
+    }
+
+    &:after {
+        @include breakpoint(tablet) {
+            height: 680px;
+            background-image: linear-gradient(to bottom, $color_white, $color_quartz);
+        }
+    }
+}
+
+.v7-gradient-bg-overlapping {
+    &:after {
+        @include breakpoint(tablet) {
+            top: -610px;
+        }
+    }
+}
+
+.v7-feature-tile-background {
+    &:before {
+        @include breakpoint(tablet) {
+            top: 190px;
+        }
+    }
+
+    &:after {
+        @include breakpoint(tablet) {
+            top: -490px;
+        }
+    }
+}
+
+.v7-gradient-bg-above {
+    @include breakpoint(tablet) {
+        margin-bottom: spacer(16);
+    }
+
+    &:before {
+        @include breakpoint(tablet) {
+            top: -50px;
+        }
+    }
+
+    &:after {
+        @include breakpoint(tablet) {
+            top: -730px;
+        }
+    }
+
+    .v7-pca-section + & {
+        @include breakpoint(tablet) {
+            margin-bottom: spacer(8);
+        }
+    }
+}

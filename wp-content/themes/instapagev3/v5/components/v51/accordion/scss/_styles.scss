@@ -1,0 +1,106 @@
+// BASE COMPONENT
+//	.accordion
+// ELEMENTS
+//	.accordion-header
+//	.accordion-body
+//	.accordion-icon
+//  .accordion-group
+// VARIANTS
+//  .has-icon
+//  .accordion-search-content
+
+.accordion {
+	padding-top: spacer(2);
+	padding-bottom: spacer(2);
+	// NOTE: fix for android
+	-webkit-tap-highlight-color: transparent;
+
+	@include breakpoint(only_phone) {
+		box-shadow: none;
+		border-bottom: 1px solid $color_fog;
+		width: 100%;
+		margin: 0;
+
+		// NOTE: Sometimes we have group of accordions and there is a headline at the start.
+		&:first-child,
+		.division-header + & {
+			border-top: 1px solid $color_fog;
+		}
+	}
+
+	&:last-child {
+		margin-bottom: spacer(4);
+	}
+
+	.main-footer & {
+		margin-bottom: 0;
+		padding: spacer(1.5) spacer(2.5);
+		border-top: none;
+
+		@include breakpoint(tablet) {
+			padding-left: 0;
+			padding-right: 0;
+			box-shadow: none;
+			border-bottom: 1px solid $color_fog;
+		}
+	}
+}
+
+.accordion-header {
+	display: flex;
+	align-items: center;
+}
+
+.accordion-body {
+	.has-icon & {
+		@include breakpoint(large_tablet) {
+			margin-left: spacer(7);
+		}
+	}
+}
+
+.accordion-icon {
+	margin-left: auto;
+	font-size: 32px;
+	color: $color_kylo;
+
+	.main-footer & {
+		color: $color_grey;
+		font-size: $font_size_xlarge
+	}
+
+	.workable & {
+		position: relative;
+		right: -8px;
+		color: $color_fog;
+	}
+}
+
+// NOTE: Accordions get full width on mobiles. We need to add negative margins so we don't need to change layout markup.
+.accordion-group {
+	grid-area: content;
+	margin-left: - spacer(2);
+	margin-right: - spacer(2);
+
+	@include breakpoint(tablet) {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	@include breakpoint(large_tablet) {
+		// NOTE: When there is only one item, we want it to stick to the top of the content.
+		grid-area: topbar;
+	}
+
+	.main-footer & {
+		@include breakpoint(only_phone) {
+			margin-left: - 24px;
+			margin-right: - 24px;
+		}
+	}
+}
+
+// NOTE: Workaround for filtered search result that aren't .accordion:last-child
+.accordion-search-content > div {
+	margin-bottom: spacer(4);
+}

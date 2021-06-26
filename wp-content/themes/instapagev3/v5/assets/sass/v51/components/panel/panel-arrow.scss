@@ -1,0 +1,23 @@
+.panel-arrow {
+	padding: 0 spacer(3);
+}
+
+.panel-arrow-icon {
+	display: none;
+
+	@include breakpoint(tablet) {
+		display: block;
+		margin: auto 0;
+		height: 42px;
+		position: absolute;
+		right: 30px;
+		top: 0;
+		bottom: 0;
+		color: $color_r2d2;
+		font-size: 42px;
+	}
+
+	@include breakpoint(large_tablet) {
+		right: 50px;
+	}
+}

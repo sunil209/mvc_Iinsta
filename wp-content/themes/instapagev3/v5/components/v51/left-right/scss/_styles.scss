@@ -1,0 +1,206 @@
+/*
+BASE COMPONENT
+	.left-right-section
+ELEMENTS
+	.left-right-text
+	.left-right-text-top (somethimes text needs to be align to top of container)
+	.left-right-img-box
+	.left-right-img
+	.left-right-badge
+LAYOUTS
+	.left-right-column
+*/
+
+
+// Placeholder
+%left-image {
+	.left-right-text {
+		@include breakpoint(desktop) {
+			max-width: columns(9);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@include breakpoint(large_desktop) {
+			margin-left: 0;
+		}
+	}
+
+	.left-right-img {
+		@include breakpoint(large_tablet) {
+			right: 50px;
+			left: auto;
+		}
+	}
+
+	.left-right-img-box {
+		@include breakpoint(large_tablet) {
+			order: 0;
+		}
+	}
+}
+
+.left-right-section {
+	padding-top: spacer(8);
+
+	.division-header + & {
+		padding-top: 0;
+		margin-top: - spacer(.5);
+	}
+
+	@include breakpoint(large_tablet) {
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+
+	&:last-child {
+		padding-bottom: spacer(8);
+	}
+
+	// NOTE: styling for img on left
+	.left-right-even &:nth-child(even) {
+		@extend %left-image;
+	}
+
+	.left-right-odd &:nth-child(odd) {
+		@extend %left-image;
+	}
+
+	.left-right-top & {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+
+		@include breakpoint(large_tablet) {
+			flex-direction: row;
+			text-align: initial;
+		}
+	}
+}
+
+.left-right-column {
+	padding: 0 spacer(2);
+
+	@include breakpoint(tablet) {
+		padding: 0;
+	}
+
+	@include breakpoint(large_tablet) {
+		width: 50%;
+	}
+}
+
+.left-right-text {
+	@include breakpoint(tablet) {
+		padding: 0 spacer(8.5);
+	}
+
+	@include breakpoint(large_tablet) {
+		padding: 0 spacer(5);
+	}
+
+	@include breakpoint(desktop) {
+		padding: 0 spacer(8.5);
+		max-width: columns(9);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include breakpoint(large_desktop) {
+		margin-right: 0;
+	}
+}
+
+// NOTE: some text-box have to be align to top, not center
+.left-right-text-top {
+	@include breakpoint(large_tablet) {
+		align-self: flex-start;
+		padding-top: spacer(4);
+	}
+}
+
+.left-right-img-box {
+	margin-bottom: spacer(2);
+	overflow: hidden;
+	position: relative;
+
+	@include breakpoint(large_tablet) {
+		max-width: 900px;
+		margin-bottom: 0;
+		order: 1;
+		height: 700px;
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	@include breakpoint(desktop) {
+		max-width: initial;
+	}
+
+	.left-right-top & {
+		order: 2;
+		margin-top: spacer(5);
+
+		@include breakpoint(tablet) {
+			margin-top: spacer(6.5);
+		}
+
+		@include breakpoint(large_tablet) {
+			margin-top: initial;
+		}
+	}
+}
+
+.left-right-img {
+	max-width: 100%;
+
+	@include breakpoint(tablet) {
+		padding: 0 spacer(2);
+		display: block;
+		margin: 0 auto;
+	}
+
+	@include breakpoint(large_tablet) {
+		padding: 0;
+		max-width: initial;
+		margin-left: spacer(5);
+		position: absolute;
+	}
+}
+
+.left-right-logo {
+	margin-top: spacer(2);
+	max-height: 30px;
+
+	@include breakpoint(large_tablet) {
+		max-height: 40px;
+	}
+}
+
+.left-right-badge {
+	margin-bottom: spacer(0.5);
+	display: block;
+}
+
+.left-right-center {
+	text-align: center;
+
+	@include breakpoint(large_tablet) {
+		text-align: initial;
+	}
+}
+
+//NOTE: Video styling start
+.left-right-img-video {
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}
+
+.left-right-video {
+	@include breakpoint(tablet) {
+		max-height: 100%;
+	}
+}

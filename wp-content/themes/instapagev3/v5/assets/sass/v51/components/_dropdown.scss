@@ -1,0 +1,150 @@
+// BASE COMPONENT
+//	.dropdown
+// ELEMENTS
+//	.dropdown-trigger
+//	.dropdown-text
+//	.dropdown-list
+//	.dropdown-option
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-listing {
+	width: 100%;
+
+	@include breakpoint(tablet) {
+		width: columns(3);
+		margin-bottom: spacer(1.5);
+	}
+
+	.sidebar & {
+		margin: spacer(4) 0 spacer(8);
+
+		@include breakpoint(tablet) {
+			width: 100%;
+		}
+
+		@include breakpoint(large_tablet) {
+			display: none;
+		}
+	}
+}
+
+.dropdown-trigger {
+	cursor: default;
+	display: inline-block;
+	padding: spacer(1) 0;
+
+	// Dependeces playground!
+	.navbar[data-state~="sticky"] & {
+		padding: spacer(2.5) 0;
+	}
+
+	.dropdown-listing & {
+		border-bottom: 1px solid $color_kylo;
+		width: 100%;
+		padding: spacer(1.5) 0 spacer(.5);
+	}
+}
+
+.dropdown-text {
+	.navbar & {
+		letter-spacing: 1px;
+	}
+}
+
+.dropdown-list {
+	overflow: hidden;
+	transition: 0.2s all;
+	background-color: $color_leia;
+	box-shadow: $box_shadow_level_2;
+	border-radius: 3px;
+	opacity: 0;
+	max-height: 0;
+	position: absolute;
+	margin-top: spacer(-1);
+	z-index: map-get($z_index, dropdown);
+	left: 0;
+
+	.dropdown:hover &,
+	.is-open > & {
+		opacity: 1;
+		max-height: 60em;
+		margin-top: -3px;
+	}
+
+	// Dependecies playground!
+	// NOTE: Navbar options gets uppercase.
+	.navbar & {
+		text-transform: none;
+	}
+
+	.navbar[data-state~="sticky"] & {
+		border-radius: 0 0 3px 3px;
+	}
+}
+
+.dropdown-list-title {
+	color: $color_slate;
+	font-size: $font_size_small;
+	padding: spacer(1) spacer(2);
+	font-weight: $font_weight_semibold;
+}
+
+.dropdown-option {
+	white-space: nowrap;
+	width: 100%;
+	padding: spacer(1) spacer(5) spacer(1) spacer(2);
+	text-align: left;
+	color: $color_slate;
+	display: flex;
+	align-items: center;
+
+	&:hover {
+		background-color: $color_ice;
+	}
+
+	.dropdown-listing &:hover {
+		background-color: $color_r2d2;
+		color: $color_leia;
+	}
+
+	.with-icons & {
+		padding: 8px spacer(2) 8px 12px;
+	}
+}
+
+.dropdown-option-icon {
+	display: flex;
+	height: 18px;
+	width: 18px;
+	margin-right: spacer(1);
+	font-size: $font_size_basic;
+	color: $color_hansolo;
+	text-align: center;
+
+	img {
+		max-height: 100%;
+		max-width: 100%;
+		margin: auto;
+		display: block;
+	}
+}
+
+.dropdown-column {
+	.dropdown-two-columns & {
+		width: 268px;
+	}
+}
+
+.dropdown-two-columns {
+	display: flex;
+}
+
+.dropdown-listing-icon {
+	position: absolute;
+	right: 0;
+	top: 20px;
+}

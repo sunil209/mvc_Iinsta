@@ -1,0 +1,83 @@
+.v7-engagement-box {
+    position: relative;
+
+    @include breakpoint(max_large_tablet) {
+        padding-bottom: spacer(5);
+        background: transparent;
+        box-shadow: none;
+        text-align: center;
+    }
+
+    @include breakpoint(large_tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: spacer(6) spacer(4);
+        background-color: $color_white;
+    }
+
+    @include breakpoint(desktop) {
+        padding: spacer(4) spacer(6);
+    }
+}
+
+.v7-engagement-box-copy {
+    @include breakpoint(large_tablet) {
+        max-width: 320px;
+        margin-right: spacer(6);
+    }
+
+    @include breakpoint(desktop) {
+        max-width: initial;
+        margin-right: spacer(3);
+    }
+}
+
+.v7-engagement-box-image-wrapper {
+    width: 100%;
+    margin: auto;
+
+    @include breakpoint(large_tablet) {
+        position: relative;
+        z-index: 1;
+        width: 65%;
+    }
+
+    &::after {
+        @include breakpoint(large_tablet) {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            right: -40px;
+            width: calc(50% + 40px);
+            height: 175%;
+            transform: translateY(-50%);
+            background-color: $color_ocean;
+            background-color: var(--leading-color, #{$color_ocean});
+        }
+
+        @include breakpoint(desktop) {
+            right: -60px;
+            width: calc(50% + 60px);
+        }
+    }
+}
+
+.v7-engagement-box-image {
+    width: 100%;
+
+    @include breakpoint(tablet) {
+        width: initial;
+    }
+
+    @include breakpoint(large_tablet) {
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+
+    @include breakpoint(desktop) {
+        width: initial;
+    }
+}

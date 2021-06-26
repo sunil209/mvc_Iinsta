@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="70" viewBox="0 0 56 70">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#BCCED6" fill-rule="nonzero" d="M21.71 34.32v11.9h13.3v-15.4l-4.2-1.4-.7 1.4h-1.4l-.7-.7z" opacity=".2"/>
+        <path stroke="#BECED6" stroke-width="1.5" d="M54.6 6.7H1.4"/>
+        <circle cx="7.05" cy="4.05" r="1.05" fill="#BCCED6" fill-rule="nonzero"/>
+        <circle cx="11.05" cy="4.05" r="1.05" fill="#BCCED6" fill-rule="nonzero"/>
+        <circle cx="15.05" cy="4.05" r="1.05" fill="#BCCED6" fill-rule="nonzero"/>
+        <path fill="#BECED6" fill-rule="nonzero" d="M48.42 15.5v29.9H7.8V15.5h40.62zm1.5-1.5H6.3v32.9h43.62V14z"/>
+        <path fill="#BCCED6" fill-rule="nonzero" d="M55.282 5.9V2.4c0-.773-.643-1.4-1.436-1.4H2.154c-.381 0-.746.147-1.015.41-.27.263-.421.619-.421.99v3.5A.71.71 0 0 0 0 6.6c0 .387.321.7.718.7h54.564A.71.71 0 0 0 56 6.6a.71.71 0 0 0-.718-.7z" opacity=".2"/>
+        <path fill="#BECED6" fill-rule="nonzero" d="M37.46 54.7a3 3 0 0 1 3 3v.7a3 3 0 0 1-3 3h-18.9a3.06 3.06 0 0 1-3-3v-.7a3.06 3.06 0 0 1 3-3h18.9zm0-1.5h-18.9A4.55 4.55 0 0 0 14 57.75v.7A4.55 4.55 0 0 0 18.56 63h18.9A4.55 4.55 0 0 0 42 58.45v-.7a4.55 4.55 0 0 0-4.55-4.55h.01z"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="1.5" d="M19.61 58.12h17.5"/>
+        <rect width="28" height="9.8" x="14" y="53.22" fill="#BCCED6" fill-rule="nonzero" opacity=".2" rx="4.55"/>
+        <path stroke="#BACCD5" stroke-width="1.5" d="M21.71 34.32v11.9M35.01 30.82v15.4"/>
+        <path fill="#BECED6" fill-rule="nonzero" d="M52 1.5A2.51 2.51 0 0 1 54.5 4v62a2.51 2.51 0 0 1-2.5 2.5H4A2.51 2.51 0 0 1 1.5 66V4A2.51 2.51 0 0 1 4 1.5h48zM52 0H4a4 4 0 0 0-4 4v62a4 4 0 0 0 4 4h48a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4z"/>
+        <path stroke="#BACCD5" stroke-width="1.5" d="M31.13 29.65l3.57 1.16 8.5-6.12M16.72 32.29l4.99 2.03 5.84-4.07M6.95 37.06l5.8-4.26"/>
+        <path fill="#BECED6" fill-rule="nonzero" d="M14.71 30.87a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-1.5a2.48 2.48 0 1 0 0 4.96 2.48 2.48 0 0 0 0-4.96zM29.27 28.39a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-1.5a2.48 2.48 0 1 0 .02 4.96 2.48 2.48 0 0 0-.02-4.96z"/>
+        <path stroke="#BACCD5" stroke-linecap="round" stroke-width="1.5" d="M43.1 28.19l.18-3.62-4.02-.27"/>
+    </g>
+</svg>

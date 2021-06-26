@@ -1,0 +1,78 @@
+.podcast-search {
+    padding: spacer(8) 0 spacer(2.5);
+
+    @include breakpoint(tablet) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: spacer(6) 0 spacer(1);
+    }
+
+    @include breakpoint(desktop) {
+        padding-bottom: spacer(1);
+    }
+}
+
+.podcast-listing {
+    @include breakpoint(tablet) {
+        @include css-grid(2);
+        grid-row-gap: $main_gap;
+        margin-top: spacer(3);
+    }
+}
+
+.podcast-autor {
+    text-transform: uppercase;
+    display: block;
+    color: $color_vader;
+    white-space: normal;
+    margin-bottom: spacer(4);
+
+    @include breakpoint(desktop) {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        margin-bottom: 0;
+        max-width: 50%;
+    }
+}
+
+.podcast-form {
+    width: 100%;
+    margin-top: spacer(1);
+
+    @include breakpoint(tablet) {
+        @include columns(3);
+        margin: 0 0 0 auto;
+    }
+}
+
+.podcast-item {
+    height: 100%;
+}
+
+.podcast-title {
+    //NOTE: we don't have this size in variables
+    font-size: 32px;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+        text-align: left;
+    }
+}
+
+.post-soundcloud {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: $color_leia;
+    width: 100%;
+    border-top: 1px solid $color_yoda;
+    transition: $transition_regular;
+    z-index: map-get($z_index, select);
+    transform: translate(0, 100%);
+
+    &[data-state~="shown"] {
+        transform: translate(0, 0%);
+    }
+}

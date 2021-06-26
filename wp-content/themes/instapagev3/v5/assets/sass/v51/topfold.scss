@@ -1,0 +1,59 @@
+/* Base */
+/* Variables */
+@import 'variables';
+/* Mixins */
+@import 'mixins/breakpoints';
+@import 'mixins/grid';
+@import 'mixins/transition';
+@import 'mixins/column';
+@import 'mixins/text-smoothing';
+/* Functions */
+@import 'functions/spacer';
+@import 'functions/columns';
+/* Placeholders */
+@import 'placeholders/material-icons';
+/* Animations */
+@import 'animations/slide';
+@import 'animations/fade';
+@import 'animations/rotate';
+/* Misc */
+@import 'fonts';
+@import 'reset';
+@import 'global';
+@import 'typography';
+@import 'layouts';
+
+/* THEMES */
+@import '../v70/themes/products';
+@import '../../../components/v70/integrations-list/scss/default';
+
+/* List of all UI components */
+@import 'components/editable-content';
+@import 'components/quick-links';
+@import 'components/expandable-item';
+@import 'components/material-icons';
+@import 'components/icons';
+@import '../../../components/v51/footer/scss/styles';
+@import '../../../components/v51/navbar/scss/styles';
+@import '../../../components/v51/button/scss/styles';
+@import '../../../components/v51/benefits-section/scss/styles';
+@import '../../../components/v51/sidebar/scss/styles';
+@import 'components/hero-section';
+@import 'components/division';
+@import 'components/links';
+@import 'components/panel/styles';
+@import 'components/panel/panel-image';
+@import 'components/list';
+@import 'components/dropdown';
+@import 'components/snackbar';
+@import 'components/video';
+@import '../../../components/v51/social-bar/scss/styles';
+@import '../../../components/v51/cookies/scss/styles';
+@import 'components/sitemap';
+@import '../../../components/v51/search/scss/styles';
+
+/* v7.0 */
+@import '../v70/topfold.scss';
+
+/* Helpers */
+@import 'helpers';

@@ -1,0 +1,39 @@
+.v7-product-features-navigation {
+    display: none;
+
+    @include breakpoint(desktop) {
+        @include css-grid(3);
+        border-bottom: 1px solid $color_fog;
+    }
+}
+
+.v7-product-features-navigation-item {
+    @include breakpoint(desktop) {
+        // NOTE: We want this border to overlay border of container,
+        // which border height is 1px
+        margin-bottom: -1px;
+        padding: spacer(1) 0 spacer(2);
+        border-bottom: 4px solid transparent;
+        cursor: pointer;
+
+        &[data-state~="active"] {
+            border-bottom: 4px solid $color_ocean;
+        }
+
+        &:not([data-state~="active"]) {
+            color: $color_fog;
+        }
+    }
+}
+
+
+.v7-product-feature-slide-content {
+    width: 100%;
+    max-width: 970px;
+
+    .v7-product-feature-slide-title {
+        @include breakpoint(desktop) {
+            display: none;
+        }
+    }
+}

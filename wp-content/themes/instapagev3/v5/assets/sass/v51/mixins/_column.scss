@@ -1,0 +1,7 @@
+// NOTE: Use this mixins to define width of column.
+// USAGE:
+//	@include columns(3);
+
+@mixin columns($nr_columns) {
+	width: $nr_columns * 100px - 30px;
+}

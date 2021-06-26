@@ -1,0 +1,136 @@
+// ELEMENTS
+//  .v7-lp-filter-navigation
+//  .v7-lp-link-filter
+//  .v7-lp-link-filter-icon
+//  .v7-lp-template-desktop-wrapper
+//  .v7-lp-template-mobile-wrapper
+//  .v7-lp-template-desktop-img
+//  .v7-lp-template-mobile-img
+
+.v7-lp-filter-navigation {
+    border-bottom: 1px solid $color_fog;
+    color: $color_fog;
+}
+
+.v7-lp-link-filter {
+    display: inline-block;
+    // NOTE: We want this border to overlay border of container,
+    // which border height is 1px
+    margin-bottom: -1px;
+    padding: spacer(2);
+    border-bottom: 4px solid transparent;
+    font-family: $font_family_secondary;
+    font-weight: $font_weight_semibold;
+    text-transform: capitalize;
+
+    @include breakpoint(tablet) {
+        min-width: 155px;
+        padding: spacer(2) spacer(2.5);
+    }
+
+    &[data-state~="active"] {
+        border-bottom: 4px solid $color_ocean;
+        color: $color_dark;
+    }
+}
+
+.v7-lp-link-filter-icon {
+    position: relative;
+    top: 3px;
+    margin-right: spacer(0.5);
+    font-size: $font_size_xxlarge;
+    vertical-align: text-bottom;
+
+    [data-state~="active"] & {
+        color: $color_ocean;
+    }
+}
+
+.v7-lp-template-desktop-wrapper {
+    @include breakpoint(tablet) {
+        position: relative;
+        // NOTE: Width comes from 770px size from API plus border width
+        max-width: 790px;
+        margin: auto;
+        border: solid $color_ice;
+        border-width: 30px 10px 30px 10px;
+        border-radius: $border_radius_secondary;
+        box-shadow: $shadow_3;
+    }
+
+    &::after {
+        // NOTE: fake browser controls
+        @include breakpoint(tablet) {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 48px;
+            height: 10px;
+            background: center / 20px 20px repeat-x radial-gradient($color_white 30%, transparent 0);
+        }
+    }
+}
+
+[data-filter~="mobile"] {
+    position: relative;
+
+    &::after {
+        // NOTE: iphone notch
+        @include breakpoint(tablet) {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            width: 150px;
+            height: 15px;
+            transform: translateX(-50%);
+            border-radius: 0 0 35px 35px;
+            background: $color_ice;
+        }
+    }
+}
+
+.v7-lp-template-mobile-wrapper {
+    @include breakpoint(tablet) {
+        // NOTE: Width comes from 240px size from API plus border width
+        width: 264px;
+        max-height: 625px;
+        margin: auto;
+        overflow-y: scroll;
+        border: 12px solid $color_ice;
+        border-radius: 35px;
+        box-shadow: $shadow_3;
+    }
+}
+
+.v7-lp-template-desktop-img {
+    width: 100%;
+
+    @include breakpoint(tablet) {
+        display: block;
+        border-radius: $border_radius_primary;
+    }
+}
+
+.v7-lp-template-mobile-img {
+    display: block;
+    margin: auto;
+}
+
+.insta-sub-text {
+    
+    font-family: Montserrat,sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #2D67F7;
+    margin-top: 19px;
+}
+
+.page-id-66648 header.v7-content-md.text-center.v7-mb-30.v7-mb-md-40 p {
+    display: none;
+}

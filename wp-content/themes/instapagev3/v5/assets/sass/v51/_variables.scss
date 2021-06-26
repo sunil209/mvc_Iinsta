@@ -1,0 +1,118 @@
+// Colors
+$color_vader: #0D1A2B; //black
+$color_obiwan: #29313E; //dark grey
+$color_jedi: #7f919a; //grey
+$color_ewok: #D7E2E6; // medium grey
+$color_kylo: #BBCED5; //light grey
+$color_hansolo: #BCCED6; //light grey
+$color_skywalker: #1565C0; //dark blue
+$color_leia: #FFFFFF; //white
+$color_r2d2: #1E88E5; //blue
+$color_snoke: #1B80D9; //light blue
+$color_yoda: #F2F7F9; //creme
+$color_danger: #F44336; //red
+$color_success: #4CAF50; //green
+
+// Social icon background colors:
+$color-buffer: #2a2a2a;
+$color-linkedin: #229bd2;
+$color-twitter: #20a8e1;
+$color-facebook: #3a6ace;
+$color-placeholder: #7C8089;
+
+// Asset indicator. Important: asset_version must be a numeric value!
+$asset_version: 2406202001;
+$asset_tag: instapageasset;
+$asset_infix: $asset_tag + '.' + $asset_version;
+
+// Fonts
+$font_family_primary: 'Proxima Nova', sans-serif;
+$font_family_secondary: 'Montserrat', sans-serif;
+
+$font_weight_bold: 600;
+$font_weight_semibold: 500;
+$font_weight_normal: 400;
+
+$font_size_xsmall: 12px;
+$font_size_small: 14px;
+$font_size_basic: 16px;
+$font_size_large: 18px;
+$font_size_xlarge: 20px;
+$font_size_xxlarge: 24px;
+
+// Z-index
+$z_index: (
+	garbage: 0,
+	image: 1,
+	select: 100,
+	arrows: 999,
+	video: 9000,
+	header-video: 1100000,
+	popup: 10500,
+	modal-in-content: 10900,
+	navbar: 1000000,
+	navbar-expandable: 1000001,
+	navbar-sticky: 1000002,
+	navbar-social: 11003,
+	dropdown: 10000,
+	modal-holder: 1110000,
+	modal: 1110001,
+	snackbar: 1120000,
+	cookies: 1130000
+);
+
+// Box Shadow levels
+$box_shadow_level_1: 0 1px 1px 0 rgba(11, 37, 71, 0.2), 0 0 1px 0 rgba(10, 37, 70, 0.2);
+$box_shadow_level_2: 0 2px 2px 0 rgba(11, 37, 71, 0.2), 0 0 1px 0 rgba(10, 37, 70, 0.2);
+$box_shadow_level_3: 0 4px 3px 0 rgba(11, 37, 71, 0.2), 0 0 1px 0 rgba(10, 37, 70, 0.2);
+$box_shadow_level_4: 0 6px 6px 0 rgba(11, 37, 71, 0.2), 0 0 1px 0 rgba(10, 37, 70, 0.2);
+$box_shadow_level_5: 0 8px 8px 0 rgba(11, 37, 71, 0.2), 0 0 1px 0 rgba(10, 37, 70, 0.2);
+//NOTE: this shadow is used on every single blog post
+$box_shadow_single_post: 0 11px 21px 0 rgba(20, 33, 47, 0.13);
+
+//Transition duration
+$transition_fast: .1s;
+$transition_regular: .2s;
+$transition_slow: .5s;
+
+// Spaces
+$main_gap: 30px;
+
+// Content
+$content_width: 1170px;
+
+// Height of navbar
+$navbar_height: 72px;
+
+// Height of header
+$heigh_header: 575px;
+
+// Border
+$border_radius_primary: 3px;
+$border_radius_secondary: 10px;
+
+/* v7.0 */
+// Colors
+$color_ocean: #2d67f7;
+$color_sky: #3d84fe;
+$color_aqua: #0fc7eb;
+$color_purple: #a44fff;
+$color_mint: #3acb65;
+$color_orange: #f7b422;
+$color_red: #e84a4c;
+$color_dark: #273245;
+$color_slate: #45536b;
+$color_grey: #8b98a9;
+$color_fog: #bacee4;
+$color_ice: #e7f1fa;
+$color_snow: #ebf2fa;
+$color_white: #ffffff;
+$color_royal: #0c2086;
+$color_navy: #0d2999;
+$color_blue: #104ada;
+
+// Box Shadow levels
+$shadow_1: 0 4px 3px 0 rgba(34, 90, 182, 0.12), 0 0 1px 0 rgba(41, 92, 176, 0.25);
+$shadow_2: 0 6px 6px 0 rgba(34, 90, 182, 0.12), 0 0 1px 0 rgba(41, 92, 176, 0.25);
+$shadow_3: 0 8px 8px 0 rgba(34, 90, 182, 0.12), 0 0 1px 0 rgba(41, 92, 176, 0.25);
+$shadow_4: 0 10px 10px 0 rgba(34, 90, 182, 0.12), 0 0 1px 0 rgba(41, 92, 176, 0.25);

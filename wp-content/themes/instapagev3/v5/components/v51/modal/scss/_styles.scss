@@ -1,0 +1,66 @@
+// BASE COMPONENNT:
+//	.modal
+// VARIANTS:
+//	.modal-text
+// ElEMENTS
+//	.modal-element
+//	.modal-close
+//	.modal-title
+
+.modal {
+	z-index: map-get($z_index, modal-holder);
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	overflow-y: auto;
+	position: fixed;
+
+	@include breakpoint(tablet) {
+		padding: spacer(2.5);
+	}
+
+	@include breakpoint(large_tablet) {
+		//NOTE: fix for centering panel in modal
+		&:not([data-state~="hidden"]) {
+			display: flex;
+		}
+	}
+}
+
+.modal-text {
+	text-align: center;
+}
+
+.modal-element {
+	margin: auto;
+	z-index: map-get($z_index, modal);
+	padding: spacer(6) spacer(3);
+
+	@include breakpoint(large_tablet) {
+		padding: spacer(6);
+		width: columns(8);
+	}
+}
+
+.modal-close {
+	cursor: pointer;
+	color: $color_hansolo;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 26px;
+
+	@include breakpoint(tablet) {
+		top: 30px;
+		right: 30px;
+	}
+}
+
+.modal-title {
+	font-size: $font_size_xlarge;
+
+	@include breakpoint(tablet) {
+		font-size: $font_size_xxlarge;
+	}
+}

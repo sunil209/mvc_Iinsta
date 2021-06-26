@@ -1,0 +1,24 @@
+// BASE COMPONENNT:
+//	.faq
+// ElEMENTS
+//	.faq-term
+//	.faq-description
+
+.faq {
+	margin-top: spacer(5);
+}
+
+.faq-term {
+	font-family: $font_family_secondary;
+	font-size: $font_size_large;
+	margin-bottom: spacer(1);
+	
+	@include breakpoint(tablet) {
+		margin-bottom: spacer(.5);
+		font-size: $font_size_xlarge;
+	}
+}
+
+.faq-description {
+	margin-bottom: spacer(4);
+}

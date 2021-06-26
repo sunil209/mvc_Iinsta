@@ -1,0 +1,13 @@
+.v7-news {
+    @include breakpoint(large_tablet) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.v7-news-date {
+    @include breakpoint(large_tablet) {
+        display: block;
+        margin-top: auto;
+    }
+}

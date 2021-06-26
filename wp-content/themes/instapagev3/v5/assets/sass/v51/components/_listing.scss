@@ -1,0 +1,105 @@
+.listing-search {
+	@include breakpoint(tablet) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.listing-form {
+	@include breakpoint(tablet) {
+		width: columns(3.5);
+		margin-left: auto;
+	}
+}
+
+.listing-element {
+	box-shadow: none;
+	margin-left: - spacer(2);
+	margin-right: - spacer(2);
+
+	@include breakpoint(widescreen_phone) {
+		box-shadow: $box_shadow_level_2;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	@include breakpoint(large_tablet) {
+		display: flex;
+	}
+
+	&.webinar-countdown {
+		margin-bottom: spacer(6);
+
+		@include breakpoint(large_tablet) {
+			margin-bottom: spacer(8);
+		}
+	}
+}
+
+.listing-footer {
+	margin-top: spacer(2);
+
+	.webinar-listing & {
+		text-align: right;
+	}
+
+	@include breakpoint(widescreen_phone) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@include breakpoint(large_tablet) {
+		margin-top: auto;
+	}
+}
+
+.listing-link {
+	@include breakpoint(large_tablet) {
+		display: flex;
+	}
+}
+
+.listing-link-cta {
+	display: block;
+	text-align: right;
+	margin-top: spacer(2.5);
+
+	@include breakpoint(widescreen_phone) {
+		display: flex;
+		margin-top: 0;
+	}
+}
+
+.listing-button {
+	margin: 0 auto spacer(1);
+	display: block;
+}
+
+.listing-img {
+	width: 100%;
+
+	@include breakpoint(large_tablet) {
+		width: columns(6);
+		align-self: center;
+	}
+}
+
+.listing-text {
+	@include breakpoint(large_tablet) {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+	}
+
+	@include breakpoint(desktop) {
+		-webkit-line-clamp: 2;
+	}
+}
+
+.listing-no-results-icon {
+	display: block;
+	margin: auto;
+	padding-bottom: spacer(4);
+}

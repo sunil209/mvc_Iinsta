@@ -1,0 +1,13 @@
+// NOTE: This function prevents us from creating too much spacing exceptions and also eliminates "Magic Numbers" from our code.
+// USAGE:
+//	padding: spacer(1.5);
+// 	padding: spacer(1) 0;
+
+@function spacer($value) {
+	@if ($value * 2) % 1 != 0 {
+		@warn 'Spacer value must be a multiple of 0.5';
+		@return 'Spacer value must be a multiple of 0.5';
+	} @else {
+		@return 10px * $value;
+	}
+}

@@ -1,0 +1,90 @@
+.v7-tooltip {
+    display: none;
+
+    @include breakpoint(tablet) {
+        display: inline-block;
+        position: relative;
+    }
+
+    // NOTE: Fix for high specifity overwriting styles 😢
+    .checkbox-container &.v7-icon-help {
+        display: none;
+
+        @include breakpoint(tablet) {
+            display: inline-block;
+        }
+    }
+}
+
+.v7-tooltip-wrapper {
+    @include breakpoint(tablet) {
+        display: flex;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        bottom: 172%;
+        left: 50%;
+        justify-content: center;
+        width: 248px;
+        transform: translateX(-50%);
+        transition: $transition_fast;
+        transition-delay: 200ms;
+        opacity: 0;
+    }
+
+    &::after {
+        @include breakpoint(tablet) {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -8px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: $color_white transparent transparent transparent;
+        }
+    }
+
+    .v7-tooltip:hover & {
+        @include breakpoint(tablet) {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .v7-pricing-card-expanded:nth-child(2) & {
+        @include breakpoint(tablet) {
+            width: 100px;
+        }
+
+        @include breakpoint(large_tablet) {
+            width: 248px;
+        }
+    }
+}
+
+.v7-tooltip-text {
+    @include breakpoint(tablet) {
+        padding: spacer(1) spacer(2);
+        border-radius: $border_radius_primary;
+        background-color: $color_white;
+        box-shadow: $shadow_2;
+        color: $color_slate;
+        font-family: $font_family_primary;
+        font-size: $font_size_small;
+        line-height: 1.42;
+        text-align: left;
+        white-space: initial;
+        cursor: text;
+    }
+
+    .v7-pricing-card-expanded:nth-child(2) & {
+        @include breakpoint(tablet) {
+            margin-left: spacer(-5);
+        }
+
+        @include breakpoint(large_tablet) {
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="70" viewBox="0 0 52 70">
+    <g fill="none" fill-rule="evenodd" transform="translate(1)">
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M40.14 20.38v4.38c0 8.362-6.778 15.14-15.14 15.14-8.362 0-15.14-6.778-15.14-15.14v-4.38"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.86 20.38V.94h30.28v19.44"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.86 6.51H.72v11.23s1.67 8.77 9.42 9.93M40.14 6.51h9.14v11.23s-1.67 8.77-9.42 9.93M22.17 39.9h5.61v15.18h-5.61z"/>
+        <rect width="16.83" height="4.88" x="16.57" y="55.08" stroke="#BCCED6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" rx="2.44"/>
+        <rect width="16.83" height="4.88" x="16.57" y="55.08" fill="#BCCED6" fill-rule="nonzero" opacity=".2" rx="2.44"/>
+        <rect width="23.75" height="9.01" x="13.1" y="59.93" stroke="#BCCED6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" rx="2.44"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="1.5" d="M25 21.67l4.63 3.38-1.76-5.5 4.64-3.25h-5.64L25 10.66l-1.88 5.64h-5.63l4.63 3.25-1.76 5.5z"/>
+    </g>
+</svg>

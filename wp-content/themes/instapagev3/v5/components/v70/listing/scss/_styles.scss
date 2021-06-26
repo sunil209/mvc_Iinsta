@@ -1,0 +1,29 @@
+.v7-listing-header {
+    @include breakpoint(large_tablet) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.v7-listing-title {
+    @include breakpoint(large_tablet) {
+        grid-column-start: 2;
+        margin-bottom: 0;
+    }
+
+    .v7-search-listing & {
+        @include breakpoint(large_tablet) {
+            grid-column: 1 / 4;
+        }
+    }
+}
+
+.v7-dropdown-listing {
+    @include breakpoint(large_tablet) {
+        justify-self: end;
+    }
+
+    .v7-search-listing & {
+        display: none
+    }
+}

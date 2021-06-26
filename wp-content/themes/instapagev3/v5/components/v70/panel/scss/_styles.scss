@@ -1,0 +1,321 @@
+// BASE COMPONENT
+//	.v7-panel-layout
+// ELEMENTS
+//	.v7-panel-image-link
+//	.v7-panel-logo-link
+//	.v7-panel-image
+//	.v7-panel-copy
+//	.v7-panel-copy-short
+//	.v7-panel-label
+//	.v7-panel-title
+//	.v7-panel-text
+//	.v7-panel-cta
+//	.v7-panel-footer
+
+.v7-panel-layout {
+    justify-content: flex-start;
+
+    .v7-panel-container & {
+        max-width: 370px;
+
+        @include breakpoint(only_tablet) {
+            max-width: initial;
+            flex-direction: row;
+            align-items: stretch;
+        }
+    }
+
+    .v7-single-panel-container & {
+        @include breakpoint(large_tablet) {
+            flex-direction: row;
+        }
+    }
+
+    .v7-featured-articles-slider & {
+        width: 100%;
+    }
+}
+
+.v7-panel-image-link {
+    position: relative;
+    width: 100%;
+
+    .v7-panel-container & {
+        @include breakpoint(only_tablet) {
+            width: initial;
+        }
+    }
+}
+
+.v7-panel-image-overlay {
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: $transition_regular;
+        opacity: 0;
+        background: rgba(45, 102, 247, 0.84);
+    }
+
+    &:hover:after {
+        opacity: 1;
+    }
+}
+
+.v7-panel-logo-link {
+    width: 100%;
+
+    @include breakpoint(only_phone) {
+        height: 155px;
+    }
+
+    @include breakpoint(only_tablet) {
+        padding: 0;
+        width: 345px;
+        height: 100%;
+    }
+
+    @include breakpoint(large_tablet) {
+        padding: spacer(3) spacer(3) 0;
+    }
+}
+
+.v7-panel-image {
+    .v7-panel-container & {
+        @include breakpoint(only_tablet) {
+            width: 345px;
+            height: 100%;
+        }
+    }
+}
+
+.v7-panel-image > img {
+    .v7-panel-container & {
+        @include breakpoint(only_tablet) {
+            object-fit: cover;
+        }
+    }
+
+    .v7-panel-logo-link & {
+        @include breakpoint(only_tablet) {
+            width: initial;
+            object-fit: contain;
+        }
+    }
+
+    .v7-single-panel-container & {
+        @include breakpoint(large_tablet) {
+            border-radius: $border_radius_secondary 0 0 $border_radius_secondary;
+        }
+    }
+}
+
+.v7-panel-copy {
+    width: 100%;
+    position: relative;
+
+    @include breakpoint(only_phone) {
+        padding: spacer(2.5) spacer(2);
+    }
+
+    @include breakpoint(large_tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 100%;
+        padding: spacer(2) spacer(2) spacer(3);
+    }
+
+    @include breakpoint(desktop) {
+        padding: spacer(3);
+    }
+
+    .v7-panel-container & {
+        @include breakpoint(only_tablet) {
+            width: calc(100% - 345px);
+            padding: spacer(2) spacer(3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    .v7-double-panel-container & {
+        @include breakpoint(tablet) {
+            padding: spacer(3) spacer(3) spacer(3.5);
+        }
+
+        @include breakpoint(desktop) {
+            padding: spacer(3.5) spacer(4);
+        }
+    }
+
+    .v7-single-panel-container & {
+        @include breakpoint(tablet) {
+            padding: spacer(3) spacer(3) spacer(3.5);
+        }
+
+        @include breakpoint(large_tablet) {
+            padding: spacer(2) spacer(4);
+        }
+
+        @include breakpoint(desktop) {
+            height: 285px;
+            padding: spacer(3.5) spacer(4);
+        }
+    }
+
+    .v7-featured-articles-slider & {
+        @include breakpoint(max_large_tablet) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+    }
+}
+
+.v7-panel-copy-short {
+    .v7-panel-container & {
+        @include breakpoint(tablet) {
+            justify-content: center;
+        }
+    }
+}
+
+.v7-panel-label {
+    color: $color_slate;
+    font-size: $font_size_small;
+    text-transform: uppercase;
+}
+
+.v7-panel-title {
+    .v7-panel-container &,
+    .v7-double-panel-container & {
+        font-size: $font_size_basic;
+    }
+
+    .v7-panel-container & {
+        @include breakpoint(desktop) {
+            font-size: $font_size_large;
+        }
+    }
+
+    .v7-single-panel-container & {
+        @include breakpoint(tablet) {
+            font-size: $font_size_xxlarge;
+        }
+
+        @include breakpoint(large_tablet) {
+            font-size: $font_size_xlarge;
+        }
+
+        @include breakpoint(desktop) {
+            font-size: $font_size_xxlarge;
+        }
+    }
+
+    .v7-double-panel-container & {
+        @include breakpoint(tablet) {
+            font-size: $font_size_xxlarge;
+        }
+    }
+}
+
+.v7-panel-text {
+    margin-top: spacer(1.5);
+
+    @include breakpoint(large_tablet) {
+        margin-top: 0;
+    }
+
+    // FIXME: Delete .v7 and move up after v51 typography is out. Needed for higher specificity.
+    .v7 & {
+        font-size: $font_size_basic;
+    }
+
+    .v7 h2 + &,
+    .v7 h4 + & {
+        margin-top: spacer(1);
+    }
+
+    .v7-panel-copy-long & {
+        @include breakpoint(only_tablet) {
+            width: 295px;
+            margin-top: spacer(1);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
+
+.v7-panel-cta {
+    padding-top: spacer(2);
+
+    .v7-panel-container & {
+        @include breakpoint(only_tablet) {
+            text-align: right;
+        }
+    }
+
+    &.v7-panel-label-cta {
+        padding-top: spacer(1.5);
+
+        @include breakpoint(tablet) {
+            padding-top: spacer(1);
+        }
+
+        @include breakpoint(desktop) {
+            padding-top: spacer(2);
+        }
+    }
+
+    .v7-single-panel-container & {
+        @include breakpoint(max_large_tablet) {
+            text-align: left;
+        }
+
+        @include breakpoint(large_tablet) {
+            display: block;
+            margin-right: 0;
+            margin-left: auto;
+        }
+    }
+
+    .v7-panel-footer & {
+        @include breakpoint(only_phone) {
+            align-self: flex-end;
+        }
+
+        @include breakpoint(tablet) {
+            padding-top: 0;
+        }
+    }
+}
+
+.v7-panel-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .v7-single-panel-container & {
+        @include breakpoint(tablet) {
+            padding-top: spacer(1.5);
+        }
+
+        @include breakpoint(desktop) {
+            padding-top: spacer(3);
+        }
+    }
+}

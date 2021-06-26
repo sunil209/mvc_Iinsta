@@ -1,0 +1,137 @@
+.dropdown {
+	position: relative;
+	font-size: $font_size_xsmall;
+	display: inline-block;
+}
+
+[class*="dropdown-trigger"] {
+	cursor: pointer;
+}
+
+.dropdown-trigger-hover {
+	padding: 13px 0;
+
+	.navbar[data-state~="sticky"] & {
+		padding: spacer(3) 0;
+	}
+}
+
+// NOTE: We already have better solution for this in Spock v5.1
+.dropdown-hover:hover {
+	& > .dropdown-list {
+		@extend %show-dropdown;
+	}
+}
+
+.dropdown-trigger-hover:hover {
+	& + .dropdown-list {
+		@extend %show-dropdown;
+	}
+}
+
+.dropdown-list {
+	height: 0;
+	position: absolute;
+	z-index: map-get($z_index, dropdown);
+	background-color: $color_leia;
+	top: calc(100% + 13px);
+	box-shadow: $box_shadow_quaternary;
+	border-radius: $border_radius_primary;
+	@include transition($transition_regular, height, opacity);
+	opacity: 0;
+	overflow: hidden;
+	// NOTE: we need to reset it here.
+	letter-spacing: normal;
+
+	&.with-icons {
+		width: 340px;
+	}
+
+	&.two-columns {
+		display: flex;
+		width: 680px;
+	}
+
+	.form-field & {
+		top: 0;
+	}
+
+	.navbar & {
+		text-transform: none;
+	}
+
+	.navbar[data-state~="sticky"] & {
+		border-radius: 0 0 5px 5px;
+		top: calc(100% + 28px);
+	}
+
+	.is-open > & {
+		@extend %show-dropdown;
+	}
+}
+
+.dropdown-column {
+	width: 340px;
+}
+
+.dropdown-option {
+	color: $color_slate;
+	display: inline-block;
+	width: 100%;
+	padding: 12px spacer(5) 12px spacer(2);
+	cursor: pointer;
+	@include transition($transition_regular, color, background-color);
+	white-space: nowrap;
+
+	// NOTE: Let's make some border when there is two columns. Consider changing this solution when column number will increase.
+	.two-columns > .dropdown-column:first-child & {
+		border-right: 1px solid #d3dee2;
+	}
+
+	.with-icons & {
+		display: flex;
+		white-space: normal;
+		padding: spacer(2);
+	}
+
+	&:hover {
+		background-color: $color_ice;
+		color: $color_slate;
+	}
+
+	&:first-child {
+		border-radius: $border_radius_primary $border_radius_primary 0 0;
+
+		.navbar[data-state~="sticky"] & {
+			border-radius: 0;
+		}
+	}
+
+	&:last-child {
+		border-radius: 0 0 $border_radius_primary $border_radius_primary;
+	}
+}
+
+.dropdown-list-title {
+	color: $color_dark;
+	font-size: $font_size_small;
+	padding: spacer(2);
+}
+
+.dropdown-option-icon {
+	margin-right: spacer(2);
+	max-width: 48px;
+}
+
+.dropdown-option-desc {
+	font-size: $font_size_xsmall;
+	margin-top: spacer(0.5);
+	line-height: 1.33;
+	// NOTE: New color. It's going to be a standard "less important" color in v5.1
+	color: #7f919a;
+}
+
+%show-dropdown {
+	opacity: 1;
+	height: auto;
+}

@@ -1,0 +1,408 @@
+// BASE COMPONENT:
+//	.v7-btn
+// MODIFICATIONS:
+//  .v7-btn-small
+//	.v7-btn-cta
+//  .v7-btn-ghost
+//  .v7-btn-ghost-cta
+//  .v7-btn-white
+//  .v7-btn-flat
+//  .v7-btn-flat-black
+//  .v7-btn-play-icon
+
+$padding_button_large: 14px 30px;
+$padding_button_regular: 14px 30px;
+$padding_button_small: 10px 20px;
+$play_icon_large: 22px;
+$play_icon_regular: 19px;
+$play_icon_small: 18px;
+
+@mixin button_sizing($padding, $font_size) {
+    padding: $padding;
+    font-size: $font_size;
+}
+
+@mixin button_coloring($border_color, $background_color, $font_color) {
+    border: 1px solid $border_color;
+    background-color: $background_color;
+    color: $font_color;
+}
+
+@mixin play_icon_sizing($size) {
+    width: $size;
+    height: $size;
+}
+
+.v7-btn {
+    display: inline-block;
+    position: relative;
+    @include button_sizing($padding_button_small, $font_size_small);
+    outline: none;
+    cursor: pointer;
+    font-family: $font_family_secondary;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color $transition_regular,
+                border-color $transition_regular,
+                color $transition_regular;
+
+    @include breakpoint(desktop) {
+        @include button_sizing($padding_button_regular, $font_size_basic);
+    }
+
+    .v7-header-solid &,
+    .v7-header &,
+    .v7-cta & {
+        width: 190px;
+    
+        @include breakpoint(desktop) {
+            width: 210px;
+        }
+    }
+
+    .v7-careers & {
+        width: 225px;
+
+        @include breakpoint(desktop) {
+            width: 240px;
+        }
+    }
+
+    .v7-pricing-card & {
+        display: block;
+        max-width: 250px;
+        margin: spacer(3) auto 0;
+        @include button_sizing(14px, $font_size_large);
+
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+
+    .v7-pricing-cards-buttons-wrapper & {
+        width: 50%;
+        padding: 22px spacer(3);
+        font-size: $font_size_large;
+
+        @include breakpoint(large_tablet) {
+            padding: 28px spacer(3);
+        }
+    }
+
+    .v7-search-shadow & {
+        width: 100%;
+        margin-top: spacer(2);
+
+        @include breakpoint(tablet) {
+            max-width: 144px;
+            max-height: 42px;
+            margin-top: 0;
+        }
+
+        @include breakpoint(desktop) {
+            @include button_sizing($padding_button_small, $font_size_small);
+        }
+    }
+
+    .v7-engagement-box & {
+        font-size: $font_size_basic;
+
+        @include breakpoint(max_large_tablet) {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &[data-state~=hidden] {
+        display: none !important;
+    }
+}
+
+.v7-btn-small {
+    @include button_sizing($padding_button_small, $font_size_small);
+}
+
+.v7-btn-cta {
+    // NOTE: First set is fallback for browser which do not implement css variables
+    // if usage of css variable will be more broad we add step in building css
+    @include button_coloring($color_ocean, $color_ocean, $color_white);
+    @include button_coloring(
+            var(--leading-color, #{$color_ocean}),
+            var(--leading-color, #{$color_ocean}),
+            $color_white
+    );
+
+    &:hover {
+        // NOTE: First set is fallback for browser which do not implement css variables
+        // if usage of css variable will be more broad we add step in building css
+        @include button_coloring($color_sea, $color_sea, $color_white);
+        @include button_coloring(
+                var(--leading-color-hover, #{$color_sea}),
+                var(--leading-color-hover, #{$color_sea}),
+                $color_white
+        );
+    }
+}
+
+.v7-btn-submit {
+    @include button_sizing($padding_button_large, $font_size_basic);
+    width: 100%;
+}
+
+.v7-btn-ghost-cta {
+    // NOTE: First set is fallback for browser which do not implement css variables
+    // if usage of css variable will be more broad we add step in building css
+    @include button_coloring($color_ocean, transparent, $color_ocean);
+    @include button_coloring(
+            var(--leading-color, #{$color_ocean}),
+            transparent,
+            var(--leading-color, #{$color_ocean})
+    );
+
+    &:hover {
+        // NOTE: First set is fallback for browser which do not implement css variables
+        // if usage of css variable will be more broad we add step in building css
+        @include button_coloring($color_ocean, $color_ocean, $color_white);
+        @include button_coloring(
+                var(--leading-color, #{$color_ocean}),
+                var(--leading-color, #{$color_ocean}),
+                $color_white
+        );
+    }
+
+    .v7-pricing-cards-buttons-wrapper & {
+        border: transparent;
+
+        &:hover {
+            background-color: $color_quartz;
+            color: $color_ocean;
+        }
+    }
+}
+
+.v7-btn-ghost {
+    @include button_coloring($color_white, transparent, $color_white);
+
+    &:hover {
+        @include button_coloring($color_white, $color_white, $color_ocean);
+
+        .v7-cta & {
+            @include button_coloring($color_white, $color_white, var(--leading-color, #{$color_royal}));
+        }
+
+        .v7-cta-bright-blue & {
+            color: $color_ocean;
+        }
+    }
+
+    .v7-header-solid.is-dark & {
+        &:hover {
+            color: $color_royal;
+        }
+    }
+}
+
+.v7-btn-flat {
+    padding: 0;
+    @include button_coloring(none, none, $color_ocean);
+
+    &:hover {
+        color: $color_space;
+    }
+}
+
+.v7-btn-flat-black {
+    display: inline-block;
+
+    &:hover {
+        color: $color_ocean;
+    }
+}
+
+.v7-btn-white {
+    @include button_coloring($color_white, $color_white, $color_ocean);
+
+    .v7-cta &,
+    .v7-header-solid.is-dark & {
+        @include button_coloring($color_white, $color_white, var(--leading-color, #{$color_royal}));
+    }
+
+    .v7-cta-bright-blue & {
+        color: $color_ocean;
+    }
+}
+
+.v7-btn-round {
+    padding: spacer(1.5);
+    border-radius: 50%;
+
+    .v7-left-right-img-section &,
+    .v7-panel-image-link & {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .v7-panel-image-overlay & {
+        z-index: 1;
+        transition: opacity $transition_regular;
+        opacity: 0;
+    }
+
+    .v7-panel-image-overlay:hover & {
+        opacity: 1;
+    }
+}
+
+.v7-btn-round-white {
+    background-color: $color_white;
+
+    &:hover {
+        background-color: $color_sky;
+
+        .v7-panel-image-overlay & {
+            background: $color_white;
+        }
+    }
+}
+
+.v7-btn-round-ghost {
+    border: 3px solid $color_white;
+    background-color: transparent;
+
+    .v7-header & {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.v7-btn-round-cta {
+    background-color: $color_ocean;
+}
+
+.v7-btn-copy {
+    .v7-btn-round & {
+        display: none;
+    }
+}
+
+.v7-btn-ghost-grey {
+    margin: 0 spacer(1) spacer(1.5);
+    padding: spacer(1) spacer(2);
+    border: 1px solid $color_fog;
+    border-radius: 0;
+    color: $color_slate;
+    font-family: $font_family_primary;
+    font-size: $font_size_basic;
+    text-transform: none;
+
+    @include breakpoint(tablet) {
+        margin: 0 spacer(1) spacer(2);
+        padding: spacer(1) spacer(3);
+        transition: $transition_regular;
+        transition-delay: 0.1s;
+        font-size: $font_size_large;
+    }
+
+    &:hover {
+        @include breakpoint(tablet) {
+            transform: translateY(-10px);
+        }
+    }
+}
+
+.v7-btn-play-icon {
+    position: relative;
+    @include play_icon_sizing($play_icon_small);
+    margin: -3px 2px 0 0;
+    transition: 0.2s all;
+    vertical-align: middle;
+
+    @include breakpoint(tablet) {
+        margin: 0 2px 0 0;
+        vertical-align: text-bottom;
+    }
+
+    @include breakpoint(desktop) {
+        @include play_icon_sizing($play_icon_regular);
+    }
+
+    .v7-btn-cta &,
+    .v7-btn-round-cta &,
+    .v7-btn-ghost-cta:hover &,
+    .v7-btn-ghost:hover &,
+    .v7-btn-round:hover &,
+    .v7-btn-ghost & {
+        fill: $color_white;
+    }
+
+    .v7-btn-flat & {
+        fill: $color_ocean;
+    }
+
+    .v7-btn-ghost-cta & {
+        fill: var(--leading-color, #{$color_ocean});
+    }
+
+    .v7-btn-ghost:hover &,
+    // Exception for Homepage A/B test v1 /home
+    .v7-cta.v7-cta-bright-blue .v7-btn-ghost:hover & {
+        fill: $color_ocean;
+
+        .v7-header-solid.is-dark &,
+        .v7-cta & {
+            fill: $color_royal;
+        }
+    }
+
+    .v7-btn-white &,
+    .v7-panel-image-overlay .v7-btn-round-white:hover &,
+    // Exception for Homepage A/B test v1 /home
+    .v7-cta.v7-cta-bright-blue .v7-btn-white & {
+        fill: $color_sky;
+
+        .v7-header-solid.is-dark &,
+        .v7-cta & {
+            fill: $color_royal;
+        }
+    }
+
+    .v7-btn-round & {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+
+    .v7-btn-round-white & {
+        fill: $color_sky;
+    }
+
+    .v7-btn-small & {
+        @include play_icon_sizing($play_icon_small);
+    }
+}
+
+.v7-btn-icon-right {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    top: 7px;
+    margin-left: 8px;
+    fill: $color_ocean;
+}
+
+.v7-btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include breakpoint(tablet) {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,55 @@
+// NOTE: style for proper sidebar and content placement in dual-column layout
+.presskit-content {
+  grid-area: content;
+}
+
+.presskit-logos {
+  @include breakpoint(tablet) {
+      @include css-grid(2);
+  }
+}
+
+.presskit-download {
+  text-align: center;
+
+  @include breakpoint(tablet) {
+      @include css-grid(3);
+  }
+}
+
+.presskit-logo {
+  display: block;
+  padding: spacer(2);
+}
+
+.presskit-download-icon {
+  display: block;
+  padding: spacer(2);
+  margin-top: spacer(1.5);
+  box-shadow: $box_shadow_level_2;
+  @include transition($transition_regular);
+
+  @include breakpoint(tablet) {
+      margin-top: spacer(3);
+  }
+
+  &:hover {
+    box-shadow: $box_shadow_level_4;
+  }
+}
+
+.presskit-download-img {
+  display: block;
+
+  .presskit-download-icon & {
+    margin: 0 auto spacer(1);
+  }
+}
+
+.presskit-dark-bg {
+  background-color: $color_vader;
+}
+
+.presskit-blue-bg {
+  background-color: $color_skywalker;
+}

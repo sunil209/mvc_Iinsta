@@ -1,0 +1,86 @@
+.panel-image {
+	.panel-testimonial & {
+		margin: 0 auto;
+
+		@include breakpoint(tablet) {
+			margin-left: 0;
+		}
+	}
+
+	.in-group & {
+		display: block;
+		width: 100%;
+
+		@include breakpoint(widescreen_phone) {
+			width: 50%;
+			object-fit: cover;
+		}
+
+		@include breakpoint(tablet) {
+			flex: 1;
+			object-fit: initial;
+		}
+
+		@include breakpoint(large_tablet) {
+			width: 100%;
+		}
+	}
+
+	.in-column & {
+		max-height: 100px;
+	}
+
+	.panel-single-agency & {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	.panel-image-link & {
+		@include breakpoint(widescreen_phone) {
+			height: fit-content;
+			width: 100%;
+		}
+
+		@include breakpoint(tablet) {
+			height: initial;
+		}
+	}
+
+	.agency-listing & {
+		max-height: 100%;
+		max-width: 100%;
+	}
+
+	.podcast-item & {
+		max-width: 100%;
+		display: block;
+	}
+
+	.preferred-partners & {
+		height: 70px;
+		vertical-align: bottom;
+
+		@include breakpoint(desktop) {
+			height: 100px;
+		}
+	}
+}
+
+.panel-image-link {
+	.in-group & {
+		@include breakpoint(widescreen_phone) {
+			width: 100%;
+		}
+
+		@include breakpoint(tablet) {
+			flex: 1;
+		}
+	}
+
+	.agency-listing & {
+		font-size: $font_size_small;
+		margin: spacer(1) 0 spacer(2);
+		max-width: 100%;
+		max-height: 100%;
+	}
+}

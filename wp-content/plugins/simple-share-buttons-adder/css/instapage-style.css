@@ -1,0 +1,646 @@
+
+.social-shares
+{
+	position: fixed;
+	background-color: #fff;
+	box-shadow: 0 1px 4px 1px rgba(0,0,0,0.15);
+	border-radius: 4px;
+	width: 60px;
+	z-index: 1000;
+	padding: 10px;
+	text-align: center;
+}
+
+.social-shares .widget-description
+{
+	display: none;
+}
+
+.social-shares .total-shares
+{
+	font-weight: 400;
+	color: #5a5a5f;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 10px;
+	padding-bottom: 1px;
+	line-height: 100%;
+}
+
+.social-shares .total-shares .share-number
+{
+	display: block;
+	font-weight: 700;
+	font-size: 23px;
+	line-height: 100%;
+	padding-bottom: 3px;
+}
+
+.social-shares .total-shares.large-value .share-number
+{
+	font-size: 16px;
+}
+
+.social-shares ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+.social-shares li
+{
+	list-style-type: none;
+	position: relative;
+	width: 60px;
+	height: 40px;
+	margin-top: 5px;
+}
+
+.social-shares a,
+.social-shares .social-button-wrapper,
+.social-shares .ssba_sharecount
+{
+	transition: all 0.25s ease-in-out;
+}
+
+.social-shares a
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #2a94c8;
+	color: #fff;
+	text-align: center;
+}
+
+.social-shares a:hover
+{
+	left: -10px;
+	width: 60px;
+	text-decoration: none;
+}
+
+.social-shares a.ssba_twitter_share:hover
+{
+	left: 0;
+	width: 40px;
+}
+
+.social-shares .social-button-wrapper
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	background-color: #2a94c8;
+}
+
+.social-shares .ssba_facebook_share,
+.social-shares .ssba_facebook_share .social-button-wrapper
+{
+	background-color: #0b59aa;
+}
+
+.social-shares .ssba_linkedin_share,
+.social-shares .ssba_linkedin_share .social-button-wrapper
+{
+	background-color: #0375b3;
+	font-size: 22px;
+}
+
+.social-shares .ssba_twitter_share,
+.social-shares .ssba_twitter_share .social-button-wrapper
+{
+	background-color: #00aaef;
+	font-size: 24px;
+}
+
+.social-shares .ssba_google_share,
+.social-shares .ssba_google_share .social-button-wrapper
+{
+	background-color: #d84d2f;
+	font-size: 21px;
+}
+
+.social-shares a.ssba_email_share,
+.social-shares a.ssba_email_share .social-button-wrapper
+{
+	font-size: 22px;
+}
+
+.social-shares a:hover .social-button-wrapper
+{
+	width: 30px;
+	font-size: 17px;
+}
+
+.social-shares .ssba_linkedin_share:hover .social-button-wrapper
+{
+	font-size: 18px;
+}
+
+.social-shares .ssba_twitter_share:hover .social-button-wrapper,
+.social-shares .ssba_buffer_share:hover .social-button-wrapper
+{
+	width: 40px;
+	font-size: 20px;
+}
+
+.social-shares a.ssba_email_share:hover .social-button-wrapper
+{
+	width: 40px;
+	font-size: 18px;
+	background-color: #1e87bb;
+}
+
+.social-shares .social-button-wrapper .social-share-text
+{
+	display: block;
+	text-align: left;
+	text-indent: -9999px;
+}
+
+.social-shares .ssba_sharecount
+{
+	position: absolute;
+	left: 40px;
+	top: 0;
+	display: block;
+	width: 0;
+	height: 40px;
+	opacity: 0;
+	font-size: 10px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	background-color: #1e87bb;
+}
+
+.social-shares .ssba_facebook_share .ssba_sharecount
+{
+	background-color: #094f98;
+}
+
+.social-shares .ssba_linkedin_share .ssba_sharecount
+{
+	background-color: #0269a0;
+}
+
+.social-shares .ssba_twitter_share .ssba_sharecount
+{
+	background-color: #0098d6;
+}
+
+.social-shares .ssba_google_share .ssba_sharecount
+{
+	background-color: #c2452a;
+}
+
+.social-shares a:hover .ssba_sharecount
+{
+	left: 30px;
+	width: 30px;
+	opacity: 1;
+}
+
+.social-shares a.ssba_twitter_share:hover .ssba_sharecount
+{
+	left: 40px;
+	width: 40px;
+	opacity: 0;
+}
+
+.social-shares .share-by-email-container
+{
+	position: absolute;
+	left: 70px;
+	top: 234px;
+	width: 250px;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 2px;
+	z-index: 1001;
+	border: 1px solid #e1e1e1;
+}
+
+.social-shares .share-by-email-container input,
+.social-shares .share-by-email-container button
+{
+	display: block;
+	border-radius: 2px;
+	font-family: "Proxima Nova", sans-serif;
+	padding: 0 10px;
+	font-size: 16px;
+}
+
+.social-shares .share-by-email-container input
+{
+	width: 100%;
+	background-color: #f5f5f5;
+	border: 1px solid #c6c6c6;
+	line-height: 32px;
+	color: #a2a2a2;
+	margin-bottom: 10px;
+	font-weight: 400;
+}
+
+.social-shares .share-by-email-container button
+{
+	width: 100px;
+	border: none;
+	background-color: #1e88e5;
+	line-height: 34px;
+	color: #fff;
+	font-weight: 500;
+	float: left;
+	border-radius: 4px;
+}
+
+.social-shares .share-by-email-container button.close-btn
+{
+	background-color: #fff;
+	color: #6f6f6f;
+	border: 1px solid #c8c8c8;
+	float: right;
+}
+
+.social-shares .share-by-email-container .output p
+{
+	font-size: 14px;
+	line-height: 110%;
+	padding-top: 0;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+.social-shares .share-by-email-container .output p:last-of-type
+{
+	margin-bottom: 10px;
+}
+
+.social-shares .share-by-email-container .error
+{
+	color: #cc0000;
+}
+
+.social-shares .share-by-email-container .success
+{
+	color: #58c778;
+}
+
+.social-shares .share-by-email-container .output.loading
+{
+	background: url( 'https://instapage.com/wp-content/themes/instapagev3/v5/assets/images/loading_circle_dark.svg' ) no-repeat center center;
+	background-size: 25px;
+	min-height: 50px;
+}
+
+.social-shares input:-webkit-autofill,
+.social-shares input:-webkit-autofill:focus
+{
+	-webkit-text-fill-color: #a2a2a2;
+	background-color: #f5f5f5;
+	-webkit-box-shadow:0 0 0 50px #f5f5f5 inset;
+}
+
+.social-shares input:focus
+{
+	border-color: #2A94C8;
+	outline: none;
+}
+
+.social-shares input[type="email"]
+{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+}
+
+.social-shares a.ssba_buffer_share
+{
+	background-color: #2a2a2a;
+}
+
+.ssba_buffer_share .social-button-wrapper
+{
+	background: url( 'https://instapage.com/wp-content/themes/instapagev3/v5/assets/images/icon-buffer-white.svg' ) no-repeat center center;
+	background-color: #2a2a2a;
+	background-size: 19px 19px;
+}
+
+.ssba_buffer_share:hover .social-button-wrapper
+{
+	background-size: 16px 16px;
+	background-color: #3D3D3D;
+}
+
+.ssba_buffer_share .ssba_sharecount.buffer-counter
+{
+	background-color: #2a2a2a;
+}
+
+.ssba_buffer_share .fa-buffer::before
+{
+    content: " ";
+}
+
+@media screen and (max-width: 1220px)
+{
+	.social-shares .total-shares
+	{
+		background-color: #fff;
+		padding-top: 2px;
+		padding-bottom: 2px;
+	}
+
+	.social-shares a:hover
+	{
+		left: 0;
+		width: 40px;
+	}
+
+	.social-shares a:hover .social-button-wrapper
+	{
+		width: 40px;
+		font-size: 17px;
+	}
+
+	.social-shares a:hover .ssba_sharecount
+	{
+		left: 40px;
+		width: 40px;
+	}
+}
+
+@media screen and (max-width: 1145px)
+{
+
+	.social-shares.hidden-mobile
+	{
+		bottom: -60px;
+	}
+
+	.social-shares
+	{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: auto;
+		background-color: #fff;
+		width: auto;
+		height: 60px;
+		margin: 0;
+		padding: 0;
+		box-shadow: none;
+		border-radius: 0;
+		z-index: 100;
+	}
+
+	.social-shares .widget-description
+	{
+		width: 20%;
+		background-color: #eee;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		float: left;
+		height: 100%;
+		border-right: 1px solid #e6e6e6;
+		box-shadow: 1px 0px 0px 0px #e9e9e9;
+		font-family: 'Proxima Nova', sans-serif;
+		font-size: 18px;
+	}
+
+	.social-shares-inner
+	{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+	}
+
+	.social-shares .total-shares
+	{
+		display: none;
+	}
+
+	.social-shares ul:after
+	{
+		clear: both;
+		content: ".";
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
+
+	.social-shares li
+	{
+		float: left;
+		width: 20%;
+		height: 60px;
+		margin-top: 0;
+		width: 16%;
+	}
+
+	.social-shares a,
+	.social-shares .social-button-wrapper,
+	.social-shares a:hover,
+	.social-shares a.ssba_email_share:hover,
+	.social-shares a.ssba_twitter_share:hover,
+	.social-shares a.ssba_buffer_share:hover,
+	.social-shares a:hover .social-button-wrapper,
+	.social-shares a.ssba_email_share:hover .social-button-wrapper,
+	.social-shares a.ssba_twitter_share:hover .social-button-wrapper,
+	.social-shares a.ssba_buffer_share:hover .social-button-wrapper,
+	.social-shares a:hover .ssba_sharecount
+	{
+		position: static;
+		width: auto;
+	}
+
+	.social-shares a
+	{
+		height: auto;
+		line-height: 25px;
+		padding: 7px 0 3px;
+	}
+
+	.social-shares .social-button-wrapper
+	{
+		height: 25px;
+	}
+
+	.social-shares a.ssba_twitter_share .social-button-wrapper
+	{
+		height: 50px;
+	}
+
+	.social-shares .ssba_sharecount
+	{
+		position: static;
+		width: auto;
+		height: 25px;
+		line-height: 15px;
+		padding-top: 5px;
+		opacity: 1;
+		font-size: 14px;
+	}
+
+	.social-shares .ssba_facebook_share,
+	.social-shares .ssba_facebook_share .social-button-wrapper,
+	.social-shares .ssba_twitter_share,
+	.social-shares .ssba_twitter_share .social-button-wrapper,
+	.social-shares .ssba_linkedin_share,
+	.social-shares .ssba_linkedin_share .social-button-wrapper,
+	.social-shares a.ssba_buffer_share,
+	.ssba_buffer_share .ssba_sharecount.buffer-counter,
+	.ssba_buffer_share .social-button-wrapper,
+	.social-shares a,
+	.ssba_buffer_share:hover .social-button-wrapper,
+	.social-shares .ssba_google_share,
+	.social-shares .ssba_google_share .ssba_sharecount,
+	.social-shares .ssba_twitter_share,
+	.social-shares .ssba_twitter_share .ssba_sharecount,
+	.social-shares .ssba_linkedin_share,
+	.social-shares .ssba_linkedin_share .ssba_sharecount,
+	.social-shares .ssba_facebook_share,
+	.social-shares .ssba_facebook_share .ssba_sharecount,
+	.social-shares .ssba_sharecount,
+	.social-shares .social-button-wrapper,
+	.social-shares li,
+	.social-shares a.ssba_email_share:hover .social-button-wrapper
+	{
+		background-color: #eeeeee;
+	}
+
+	.social-shares .ssba_linkedin_share,
+	.social-shares .ssba_linkedin_share .social-button-wrapper,
+	.social-shares .social-button-wrapper,
+	.social-shares .ssba_twitter_share,
+	.social-shares .ssba_twitter_share .social-button-wrapper,
+	.social-shares a.ssba_email_share,
+	.social-shares a.ssba_email_share .social-button-wrapper,
+	.social-shares a:hover .social-button-wrapper,
+	.social-shares .ssba_twitter_share:hover .social-button-wrapper,
+	.social-shares .ssba_linkedin_share:hover .social-button-wrapper,
+	.social-shares a.ssba_email_share:hover .social-button-wrapper
+	{
+		font-size: 32px;
+	}
+
+	.ssba_buffer_share .social-button-wrapper
+	{
+		background-size: 26px 26px;
+	}
+
+	.ssba_buffer_share:hover .social-button-wrapper
+	{
+		background-size: 26px 26px;
+	}
+
+	.ssba_buffer_share .social-button-wrapper
+	{
+		height: 48px;
+	}
+
+	.ssba_buffer_share .social-button-wrapper
+	{
+		background-image: url( 'https://instapage.com/wp-content/themes/instapagev3/v5/assets/images/icon-buffer.svg' );
+	}
+
+	.social-shares li
+	{
+		border-right: 1px solid #e6e6e6;
+		box-shadow: 1px 0px 0px 0px #e9e9e9;
+	}
+
+	.social-shares li:last-child
+	{
+		box-shadow: none;
+		border: none;
+	}
+
+	.social-shares a
+	{
+		color: #192636;
+		line-height: 50px;
+	}
+
+	.social-shares .ssba_sharecount
+	{
+		display: none;
+	}
+
+	.social-shares a.ssba_twitter_share .ssba_sharecount
+	{
+		display: none;
+	}
+
+	.social-shares .share-by-email-container
+	{
+		left: 0;
+		right: 0;
+		bottom: 68px;
+		top: initial;
+		width: 96%;
+		margin: 0 auto;
+		padding: 16px 15px;
+	}
+
+	.social-shares .share-by-email-container input,
+	.social-shares .share-by-email-container button
+	{
+		padding: 0 15px;
+	}
+
+	.social-shares .share-by-email-container input
+	{
+		line-height: 46px;
+		margin-bottom: 14px;
+		background-color: transparent;
+		border: 1px solid #e1e1e1;
+		border-radius: 4px;
+		font-size: 16px;
+	}
+
+	.social-shares .share-by-email-container button
+	{
+		width: 138px;
+		line-height: 48px;
+		outline: 0;
+		font-size: 20px;
+	}
+
+	.social-shares .share-by-email-container .output p
+	{
+		font-size: 18px;
+		margin-bottom: 8px;
+	}
+
+	.social-shares .share-by-email-container .output p:last-of-type
+	{
+		margin-bottom: 14px;
+	}
+
+	.social-shares .share-by-email-container .output.loading
+	{
+		background-size: 35px;
+	}
+}
+
+@media screen and (max-width: 479px)
+{
+
+	.social-shares .share-by-email-container button
+	{
+		width: 100px;
+	}
+}

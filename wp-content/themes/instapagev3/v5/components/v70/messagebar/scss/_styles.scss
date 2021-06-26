@@ -1,0 +1,68 @@
+.message-bar-wrapper {
+    display: none;
+
+    &[data-state~=shown] {
+        @include breakpoint(tablet) {
+            width: 100%;
+            max-height: 118px;
+            background: $color_orange;
+            font-family: $font_family_secondary;
+            padding: 14px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: map-get($z_index, snackbar);
+
+            @include breakpoint(tablet) {
+                height: $navbar_height;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            & ~ nav.navbar-desktop,
+            & ~ nav.navbar-mobile {
+                // NOTE: Move navbar down by the height of the messagebar
+                top: 118px;
+
+                @include breakpoint(tablet) {
+                    top: $navbar_height;
+                }
+            }
+
+            & ~ .header-section-home {
+                // NOTE: Move header down by the height of the messagebar
+                margin-top: 118px;
+
+                @include breakpoint(tablet) {
+                    margin-top: $navbar_height;
+                }
+            }
+        }
+    }
+}
+
+.message-bar-title {
+    color: $color_dark;
+    font-size: $font_size_small;
+    line-height: 1.57;
+
+    @include breakpoint(tablet) {
+        margin-right: spacer(4.5);
+        font-size: $font_size_basic;
+        line-height: 1.5;
+    }
+}
+
+.btn-message-bar {
+    margin-top: spacer(1);
+    border: 2px solid $color_royal;
+    background-color: $color_royal;
+    color: $color_white;
+
+    @include breakpoint(tablet) {
+        margin: 0;
+    }
+}

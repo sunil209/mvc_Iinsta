@@ -1,0 +1,38 @@
+.icon-hamburger {
+	outline: none;
+}
+
+.video-responsive {
+	padding: 0;
+	margin: 0;
+}
+
+.navbar-mobile-expandable {
+	.navbar-mobile-bar.data-state-open + & {
+		right: 0;
+	}
+}
+
+.google-trends-embeded {
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 2px 0px, rgba(0, 0, 0, 0.24) 0px 2px 2px 0px;
+}
+
+// NOTE: because AMP has its own img tags we want to style them so normal img won't be cropped
+.editable-content {
+	img {
+		margin: 0;
+	}
+
+	amp-img {
+		margin: spacer(1.5) 0;
+	}
+}
+
+/**
+ * Needed for giphy media, class is dynamically added by PHP when it turns out that we link to giphy
+ */
+.contain-container {
+	width: 100%;
+	height: 350px;
+	position: relative;
+}

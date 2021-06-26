@@ -1,0 +1,47 @@
+.search-box {
+	margin-top: 8px;
+}
+.search-box .search-field {
+	width: 280px;
+	height: 29px;
+	margin: 0;
+	padding: 3px 5px;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.backups,
+.results,
+.extended-results {
+	margin-top: 20px;
+}
+.backups .backups-count,
+.results .results-count,
+.extended-results .results-count {
+	float: right;
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 1.5;
+}
+.backups h1 .button,
+.results h1 .button,
+.extended-results h1 .button {
+	margin-left: 10px;
+}
+.extended-results th,
+.extended-results td {
+	width: 25% !important;
+	word-wrap: break-word;
+	overflow-wrap: break-word
+}
+.results .highlight-before,
+.extended-results .highlight-before {
+	padding: 2px 5px;
+	background-color: rgba(255, 0, 0, 0.3);
+}
+.results .highlight-after,
+.extended-results .highlight-after {
+	padding: 2px 5px;
+	background-color: rgba(0, 155, 0, 0.3);
+}

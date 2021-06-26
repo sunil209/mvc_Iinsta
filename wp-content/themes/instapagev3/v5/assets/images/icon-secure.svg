@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="47" viewBox="0 0 70 47">
+    <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="1.5" d="M67.53 21.928a2.69 2.69 0 0 0-.73-1.4L55.02 8.768c-11.727-11.69-30.702-11.69-42.43 0L.8 20.528a2.69 2.69 0 0 0-.75 1.39 1.57 1.57 0 0 0-.05.3v.3c-.001.205.022.41.07.61.012.068.029.135.05.2.124.45.357.863.68 1.2l11.79 11.75a30 30 0 0 0 42.43 0l11.78-11.75a2.81 2.81 0 0 0 .7-1.18 1.46 1.46 0 0 0 0-.2 2.54 2.54 0 0 0 .1-.62v-.3c.01-.1.01-.2 0-.3m-17.86 0v.6c-.216 8.612-7.26 15.481-15.875 15.481S18.206 31.14 17.99 22.528v-.6c.37-8.494 7.363-15.19 15.865-15.19 8.502 0 15.496 6.696 15.865 15.19"/>
+        <path fill="#BCCED6" fill-rule="nonzero" d="M67.602 22.6a2.54 2.54 0 0 1-.07.61 1.46 1.46 0 0 1 0 .2 2.81 2.81 0 0 1-.73 1.19l-11.78 11.75a30 30 0 0 1-42.43 0L.802 24.6a2.81 2.81 0 0 1-.75-1.38 2.54 2.54 0 0 1-.05-.62v-.3c0-.1 0-.2.05-.3h17.89v.6c.216 8.612 7.26 15.482 15.875 15.482s15.66-6.87 15.875-15.482V22h17.84v.3c0 .1.07.2.07.3z" opacity=".2"/>
+        <rect width="14.54" height="11.96" x="27" y="20" stroke="#BCCED6" stroke-linecap="round" stroke-width="1.5" rx="1.16"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="1.5" d="M29 20.25V17.2a5.2 5.2 0 1 1 10.4 0v3.05"/>
+        <circle cx="33.57" cy="24.57" r="1.57" stroke="#BCCED6" stroke-linecap="round" stroke-width="1.5"/>
+        <path stroke="#BCCED6" stroke-linecap="round" stroke-width="1.5" d="M34 26v2.58"/>
+    </g>
+</svg>

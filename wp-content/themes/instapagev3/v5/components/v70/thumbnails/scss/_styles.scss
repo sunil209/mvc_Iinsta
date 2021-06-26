@@ -1,0 +1,35 @@
+.v7-thumbnails-group {
+    @include breakpoint(tablet) {
+        @include css-grid(2);
+        grid-row-gap: $main_gap;
+        width: 100%;
+    }
+}
+
+.v7-thumbnail {
+    display: inline-block;
+    position: relative;
+    max-height: 560px;
+    border-radius: $border_radius_primary;
+}
+
+.v7-thumbnail-link {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: $color_white;
+    @include transition($transition_regular);
+    box-shadow: $box_shadow_level_3;
+    font-family: $font_family_secondary;
+
+    .v7-thumbnail:hover & {
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: $color_ocean;
+    }
+}

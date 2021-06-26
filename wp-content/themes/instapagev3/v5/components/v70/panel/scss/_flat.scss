@@ -1,0 +1,115 @@
+.v7-flat-panel {
+    position: relative;
+    transition: $transition_regular;
+
+    @include breakpoint(only_phone) {
+        max-width: 370px;
+    }
+}
+
+.v7-flat-panel-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.v7-flat-panel-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.v7-flat-panel-title {
+    .v7 & {
+        @include breakpoint(only_phone) {
+            font-size: $font_size_xlarge;
+        }
+    }
+}
+
+.v7-flat-panel-copy {
+    display: block;
+    height: 100%;
+    padding: spacer(3);
+
+    @include breakpoint(desktop) {
+        padding: spacer(5);
+    }
+
+    .v7-flat-panel-circle-btn-wrapper & {
+        padding: spacer(3) spacer(3) spacer(4) spacer(3);
+
+        @include breakpoint(desktop) {
+            padding: spacer(5);
+        }
+    }
+}
+
+.v7-flat-panel-text {
+    @include breakpoint(tablet) {
+        margin-bottom: spacer(4);
+    }
+
+    .v7-flat-panel-circle-btn-wrapper & {
+        @include breakpoint(tablet) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.v7-flat-panel-cta {
+    @include breakpoint(tablet) {
+        position: absolute;
+        bottom: 30px;
+    }
+
+    @include breakpoint(desktop) {
+        bottom: 50px;
+        font-size: $font_size_basic;
+    }
+}
+
+
+.v7-flat-panel-top-line {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10px;
+        background-color: $color_royal;
+    }
+}
+
+.v7-flat-panel-with-circle-btn {
+    margin: 0 auto spacer(6);
+
+    @include breakpoint(tablet) {
+        margin-bottom: spacer(3);
+    }
+}
+
+.v7-flat-panel-circle-btn {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: $shadow_1;
+
+    .v7-flat-panel:hover & {
+        box-shadow: $shadow_4;
+    }
+
+    img {
+        margin-left: 3px;
+    }
+}

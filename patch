@@ -1,0 +1,310 @@
+diff --git a/wp-content/themes/instapagev3/functions.php b/wp-content/themes/instapagev3/functions.php
+index 1d93229..67f9ed9 100644
+--- a/wp-content/themes/instapagev3/functions.php
++++ b/wp-content/themes/instapagev3/functions.php
+@@ -2333,6 +2333,7 @@ add_action('wp_loaded', function () {
+   \Instapage\Classes\RssFeedEnhancer::getInstance()->enhance();
+   \Instapage\Classes\DashboardEnhancer::getInstance()->enhance();
+   \Instapage\Classes\ComponentCache::hookClearingCache();
++  (new \Instapage\Modules\ColorParameterizer\ColorParameterizer())->run();
+ });
+
+ new \Instapage\Classes\ConvertPro\CtaInjector();
+diff --git a/wp-content/themes/instapagev3/v5/assets/sass/v51/topfold.scss b/wp-content/themes/instapagev3/v5/assets/sass/v51/topfold.scss
+index 552e383..7a93109 100644
+--- a/wp-content/themes/instapagev3/v5/assets/sass/v51/topfold.scss
++++ b/wp-content/themes/instapagev3/v5/assets/sass/v51/topfold.scss
+@@ -23,6 +23,9 @@
+ @import 'typography';
+ @import 'layouts';
+
++/* THEMES */
++@import '../v70/themes/products';
++
+ /* List of all UI components */
+ @import 'components/editable-content';
+ @import 'components/quick-links';
+diff --git a/wp-content/themes/instapagev3/v5/assets/sass/v70/themes/_products.scss b/wp-content/themes/instapagev3/v5/assets/sass/v70/themes/_products.scss
+new file mode 100644
+index 0000000..dd32885
+--- /dev/null
++++ b/wp-content/themes/instapagev3/v5/assets/sass/v70/themes/_products.scss
+@@ -0,0 +1,9 @@
++.products-personalization {
++    --leading-color: DeepSkyBlue;
++    --leading-color-hover: DodgerBlue;
++}
++
++.products-team-collaboration {
++    --leading-color: Gold;
++    --leading-color-hover: GoldenRod;
++}
+diff --git a/wp-content/themes/instapagev3/v5/components/v51/button/scss/_styles.scss b/wp-content/themes/instapagev3/v5/components/v51/button/scss/_styles.scss
+index 5c6679d..1c56ca6 100644
+--- a/wp-content/themes/instapagev3/v5/components/v51/button/scss/_styles.scss
++++ b/wp-content/themes/instapagev3/v5/components/v51/button/scss/_styles.scss
+@@ -256,10 +256,20 @@
+ 	}
+
+ 	.navbar & {
+-		background-color: $color_ocean;
++		// NOTE: Fallback applied manually, small use case for css variables
++		// If we start using it more broadly we add step in css building for auto prefixing
++		background-color: $color_r2d2;
++		border-color: $color_r2d2;
++		background-color: var(--leading-color, #{$color_r2d2});
++		border-color: var(--leading-color, #{$color_r2d2});
+
+ 		&:hover {
+-			background-color: #2459e1;
++			// NOTE: Fallback applied manually, small use case for css variables
++			// If we start using it more broadly we add step in css building for auto prefixing
++			background-color: $color_snoke;
++			border-color: $color_snoke;
++			background-color: var(--leading-color-hover, #{$color_snoke});
++			border-color: var(--leading-color-hover, #{$color_snoke});
+ 		}
+ 	}
+ }
+diff --git a/wp-content/themes/instapagev3/v5/components/v70/button/scss/_styles.scss b/wp-content/themes/instapagev3/v5/components/v70/button/scss/_styles.scss
+index 68ad0c5..f51ab3f 100644
+--- a/wp-content/themes/instapagev3/v5/components/v70/button/scss/_styles.scss
++++ b/wp-content/themes/instapagev3/v5/components/v70/button/scss/_styles.scss
+@@ -133,10 +133,24 @@ $play_icon_small: 18px;
+ }
+
+ .v7-btn-cta {
++    // NOTE: First set is fallback for browser which do not implement css variables
++    // if usage of css variable will be more broad we add step in building css
+     @include button_coloring($color_ocean, $color_ocean, $color_white);
++    @include button_coloring(
++            var(--leading-color, #{$color_ocean}),
++            var(--leading-color, #{$color_ocean}),
++            $color_white
++    );
+
+     &:hover {
++        // NOTE: First set is fallback for browser which do not implement css variables
++        // if usage of css variable will be more broad we add step in building css
+         @include button_coloring($color_sea, $color_sea, $color_white);
++        @include button_coloring(
++                var(--leading-color-hover, #{$color_sea}),
++                var(--leading-color-hover, #{$color_sea}),
++                $color_white
++        );
+     }
+ }
+
+@@ -146,10 +160,24 @@ $play_icon_small: 18px;
+ }
+
+ .v7-btn-ghost-cta {
++    // NOTE: First set is fallback for browser which do not implement css variables
++    // if usage of css variable will be more broad we add step in building css
+     @include button_coloring($color_ocean, transparent, $color_ocean);
++    @include button_coloring(
++            var(--leading-color, #{$color_ocean}),
++            transparent,
++            var(--leading-color, #{$color_ocean})
++    );
+
+     &:hover {
++        // NOTE: First set is fallback for browser which do not implement css variables
++        // if usage of css variable will be more broad we add step in building css
+         @include button_coloring($color_ocean, $color_ocean, $color_white);
++        @include button_coloring(
++                var(--leading-color, #{$color_ocean}),
++                var(--leading-color, #{$color_ocean}),
++                $color_white
++        );
+     }
+
+     .v7-pricing-cards-buttons-wrapper & {
+@@ -234,11 +262,14 @@ $play_icon_small: 18px;
+         fill: $color_white;
+     }
+
+-    .v7-btn-ghost-cta &,
+     .v7-btn-flat & {
+         fill: $color_ocean;
+     }
+
++    .v7-btn-ghost-cta & {
++        fill: var(--leading-color, #{$color_ocean});
++    }
++
+     .v7-btn-ghost:hover & {
+         fill: $color_ocean;
+     }
+@@ -253,7 +284,7 @@ $play_icon_small: 18px;
+         margin: 0;
+         fill: $color_sky;
+     }
+-
++
+     .v7-btn-xlarge & {
+         @include play_icon_sizing($play_icon_xlarge);
+     }
+diff --git a/wp-content/themes/instapagev3/v5/modules/color-parameterizer/ColorParameterizer.php b/wp-content/themes/instapagev3/v5/modules/color-parameterizer/ColorParameterizer.php
+new file mode 100644
+index 0000000..0068158
+--- /dev/null
++++ b/wp-content/themes/instapagev3/v5/modules/color-parameterizer/ColorParameterizer.php
+@@ -0,0 +1,142 @@
++<?php
++
++namespace Instapage\Modules\ColorParameterizer;
++
++
++class ColorParameterizer
++{
++    /**
++     * Run whole module
++     */
++    public function run() : void
++    {
++        add_action('wp', function () {
++            if ($this->shouldRun()) {
++                $this->addClassForBodyBasedOnPageUrl();
++                $this->parameterizeColors();
++            }
++        });
++    }
++
++    /**
++     * Function encapsulating condition if module should start?
++     *
++     * @return bool
++     */
++    public function shouldRun() : bool
++    {
++        global $post;
++        return get_post_type($post) === 'product';
++    }
++
++    /**
++     * Fetch leading colors definition from ACF
++     *
++     * @return array
++     */
++    protected function fetchColorsFromACF() : array
++    {
++        $settings = get_field('color_parameterizer');
++        $leadingColor = $settings['leading_color'];
++        $leadingColorHover = $settings['leading_color_hover'];
++
++        return [
++            'leadingColor' =>
++                !empty($leadingColor) ? $leadingColor : null,
++            'leadingColorHover' =>
++                !empty($leadingColorHover) ? $leadingColorHover : null
++        ];
++    }
++
++    /**
++     * Perform action of parameterizing colors
++     */
++    protected function parameterizeColors() : void
++    {
++        $colors = $this->fetchColorsFromACF();
++        $this->injectStyles($colors);
++    }
++
++    /**
++     * Method generating css class for current page, if we are on:
++     * `https://instapage.com/products/all-product-overview` it will
++     * generate:
++     * `products-all-product-overview`
++     *
++     * @return string
++     */
++    protected function getClassForBodyBasedOnPageUrl() : string
++    {
++        return sanitize_title(wp_make_link_relative(get_permalink()));
++    }
++
++    /**
++     * Add class to each page based on slug, it is helpful for creating
++     * parametric color variations, it was added in WWP-4012 => WWP-4013
++     */
++    protected function addClassForBodyBasedOnPageUrl() : void {
++        add_filter(
++            'body_class',
++            function ($classes) {
++                // we do not want classes on 404, 404 is generated on any address
++                // we want to generate classes on body only on pages which really exists
++                if (is_array($classes) && !is_404()) {
++                    $classes[] = $this->getClassForBodyBasedOnPageUrl();
++                }
++
++                return $classes;
++            }
++        );
++    }
++
++    /**
++     * Inject inline styles to head containg color parameterizing definitions
++     *
++     * @param array $colors Array containing colors definition,
++     *                      format like from funciton $this->fetchColorsFromACF()
++     */
++    protected function injectStyles(array $colors) : void
++    {
++        if (empty($colors['leadingColorHover'])
++            || empty($colors['leadingColor'])
++        ) {
++            return;
++        }
++
++        add_action('wp_head', function () use ($colors) {
++            echo '<style>'
++                 . $this->prepareStylesToInject($colors)
++                 . '</style>';
++        }, 100);
++    }
++
++    /**
++     * Prepare CSS template with leading colors parameterizing,
++     * its inject colors fetched from ACF
++     *
++     * @param array $colors Array containing colors definition,
++     *                      format like from funciton $this->fetchColorsFromACF()
++     *
++     * @return string
++     */
++    protected function prepareStylesToInject(array $colors) : string {
++        $rawStyles = file_get_contents(__DIR__ . '/css/color-parameterization.css');
++        $replacements = [
++            '{{className}}' => $this->getClassForBodyBasedOnPageUrl(),
++            '{{leadingColorHover}}' => $colors['leadingColorHover'],
++            '{{leadingColor}}' => $colors['leadingColor']
++        ];
++
++        $styleToInjectWithoutComments = substr(
++            $rawStyles,
++            strpos($rawStyles, '*/') + strlen('*/')
++        );
++        $styleToInject = str_replace(
++            array_keys($replacements),
++            array_values($replacements),
++            $styleToInjectWithoutComments
++        );
++
++        return $styleToInject;
++    }
++}
+diff --git a/wp-content/themes/instapagev3/v5/modules/color-parameterizer/css/color-parameterization.css b/wp-content/themes/instapagev3/v5/modules/color-parameterizer/css/color-parameterization.css
+new file mode 100644
+index 0000000..72c4ac3
+--- /dev/null
++++ b/wp-content/themes/instapagev3/v5/modules/color-parameterizer/css/color-parameterization.css
+@@ -0,0 +1,9 @@
++/**
++Be carefull! `{{ className }}`, `{{ leadingColor }}`, `{{ leadingColorHover }}`
++are automatically replaced by PHP. This comment is also truncate automatically
++ */
++
++body.{{className}} {
++    --leading-color: {{leadingColor}};
++    --leading-color-hover: {{leadingColorHover}};
++}

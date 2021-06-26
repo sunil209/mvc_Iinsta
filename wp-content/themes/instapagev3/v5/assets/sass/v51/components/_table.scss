@@ -1,0 +1,26 @@
+table {
+	.editable-content & {
+		border-collapse: collapse;
+		border: 2px solid $color_vader;
+		font-size: $font_size_xsmall;
+		text-align: left;
+		display: block;
+		overflow-x: auto;
+
+		td {
+			border: 1px solid $color_vader;
+			padding: 8px;
+		}
+
+		th {
+			background-color: $color_vader;
+			color: $color_leia;
+			border: 1px solid $color_vader;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: $color_yoda;
+		}
+	}
+}

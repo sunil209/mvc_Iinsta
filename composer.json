@@ -1,0 +1,8 @@
+{
+  "require": {
+    "hubspot/hubspot-php": "^2.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.*"
+  }
+}

@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.6
+    container_name: mysql
+    volumes:
+      - ./docker/mysql/website-docker-local-db.sql.gz:/docker-entrypoint-initdb.d/website-docker-local-db.sql.gz:cached
+      - db_data:/var/lib/mysql:cached
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on:
+      - db
+    build:
+      dockerfile: docker/wordpress/Dockerfile
+      context: .
+    container_name: wordpress
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./index.php:/var/www/html/index.php:delegated
+      - ./.htacess:/var/www/html/.htacess:delegated
+      - ./wp-content/themes/instapagev3:/var/www/html/wp-content/themes/instapagev3:delegated
+      - ./docker/wordpress/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini:cached
+
+volumes:
+  db_data: {}

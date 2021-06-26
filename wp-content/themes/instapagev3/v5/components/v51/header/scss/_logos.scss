@@ -1,0 +1,163 @@
+// BASE COMPONENNT:
+//	.hero-logos
+// VARIANTS:
+//	.hero-logos-img:nth-child()
+
+$height-logo-tablet: 30px;
+$height-logo-large-tablet: 49px;
+
+.hero-logos {
+	display: none;
+
+	@include breakpoint(tablet) {
+		display: block;
+	}
+}
+
+.hero-logos-img {
+	@include breakpoint(tablet) {
+		max-height: $height-logo-tablet;
+		position: absolute;
+		transition-duration: 2s;
+	}
+
+	@include breakpoint(desktop) {
+		max-height: $height-logo-large-tablet;
+	}
+
+	&:nth-child(1) {
+		@include breakpoint(tablet) {
+			bottom: 60px;
+			left: 57px;
+		}
+
+		@include breakpoint(desktop) {
+			bottom: 50px;
+			left: 27%;
+			max-height: 60px;
+		}
+
+		@include breakpoint(large_desktop) {
+			left: 31%;
+		}
+	}
+
+	&:nth-child(2) {
+		@include breakpoint(tablet) {
+			bottom: 57px;
+			left: 307px;
+		}
+
+		@include breakpoint(desktop) {
+			bottom: 155px;
+			left: 40px;
+		}
+
+		@include breakpoint(large_desktop) {
+			bottom: 233px;
+			left: 13%;
+		}
+	}
+
+	&:nth-child(3) {
+		@include breakpoint(tablet) {
+			top: 105px;
+			left: 35px;
+		}
+
+		@include breakpoint(desktop) {
+			top: 133px;
+			left: 148px;
+		}
+
+		@include breakpoint(large_desktop) {
+			left: 10%;
+		}
+	}
+
+	&:nth-child(4) {
+		@include breakpoint(tablet) {
+			bottom: 71px;
+			right: 97px;
+		}
+
+		@include breakpoint(desktop) {
+			bottom: 52px;
+			right: 20%;
+		}
+
+		@include breakpoint(large_desktop) {
+			right: 30%;
+		}
+	}
+
+	&:nth-child(5) {
+		@include breakpoint(tablet) {
+			top: 121px;
+			left: 187px;
+			max-height: 20px;
+		}
+
+		@include breakpoint(desktop) {
+			top: 106px;
+			left: 500px;
+			max-height: 30px;
+		}
+
+		@include breakpoint(large_desktop) {
+			top: 130px;
+			left: 40%;
+		}
+	}
+
+	&:nth-child(6) {
+		@include breakpoint(tablet) {
+			top: 121px;
+			right: 58px;
+		}
+
+		@include breakpoint(desktop) {
+			top: 163px;
+			right: 519px;
+			max-height: 27px;
+		}
+
+		@include breakpoint(large_desktop) {
+			right: 35%;
+		}
+	}
+
+	&:nth-child(7) {
+		@include breakpoint(tablet) {
+			top: 75px;
+			right: 188px;
+		}
+
+		@include breakpoint(desktop) {
+			top: 114px;
+			right: 132px;
+			max-height: 38px;
+		}
+
+		@include breakpoint(large_desktop) {
+			right: 20%;
+		}
+	}
+
+	&:nth-child(8) {
+		@include breakpoint(tablet) {
+			display: none;
+		}
+
+		@include breakpoint(desktop) {
+			display: block;
+			bottom: 150px;
+			right: 45px;
+			max-height: 36px;
+		}
+
+		@include breakpoint(large_desktop) {
+			right: 15%;
+		}
+	}
+}

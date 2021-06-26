@@ -1,0 +1,63 @@
+.v7-benefits-inline-wrapper {
+    @include breakpoint(large_tablet) {
+        @include css-grid(3);
+    }
+}
+
+.v7-benefits-inline {
+    margin-bottom: spacer(4);
+
+    @include breakpoint(tablet) {
+        display: flex;
+        align-items: center;
+        margin-bottom: spacer(1);
+    }
+
+    @include breakpoint(large_tablet) {
+        flex-direction: column;
+        margin-bottom: spacer(5);
+    }
+}
+
+.v7-benefits-inline-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.v7-benefits-inline-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint(large_tablet) {
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: spacer(1);
+        padding-left: spacer(1.5);
+    }
+}
+
+.v7-benefits-copy-inline {
+    margin: 0 auto;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+        max-width: initial;
+        margin: 0 0 0 spacer(3);
+        text-align: left;
+    }
+
+    @include breakpoint(large_tablet) {
+        margin: 0;
+    }
+}
+
+.v7-benefits-inline-heading {
+    @include breakpoint(large_tablet) {
+        align-self: center;
+        margin-left: spacer(3);
+    }
+}

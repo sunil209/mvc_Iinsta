@@ -1,0 +1,114 @@
+.v7-header-solid {
+    border-radius: 0;
+    background-color: $color_white;
+    color: $color_dark;
+
+    &.is-dark {
+        background-color: $color_royal;
+
+        h1, p {
+            color: $color_white;
+        }
+    }
+
+    &.is-dark:not(.v7-header-center) {
+        padding-bottom: spacer(5);
+
+        @include breakpoint(large_tablet) {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.v7-header-solid:not(.v7-header-center) {
+    @include breakpoint(large_tablet) {
+        height: initial;
+        overflow: visible;
+    }
+}
+
+.v7-header-content {
+    .v7-header-solid & {
+        @include breakpoint(large_tablet) {
+            padding-top: spacer(10);
+        }
+
+        @include breakpoint(desktop) {
+            justify-content: initial;
+        }
+    }
+
+    .v7-landing-page-templates-header & {
+        @include breakpoint(large_tablet) {
+            padding-top: spacer(5);
+        }
+    }
+
+    &.v7-header-landing-page-template {
+        @include breakpoint(desktop) {
+            justify-content: space-between;
+        }
+    }
+
+    .v7-header-short-img & {
+        @include breakpoint(large_tablet) {
+            padding-top: spacer(7);
+        }
+    }
+}
+
+.v7-header-img-wrapper {
+    .v7-header-solid & {
+        padding-bottom: 0;
+
+        @include breakpoint(tablet) {
+            width: 595px;
+        }
+
+        @include breakpoint(large_tablet) {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            width: 50%;
+            height: 600px;
+        }
+    }
+}
+
+.v7-header-img {
+    .v7-header-solid & {
+        @include breakpoint(large_tablet) {
+            width: 640px;
+            height: initial;
+            margin-left: spacer(7);
+        }
+
+        @include breakpoint(desktop) {
+            width: initial;
+            margin-left: spacer(13);
+        }
+    }
+}
+
+.v7-header-label {
+    .v7 & {
+        color: $color_dark;
+        color: var(--leading-color, #{$color_dark});
+        text-transform: uppercase;
+    }
+}
+
+.v7-header-copy {
+    .v7-header-solid:not(.v7-header-center) & {
+        @include breakpoint(desktop) {
+            width: 495px;
+        }
+
+        // NOTE: fix for copy aligment
+        p, .v7-btn-group {
+            @include breakpoint(desktop) {
+                width: 470px;
+            }
+        }
+    }
+}

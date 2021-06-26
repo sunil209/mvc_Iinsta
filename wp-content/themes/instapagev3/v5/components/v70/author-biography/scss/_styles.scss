@@ -1,0 +1,58 @@
+.v7-author {
+    display: flex;
+    padding-top: spacer(3);
+    border-top: 1px solid $color_fog;
+
+    @include breakpoint(tablet) {
+        padding-top: spacer(4);
+    }
+}
+
+.v7-author-photo {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    @include breakpoint(tablet) {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.v7-author-info {
+    width: 100%;
+    margin-top: spacer(2);
+    padding-left: spacer(2);
+
+    @include breakpoint(tablet) {
+        padding-left: spacer(4);
+    }
+}
+
+.v7-author-description {
+    // FIXME: Delete .v7 and move up after v51 typography is out. Needed for higher specificity.
+    .v7 & {
+        color: $color_dark;
+    }
+
+    .v7-author-name + & {
+        margin-top: spacer(3.5);
+    }
+
+    @include breakpoint(only_phone) {
+        // NOTE: image width and left padding of .v7-author-info
+        margin-left: -80px;
+    }
+
+    @include breakpoint(tablet) {
+        .v7-author-name + & {
+            // NOTE: design has strange dimnesions
+            margin-top: 8px;
+        }
+    }
+}
+
+.v7-author-introduction {
+    color: $color_grey;
+}

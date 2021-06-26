@@ -1,0 +1,75 @@
+// NOTE: left-right img section
+.img-section {
+    @include breakpoint(large_tablet) {
+        display: flex;
+    }
+}
+
+.img-right-wrapper {
+    @include breakpoint(large_tablet) {
+        position: relative;
+        order: 2;
+        flex: 1;
+        padding-left: spacer(10);
+    }
+
+    .careers-form & {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //NOTE: fix for jumping img when changing GDPR info
+        max-height: 656px;
+        padding-left: 0;
+    }
+}
+
+.img-right {
+    @include breakpoint(large_tablet) {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.img-content {
+    @include breakpoint(large_tablet) {
+        flex: 1;
+    }
+}
+
+.img-row {
+    @include breakpoint(large_tablet) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.img-row-content {
+    text-align: center;
+
+    @include breakpoint(large_tablet) {
+        padding: 0 spacer(9) 0 spacer(7);
+        text-align: left;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 0 spacer(14.5) 0 spacer(13);
+    }
+}
+
+.img-row-copy {
+    padding: spacer(5) 0 spacer(3);
+
+    @include breakpoint(tablet) {
+        padding: spacer(6) 0 spacer(4);
+    }
+
+    @include breakpoint(large_tablet) {
+        padding: 0 0 spacer(3);
+    }
+}
+
+.careers-form-image {
+    @include breakpoint(only_phone) {
+        width: 100%;
+    }
+}

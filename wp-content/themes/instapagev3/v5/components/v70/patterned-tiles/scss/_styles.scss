@@ -1,0 +1,30 @@
+.v7-patterned-tiles-container {
+    @include breakpoint(large_tablet) {
+        display: flex;
+    }
+}
+
+.v7-pattern-paceholder {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.v7-patterned-tile {
+    position: relative;
+    padding: spacer(4) spacer(3);
+
+    @include breakpoint(tablet) {
+        padding: spacer(5) spacer(13);
+    }
+
+    @include breakpoint(large_tablet) {
+        flex: 1;
+        padding: spacer(5);
+    }
+
+    @include breakpoint(desktop) {
+        padding: spacer(5) spacer(8);
+    }
+}

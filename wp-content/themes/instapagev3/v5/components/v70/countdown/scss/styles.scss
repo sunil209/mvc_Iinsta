@@ -1,0 +1,169 @@
+.v7-countdown {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('../images/webinars-countdown-background.jpg');
+    background-size: cover;
+
+    @include breakpoint(large_tablet) {
+        min-width: 455px;
+    }
+
+    @include breakpoint(desktop) {
+        min-width: 570px;
+    }
+}
+
+.v7-countdown-wrapper {
+    height: 100%;
+    padding: spacer(2) spacer(2.5) spacer(3.5);
+    color: $color_white;
+    font-family: $font_family_secondary;
+    @include text_smoothing;
+
+    @include breakpoint(only_tablet) {
+        padding: spacer(7.5) spacer(4) spacer(10);
+    }
+
+    @include breakpoint(large_tablet) {
+        padding: spacer(3) spacer(3) spacer(6);
+    }
+
+    @include breakpoint(desktop) {
+        padding: spacer(4) spacer(4) spacer(7);
+    }
+}
+
+.v7-countdown-title {
+    font-size: $font_size_basic;
+
+    @include breakpoint(tablet) {
+        font-size: $font_size_xxlarge;
+    }
+
+    @include breakpoint(large_tablet) {
+        font-size: $font_size_xlarge;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $font_size_xxlarge;
+    }
+}
+
+.v7-countdown-text {
+    font-size: $font_size_small;
+
+    @include breakpoint(tablet) {
+        margin-top: spacer(0.5);
+        font-size: $font_size_xlarge;
+    }
+
+    @include breakpoint(large_tablet) {
+        font-size: $font_size_large;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $font_size_xlarge;
+    }
+}
+
+.v7-countdown-numbers-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: spacer(1.5);
+
+    @include breakpoint(tablet) {
+        margin-top: spacer(3);
+    }
+
+    @include breakpoint(large_tablet) {
+        margin-top: spacer(2);
+    }
+
+    @include breakpoint(desktop) {
+        margin-top: spacer(3);
+    }
+}
+
+.v7-countdown-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 2.2em;
+    height: 2.2em;
+    margin-right: 1em;
+    background-color: $color_white;
+    border-radius: $border_radius_primary;
+    color: $color_ocean;
+    font-size: $font_size_large;
+    font-weight: $font_weight_bold;
+    @include text_smoothing;
+
+    @include breakpoint(tablet) {
+        margin-right: spacer(2.5);
+        font-size: $font_size_huge;
+    }
+
+    @include breakpoint(large_tablet) {
+        font-size: $font_size_xxlarge;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $font_size_huge;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:not(:last-child):after {
+        content: ":";
+        position: absolute;
+        right: -30%;
+        color: $color_white;
+        font-weight: $font_weight_bold;
+
+        @include breakpoint(only_tablet) {
+            right: -25%;
+        }
+
+        @include breakpoint(large_tablet) {
+            right: -30%;
+        }
+
+        @include breakpoint(desktop) {
+            right: -25%;
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 10px);
+        color: $color_white;
+        font-size: 8px;
+        font-weight: $font_weight_normal;
+
+        @include breakpoint(tablet) {
+            font-size: $font_size_xsmall;
+        }
+    }
+}
+
+.v7-countdown-days:before {
+    content: "DAYS";
+}
+
+.v7-countdown-hours:before {
+    content: "HOURS";
+}
+
+.v7-countdown-minutes:before {
+    content: "MINUTES";
+}
+
+.v7-countdown-seconds:before {
+    content: "SECONDS";
+}

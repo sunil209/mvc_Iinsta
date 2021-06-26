@@ -1,0 +1,188 @@
+// NOTE: styles for slick slider and testimonial slider
+// NOTE: we need 2 times 'display:flex' for keeping same hight of panels
+
+.slick-track {
+    display: flex;
+
+    .slick-slide {
+        display: flex;
+        outline: 0;
+
+        @include breakpoint(tablet) {
+            margin: spacer(1) spacer(1.5);
+        }
+
+        .v7-testimonials-slider &,
+        .v7-product-features-slider & {
+            margin: 0;
+        }
+
+        .v7-featured-articles-slider & {
+            margin: 0 spacer(1) spacer(1.5);
+        }
+    }
+
+    .v7-posts-browser-slider & {
+        align-items: flex-start;
+    }
+
+    .v7-featured-articles-slider & {
+        @include breakpoint(only_phone) {
+            display: block;
+        }
+    }
+}
+
+.slick-arrow {
+    z-index: 999;
+}
+
+.v7-previous-slide-round,
+.v7-next-slide-round {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $color_white;
+    background: var(--leading-color, #{$color_white});
+    text-align: center;
+    box-shadow: $shadow_3;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transition: $transition_regular;
+
+    &:hover {
+        background: var(--leading-color-hover, #{$color_white});
+        box-shadow: $shadow_1;
+    }
+
+    .material-icons {
+        font-size: 50px;
+        line-height: 60px;
+        color: $color_sky;
+
+        // NOTE: Nested WP class for parametric color template
+        .single-product &,
+        .solution-template-default &,
+        .single-partner & {
+            color: $color_white;
+        }
+    }
+
+    .rippleJS + .material-icons {
+        // NOTE: ripple effect needs changing of z-index
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+    }
+}
+
+.v7-previous-slide-round {
+    left: 10%;
+}
+
+.v7-next-slide-round {
+    right: 10%;
+}
+
+.v7-testimonials-slider {
+    .v7-previous-slide-round,
+    .v7-next-slide-round {
+        top: calc(50% + 50px);
+        left: initial;
+        right: initial;
+
+        @include breakpoint(max_large_tablet) {
+            display: none;
+        }
+    }
+
+    .v7-previous-slide-round {
+        @include breakpoint(large_tablet) {
+            right: calc(50% + 410px);
+        }
+
+        @include breakpoint(desktop) {
+            right: calc(50% + 510px);
+        }
+    }
+
+    .v7-next-slide-round {
+        @include breakpoint(large_tablet) {
+            left: calc(50% + 410px);
+        }
+
+        @include breakpoint(desktop) {
+            left: calc(50% + 510px);
+        }
+    }
+}
+
+.v7-product-features-slider.slick-initialized {
+    .v7-previous-slide-round,
+    .v7-next-slide-round {
+        display: none;
+
+        @include breakpoint(desktop) {
+            display: block;
+            // NOTE: arrows centering vertically ~ 30px is 1/2 of arrow height
+            top: calc(50% - 30px);
+            left: initial;
+            right: initial;
+        }
+    }
+
+    .v7-previous-slide-round {
+        @include breakpoint(desktop) {
+            right: calc(50% + 525px);
+        }
+    }
+
+    .v7-next-slide-round {
+        @include breakpoint(desktop) {
+            left: calc(50% + 525px);
+        }
+    }
+}
+
+.slick-dotted.slick-slider {
+    &.v7-featured-articles-slider {
+        margin-bottom: 0;
+        padding-bottom: spacer(3);
+    }
+}
+
+.slick-dots {
+    .v7-featured-articles-slider & {
+        bottom: -5px;
+    }
+}
+
+.slick-dots li {
+    .v7-featured-articles-slider & {
+        width: 10px;
+        height: 10px;
+        margin: 0 spacer(0.5);
+        vertical-align: text-top;
+
+        button {
+            width: inherit;
+            height: inherit;
+            padding: 0;
+
+            &:before {
+                width: inherit;
+                height: inherit;
+                border: $color_fog;
+                background: $color_fog;
+            }
+        }
+
+        &.slick-active {
+            button:before {
+                border: $color_sky;
+                background: $color_sky;
+            }
+        }
+    }
+}

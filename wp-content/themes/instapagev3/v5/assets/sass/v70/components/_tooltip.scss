@@ -1,0 +1,24 @@
+// NOTE: styling for tooltipster plugin:
+.tooltipster-sidetip .tooltipster-box {
+    background: $color_white;
+    border: none;
+    border-radius: $border_radius_primary;
+    box-shadow: $shadow_2;
+}
+
+.tooltipster-sidetip .tooltipster-content {
+    color: $color_slate;
+    text-align: center;
+    padding: spacer(1) spacer(2);
+    font-size: $font_size_xsmall;
+    line-height: 1.42;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background,
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+    border-top-color: $color_white;
+}
+
+.tooltip_templates {
+    display: none;
+}

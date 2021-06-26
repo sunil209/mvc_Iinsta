@@ -1,0 +1,277 @@
+// BASE COMPONENT
+//	.navbar
+// VARIANTS
+//	.navbar-mobile
+//  .navbar-mobile-expandable
+// ELEMENTS
+//	.navbar-content
+//	.navbar-menu
+//		.navbar-menu-option
+//		.navbar-submenu-option
+//	.navbar-logo
+//  .navbar-home-link
+
+.navbar {
+	color: $color_leia;
+	position: absolute;
+	top: spacer(1);
+	width: 100%;
+	font-size: $font_size_small;
+	z-index: map-get($z_index, navbar);
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+
+	// States!
+	&[data-state~="sticky"] {
+		background-color: $color_leia;
+		color: $color_slate;
+		animation: slideDownNav 0.5s;
+		top: 0;
+		// FIXME
+		box-shadow: $shadow_1;
+		transition: 0.2s all;
+	}
+
+	// NOTE: no shadow when navbar is next to alphabet-bar
+	&[data-state~="sticky"].is-shadowless {
+		@include breakpoint(large_tablet) {
+			border-bottom: 1px solid $color_fog;
+			box-shadow: none;
+		}
+	}
+
+	&.navbar-white {
+		box-shadow: none;
+		color: $color_slate;
+
+		&[data-state~="sticky"] {
+			box-shadow: $shadow_1;
+		}
+	}
+}
+
+.logo-svg {
+	vertical-align: middle;
+
+	.navbar[data-state~="sticky"] &,
+	.navbar-mobile-expandable &,
+	.navbar-white & {
+		fill: #0d1a2b;
+	}
+}
+
+.navbar-desktop {
+	display: none;
+
+	// Responsive!
+	@include breakpoint(desktop) {
+		display: block;
+	}
+}
+
+.navbar-mobile-bar {
+	&[data-state~="open"][data-state~="sticky"] {
+		box-shadow: none;
+		border-bottom: 1px solid $color_yoda;
+	}
+
+	@include breakpoint(tablet) {
+		&[data-state~="sticky"] {
+			z-index: map-get($z_index, navbar-sticky);
+		}
+	}
+}
+
+.navbar-mobile {
+	top: 0;
+	font-size: $font_size_basic;
+	transition: 1.5s background-color;
+
+	@include breakpoint(tablet) {
+		padding: 0 spacer(3);
+	}
+
+	@include breakpoint(desktop) {
+		display: none;
+	}
+
+	// States!
+	&[data-state~='sticky'] {
+		padding-top: 0;
+	}
+}
+
+.navbar-mobile-expandable {
+	background-color: $color_leia;
+	color: $color_slate;
+	height: 100vh;
+	position: fixed;
+	right: -100%;
+	transition: 0.5s ease-in-out right;
+	z-index: map-get($z_index, navbar-expandable);
+	overflow-y: auto;
+
+	.navbar-mobile-bar[data-state~="open"] + & {
+		right: 0;
+	}
+
+	@include breakpoint(tablet) {
+		width: 327px;
+	}
+}
+
+// NOTE: We want middle options group to be centered.
+.navbar-login-options {
+	flex: 1;
+}
+
+// NOTE: Every time you have to move something by 1-2px in CSS, a unicorn dies...
+.navbar-home-link {
+	margin-right: spacer(3);
+	margin-bottom: 2px;
+}
+
+.navbar-login-options {
+	display: flex;
+	justify-content: flex-end;
+}
+
+// NOTE: Navbar SVG logo styling.
+.navbar-logo {
+	fill: $color_leia;
+	vertical-align: middle;
+
+	.navbar-mobile-expandable &,
+	.navbar[data-state~="sticky"] & {
+		fill: $color_vader;
+	}
+}
+
+.navbar-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: $navbar_height;
+	margin: auto;
+	max-width: $content_width;
+	padding: 0 24px;
+
+	@include breakpoint(tablet) {
+		padding: 0;
+	}
+}
+
+.navbar-content-expand {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: spacer(2) 21px;
+
+	@include breakpoint(tablet) {
+		padding: spacer(2) 0 17px;
+	}
+}
+
+.navbar-menu {
+	.navbar[data-state="sticky open"] ~ .navbar-mobile[data-state="open"] & {
+		@include breakpoint(tablet) {
+			margin-top: spacer(1);
+		}
+	}
+}
+
+.navbar-menu-option {
+	padding: spacer(1.5) 24px spacer(1.5);
+	border-top: 1px solid #cadef9;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: $color_slate;
+	text-transform: uppercase;
+	font-size: $font_size_small;
+
+	@include breakpoint(tablet) {
+		padding: spacer(1.5) 0 spacer(1.5);
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&.current-menu-parent {
+		color: $color_ocean;
+	}
+
+	// NOTE: we don't want to color icons or submenus
+	.current-menu-parent & span {
+		color: $color_ocean;
+	}
+}
+
+.navbar-menu-icon-inline {
+	display: inline-block;
+	fill: $color_white;
+	vertical-align: sub;
+
+	[data-state~="sticky"] & {
+		fill: $color_slate;
+	}
+
+	.navbar-white & {
+		fill: $color_slate;
+	}
+
+	.navbar-white .current-menu-parent &,
+	.navbar[data-state~="sticky"] .current-menu-parent & {
+		fill: $color_ocean;
+	}
+}
+
+.navbar-menu-option-btn {
+	padding: spacer(3) 0 spacer(1.5);
+}
+
+.navbar-submenu-title {
+	text-transform: uppercase;
+	padding-left: spacer(1.5);
+	display: inline-block;
+	margin: spacer(1.5) 0 spacer(0.5) 24px;
+	font-size: $font_size_small;
+
+	@include breakpoint(tablet) {
+		margin: spacer(1.5) 0 spacer(0.5);
+	}
+}
+
+.navbar-submenu-option {
+	padding: 8px spacer(0.5) 8px 12px;
+	margin: 0 24px;
+	display: flex;
+	align-items: center;
+	color: $color_slate;
+	font-size: $font_size_small;
+	transition: $transition_regular;
+
+	@include breakpoint(tablet) {
+		margin: 0;
+	}
+
+	.navbar-submenu-deeper & {
+		padding-left: 12px;
+		margin-left: 39px;
+		margin-right: 24px;
+
+		@include breakpoint(tablet) {
+			margin-left: 15px;
+			margin-right: 0;
+		}
+	}
+
+	&:hover {
+		background-color: $color_ice;
+	}
+
+	&:last-child {
+		margin-bottom: spacer(1);
+	}
+}

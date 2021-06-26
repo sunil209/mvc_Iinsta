@@ -1,0 +1,133 @@
+.two-columns-half {
+    @include breakpoint(large_tablet) {
+        @include css-grid(2);
+    }
+}
+
+.two-columns-tablet {
+    @include breakpoint(tablet) {
+        display: flex;
+    }
+}
+
+.two-columns-tablet-grid {
+    @include breakpoint(tablet) {
+        @include css-grid(2);
+    }
+}
+
+// NOTE: Use for tiles only.
+.tiles-row {
+    @include breakpoint(tablet) {
+        @include css-grid(2);
+    }
+
+    @include breakpoint(large_tablet) {
+        @include css-grid(4);
+    }
+}
+
+.tiles-row-big {
+    padding-top: spacer(1);
+
+    @include breakpoint(tablet) {
+        @include css-grid(3);
+        padding-top: spacer(3);
+    }
+
+    @include breakpoint(large_tablet) {
+        @include css-grid(6);
+    }
+}
+
+.tiles-row-wide {
+    @include breakpoint(widescreen_phone) {
+        @include css-grid(2);
+    }
+
+    @include breakpoint(tablet) {
+        @include css-grid(4);
+    }
+}
+
+.tiles-row-small {
+    @include breakpoint(widescreen_phone) {
+        @include css-grid(2);
+    }
+
+    @include breakpoint(large_tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.agency-listing {
+        padding-top: spacer(2);
+
+        @include breakpoint(widescreen_phone) {
+            padding-top: spacer(3);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+    }
+}
+
+.tiles-row-medium {
+    @include breakpoint(widescreen_phone) {
+        @include css-grid(2);
+    }
+
+    @include breakpoint(tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tiles-row-center {
+    max-width: 420px;
+    margin: 0 auto;
+
+    @include breakpoint(large_tablet) {
+      max-width: initial;
+      @include css-grid(3);
+    }
+}
+
+// NOTE: Dual Coulmn template
+.template-dual-column {
+    display: grid;
+    grid-template-areas:
+        "topbar"
+        "sidebar"
+        "content";
+
+    @include breakpoint(large_tablet) {
+        grid-template-columns: 3fr 9fr;
+        grid-column-gap: spacer(3);
+        grid-template-areas:
+            "sidebar topbar"
+            "sidebar content";
+    }
+
+    .single-integration & {
+        @include breakpoint(large_tablet) {
+            grid-template-columns: 2fr 1fr;
+            grid-column-gap: spacer(10);
+            grid-template-areas:
+                "content sidebar";
+        }
+    }
+
+    &.templates-thumbnails {
+        @include breakpoint(large_tablet) {
+            grid-template-areas:
+                "sidebar content";
+        }
+    }
+}
+
+.template-page-similar {
+	@include breakpoint(tablet) {
+		@include css-grid(2);
+	}
+
+	@include breakpoint(large_tablet) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}

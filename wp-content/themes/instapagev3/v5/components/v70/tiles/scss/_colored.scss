@@ -1,0 +1,67 @@
+.v7-tile {
+    .v7-tiles-colored  & {
+        transition: background-color $transition_regular;
+
+        @include breakpoint(only_phone) {
+            height: initial;
+            padding: spacer(2) 24px spacer(2) spacer(5);
+        }
+
+        @include breakpoint(tablet) {
+            justify-content: flex-start;
+            height: initial;
+            padding: spacer(3) spacer(2);
+        }
+
+        &:hover {
+            &:first-child {
+                background-color: #3d84fe13;
+            }
+
+            &:nth-child(2) {
+                background-color: #6f4ff613;
+            }
+
+            &:nth-child(3) {
+                background-color: #00c0f713;
+            }
+
+            &:nth-child(4) {
+                background-color: #ffcd3813;
+            }
+
+            &:nth-child(5) {
+                background-color: #0598dc13;
+            }
+
+            &:nth-child(6) {
+                background-color: #ff6f6113;
+            }
+
+            &:nth-child(7) {
+                background-color: #00d4ae13;
+            }
+
+            &:last-child {
+                background-color: #2d67f713;
+            }
+        }
+    }
+}
+
+.v7-tile-image {
+    .v7-tiles-colored & {
+        width: 40px;
+        height: 70px;
+
+        @include breakpoint(tablet) {
+            padding-bottom: spacer(2);
+        }
+    }
+}
+
+.v7-tile-title {
+    .v7-tiles-colored & {
+        margin-bottom: 0;
+    }
+}

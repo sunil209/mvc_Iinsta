@@ -1,0 +1,58 @@
+// BASE COMPONENNT:
+//  .navbar
+// ELEMENTS:
+//  .navbar-menu
+//  .navbar-menu-item
+//  .navbar-menu-btn
+//  .navbar-submenu
+//  .navbar-submenu-item
+//  .navbar-submenu-link
+// STATES:
+//  sticky
+//  open (only for .navbar-mobile)
+// CLASS STATES:
+// TODO: This classes should be changed with our grid values. Something like data-self="sm-hide" or data-self="md-hide" which works properly. Need a separate task for it.
+//  .early-mobile (shows on 1230px)
+//  .no-mobile (no mobile version)
+
+.navbar {
+    padding: spacer(2.5) spacer(6) 0;
+    height: $navbar_height;
+    font-size: $font_size_small;
+    color: $color_leia;
+    position: absolute;
+    z-index: map-get($z_index, navbar);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    top: 0;
+  
+    &[data-state~="sticky"] {
+        // NOTE: Fixes LG devices navbar problem.
+        display: block;
+        width: 100%;
+        background-color: $color_leia;
+        color: $color_vader;
+        box-shadow: $box_shadow_level_2;
+        animation: slideDownNav 0.3s;
+        padding: 17px spacer(2.5);
+
+        // FIXME: we need to refactor this
+        .cls-1 {
+            fill: $color_vader;
+        }
+    }
+}
+  
+.navbar-logo {
+    width: 40%;
+    max-width: 135px;
+    padding-right: spacer(1);
+}
+  
+.navbar-social {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    z-index: map-get($z_index, navbar);
+}

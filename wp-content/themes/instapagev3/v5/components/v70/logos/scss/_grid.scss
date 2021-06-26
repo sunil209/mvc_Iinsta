@@ -1,0 +1,37 @@
+.v7-grid-logo-wrapper {
+    @include breakpoint(only_tablet) {
+        justify-content: center;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    @include breakpoint(desktop) {
+        max-width: 470px;
+    }
+}
+
+.v7-grid-logo {
+    text-align: center;
+
+    @include breakpoint(only_tablet) {
+        margin-right: spacer(1.5);
+        margin-left: spacer(1.5);
+    }
+    
+    @include breakpoint(large_tablet) {
+        align-self: baseline;
+        margin-right: $main_gap;
+        text-align: initial;
+    }
+
+    @include breakpoint(desktop) {
+        margin-right: 0;
+    }
+
+    &:nth-child(3n + 2) {
+        @include breakpoint(desktop) {
+            margin-right: $main_gap;
+            margin-left: $main_gap;
+        }
+    }
+}

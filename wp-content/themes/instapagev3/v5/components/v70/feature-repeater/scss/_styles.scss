@@ -1,0 +1,17 @@
+.v7-feature-repeater-container-row {
+    @include breakpoint(large_tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1030px;
+    }
+}
+
+.v7-feature-index-follow-link {
+    @include breakpoint(only_phone) {
+        margin-top: spacer(2);
+    }
+
+    @include breakpoint(tablet) {
+        display: flex;
+    }
+}

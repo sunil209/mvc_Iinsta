@@ -1,0 +1,31 @@
+.v7-colors-box {
+    min-height: 130px;
+    padding: spacer(1.5) spacer(2);
+
+    @include breakpoint(only_phone) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    @include breakpoint(large_tablet) {
+        min-height: 160px;
+    }
+}
+
+.v7-colors-copy {
+    display: block;
+    color: $color_white;
+    font-size: $font_size_small;
+    word-break: break-word;
+
+    & + & {
+        margin-top: spacer(0.5);
+    }
+
+    .is-dark & {
+        color: $color_slate;
+    }
+}

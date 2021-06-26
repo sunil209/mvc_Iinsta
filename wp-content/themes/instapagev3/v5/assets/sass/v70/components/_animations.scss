@@ -1,0 +1,30 @@
+.v7-fade-in {
+    animation: 0.4s linear 0.4s fadeIn;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.v7-fade-out {
+    animation: 0.4s fadeOut;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,19 @@
+.v7-benefits-columns {
+    @include breakpoint(desktop) {
+        max-width: 270px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.v7-benefits-icon {
+    .v7-benefits-columns & {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        min-width: initial;
+        height: 70px;
+        margin: 0 auto spacer(2);
+    }
+}

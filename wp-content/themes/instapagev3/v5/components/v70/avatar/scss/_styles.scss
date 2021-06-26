@@ -1,0 +1,16 @@
+.v7-avatar {
+    display: flex;
+    align-items: center;
+}
+
+.v7-avatar-profile {
+    margin-right: spacer(2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.v7-avatar-title {
+    margin-top: 0;
+    font-family: $font_family_secondary;
+}

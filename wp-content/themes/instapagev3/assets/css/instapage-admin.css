@@ -1,0 +1,27 @@
+.devsite-indicator
+{
+	background: #58c778;
+	padding: 10px 20px;
+	color: #FFF;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 1001;
+}
+
+#menu-posts-dictionary-term img
+{
+	width: 20px;
+	height: 20px;
+}
+
+#menu-posts-podcast img
+{
+	width: 20px;
+	height: 20px;
+}
+
+#wpcontent #acf-related_terms select[multiple]
+{
+	height: 450px;
+}
